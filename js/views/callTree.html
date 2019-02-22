@@ -1,0 +1,324 @@
+<table id="instDet_treeT" aria-labelledby="callTreeLabel" class="apm-tall-table-header"
+       data-bind="ojComponent: {
+                                        component: 'ojTable',
+                                        data: treeTableDatasource,
+                                        ready: readyHandler,
+                                        selectionMode: {row: 'single'},
+                                        dnd: {reorder: {columns: 'enabled'}},
+                                        contextMenu: '#'+menuIdForTreeTable,
+                                        columnsDefault: {headerClassName: 'apm-table-columns-header-default', sortable: 'none'},
+                                        columns: treeTableColumns,
+                                        rootAttributes: {style: 'width: 100%;'}},
+                                  attr: {summary: oj.Translations.getTranslatedString('instanceProperties.CALL_TREE') + ' ' + oj.Translations.getTranslatedString('instanceProperties.TREE_TABLE')}">
+</table>
+<script type="text/html" id="tree_hdr_name_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_LINK_NAME')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.NAME')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_hdr_sqlId_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_SQL_ID')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.SQL_ID')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_hdr_showSnapshot_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('headerProperties.NO_TITLE')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('headerProperties.NO_TITLE')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_hdr_compType_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_LINK_COMPONENT_TYPE')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.COMPONENT_TYPE')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_hdr_tier_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_LINK_TIER')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.TIER')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_hdr_start_time_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_LINK_CALL_START_TIME')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.CALL_START_TIME')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_hdr_response_time_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_LINK_RESPONSE_TIME')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.RESPONSE_TIME_MS')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_hdr_selfTime_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_LINK_SELF_TIME')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.SELF_TIME_MS')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_hdr_latency_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_LINK_LATENCY')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.LATENCY_MS')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_hdr_error_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_LINK_ERROR')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.ERROR')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_hdr_callType_tmpl">
+    <th data-bind="attr: {title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_LINK_CALL_TYPE')}">
+        <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.CALL_TYPE')"/>
+    </th>
+</script>
+<script type="text/html" id="tree_name_tmpl">
+    <td>
+        <div style="display: table-cell;"
+             data-bind="ojComponent: {component: 'ojRowExpander',
+                                      context: $cellContext,
+                                      expand: $parent.expandHandler
+                                     }">
+        </div>
+        <span style="display: table-cell; vertical-align: top; white-space: normal; word-break: break-all; -ms-word-break: break-all; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto;">
+        <!-- ko if: calledOperationLink === null -->
+            <span data-bind="text: tier === 'EXTERNAL' ? oj.Translations.getTranslatedString('requestProperties.ON', operationName, externalDeploymentInfo()) : operationName,
+                             attr: {id: 'tree_operationName_'+rowIndex}"/>
+            <!-- /ko -->
+            <!-- ko ifnot: calledOperationLink === null -->
+            <a href="#" data-bind="text: tier === 'EXTERNAL' ? oj.Translations.getTranslatedString('requestProperties.ON', operationName, externalDeploymentInfo()) : operationName,
+                                   click: $parent.gotoCalledOperation,
+                                   attr: {id: 'tree_operationName_'+rowIndex}"/>
+            <!-- /ko -->
+            <span style="display: inline;" data-bind="template: {name: 'fieldsJson_tmpl'}"></span>
+        </span>
+    </td>
+</script>
+<script type="text/html" id="fieldsJson_tmpl">
+    <!-- ko if: $data.fieldsJson !== undefined && $data.fieldsJson !== null -->
+    <button data-bind="attr: {id: 'btnDetails_'+rowIndex,
+                            title: oj.Translations.getTranslatedString('generalProperties.ADDITIONAL_INFO')},
+                                       ojComponent: {component: 'ojButton',
+                                                     display: 'icons',
+                                                     chroming: 'half',
+                                                     icons: {start: 'fa fa-info-circle'} },
+                                      click: function()
+                                        {
+                                          $parent.showFieldsJsonTable($parent, $data.fieldsJson, 'popup_'+rowIndex, 'btnDetails_'+rowIndex);
+                                        }">
+    </button>
+    <div data-bind="attr: {id: 'popup_'+rowIndex},
+                    ojComponent: {component: 'ojDialog',
+                                  initialVisibility: 'hide',
+                                  rootAttributes: {style: 'width: 70vw; height: 70vh;'}}">
+        <!-- Note: the user must provide the aria-labelledby attribute for the dialog to be accessible -->
+        <div class="oj-dialog-header oj-helper-clearfix" data-bind="attr: {'aria-labelledby': 'popupTitle_'+rowIndex}">
+            <span class="oj-dialog-title">
+                <i class="fa fa-info-circle"></i>
+                <span data-bind="attr: {id: 'popupTitle_'+rowIndex}, text : oj.Translations.getTranslatedString('generalProperties.ADDITIONAL_INFO')"></span>
+            </span>
+        </div>
+        <div class="oj-dialog-body" style="padding-top: 0px; padding-left: 5px; padding-right: 0px; padding-bottom: 0px;">
+            <div data-bind="foreach: $parent.infoPopupDataSource">
+                <!-- ko if: $index() === 0 -->
+                <div data-bind="ojComponent: {component: 'ojCollapsible', expanded: true}" >
+                    <span data-bind="text: $data.name"></span>
+                    <div data-bind="template: {name: 'fieldsJson_table_tmpl'}"></div>
+                </div>
+                <!-- /ko -->
+                <!-- ko ifnot: $index() === 0 -->
+                <div data-bind="ojComponent: {component: 'ojCollapsible', expanded: false}" >
+                    <span data-bind="text: $data.name"></span>
+                    <div data-bind="template: {name: 'fieldsJson_table_tmpl'}"></div>
+                </div>
+                <!-- /ko -->
+            </div>
+            <div tabindex="0"></div> <!-- this div is necessary to allow tabbing to the close icon in the header -->
+        </div>
+    </div>
+    <!-- /ko -->
+</script>
+<script type="text/html" id="fieldsJson_table_tmpl">
+    <table class="apm-popup-info-table apm-short-table-row"
+           data-bind="attr: {id: 'table_'+$parent.rowIndex+'_'+$index(), summary: oj.Translations.getTranslatedString('generalProperties.ADDITIONAL_INFO_TABLE_SUMMARY', $parent.operationName),
+                             'aria-label': oj.Translations.getTranslatedString('generalProperties.ADDITIONAL_INFO_TABLE_SUMMARY', $parent.operationName)},
+                      ojComponent: {component: 'ojTable',
+                                    data: $data.value,
+                                    emptyText: $data.emptyTextValue,
+                                    contextMenu: '',
+                                    columnsDefault: {className: 'small_label', headerClassName: 'tile_title'},
+                                    columns: [{headerText: 'Name', field: 'name'},
+                                              {headerText: 'Value', template: 'value_cell_tmpl', field: 'value'}],
+                                    rootAttributes: {style: 'width: 99%;'}}">
+    </table>
+</script>
+<script type="text/html" id="value_cell_tmpl">
+    <td data-bind="text: value" style="white-space: normal; word-break: break-all; word-wrap: break-word">
+    </td>
+</script>
+<script type="text/html" id="startTime_tmpl">
+    <td>
+        <span data-bind="text: $parent.dateTimeUtils.displayTimeWithMilliseconds(startTime, oj), attr: {id: 'tree_startTime_'+rowIndex}"></span>
+    </td>
+</script>
+<script type="text/html" id="caller_tmpl">
+    <td>
+        <div data-bind="if: calledByOpName === oj.Translations.getTranslatedString('instanceProperties.INSTANCE_START')">
+            <span data-bind="text: calledByOpName, attr: {id: 'tree_calledByOpName_'+rowIndex}" style="font-style: italic"/>
+        </div>
+        <div data-bind="ifnot: calledByOpName === oj.Translations.getTranslatedString('instanceProperties.INSTANCE_START')">
+            <span data-bind="text: calledByOpName, attr: {id: 'tree_calledByOpName_'+rowIndex}"/>
+        </div>
+    </td>
+</script>
+<script type="text/html" id="callee_tmpl">
+    <td>
+        <span data-bind="ifnot: calledOperationLink !== null">
+            <label data-bind="text: tier !== 'EXTERNAL' ? operationName : oj.Translations.getTranslatedString('requestProperties.ON', operationName, externalDeploymentInfo()),
+                              attr: {id: 'tree_operationName_'+rowIndex}"
+                   style="display: table-cell; vertical-align: top; white-space: normal; word-break: break-all;"></label>
+        </span>
+        <span data-bind="if: calledOperationLink !== null">
+            <a href="#"
+               data-bind="text: tier !== 'EXTERNAL' ? operationName : oj.Translations.getTranslatedString('requestProperties.ON', operationName, externalDeploymentInfo()),
+                          click: $parent.gotoCalledOperation,
+                          attr: {id: 'tree_operationName_'+rowIndex}"
+               style="display: table-cell; vertical-align: top; white-space: normal; word-break: break-all; cursor: pointer"></a>
+        </span>
+        <span style="display: inline;" data-bind="template: {name: 'fieldsJson_tmpl'}"></span>
+    </td>
+</script>
+<script type="text/html" id="sqlId_tmpl">
+    <td>
+        <div data-bind="if: sqlId()">
+            <div data-bind="ifnot: $data.sqlIdUrl">
+                <span data-bind="text: sqlId().replace(/[,]/g, ', '), attr: {id: 'sqlId_'+rowIndex}"
+                      style="white-space: normal;"/>
+                <div style="display:inline" data-bind="if: disableEMCCButton">
+                    <button data-bind="click: $parent.sqlDatabaseToolModel.showAddPopupMenu,attr: {title: oj.Translations.getTranslatedString('databasesqlproperties.ADD_DETAILS'), id: 'addemccbutton_'+rowIndex},
+                                                             ojComponent: {component: 'ojButton', icons: {start:'fa fa-plus'},
+                                                             chroming : 'half'},}"></button>
+                </div>
+            </div>
+            <div data-bind="if: $data.sqlIdUrl && $parent.showEMCCButton">
+                <a target ="_blank" data-bind="text: sqlId().replace(/[,]/g, ', '), attr: {id: 'sqlId_'+rowIndex , href :  $data.sqlIdUrl, title: oj.Translations.getTranslatedString('databasesqlproperties.SERVER_REQUEST_DETAILS')}"
+                   style="white-space: normal;"/>
+                <button data-bind="click: $parent.sqlDatabaseToolModel.EditEMCCDetail,attr: {title: oj.Translations.getTranslatedString('databasesqlproperties.EDIT_DETAILS'), id: 'editemccbutton_'+rowIndex},
+                                                             ojComponent: {component: 'ojButton', icons: {start:'fa fa-edit'},
+                                                             chroming : 'half'}"></button>
+            </div>
+            <div data-bind="if: false">      <!-- true for 1.24+ with dbperf changes -->
+                <div data-bind="if: ITAN_DBCSPERF_URL">
+                    <a href="" class="link"
+                       data-bind="attr:{id: 'sqlId_'+rowIndex,
+                                        title: oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_VIEW_SQL_IN_DB_PERF')},
+                                  text: sqlId().replace(/[,]/g, ', '),
+                                  click: $parent.openSQLDBPerf"
+                       style="white-space: normal;">
+                    </a>
+                </div>
+                <div data-bind="ifnot: ITAN_DBCSPERF_URL">
+                    <div class="oj-disabled"
+                         data-bind="text: sqlId().replace(/[,]/g, ', '),
+                                    attr: {id: 'sqlId_'+rowIndex}"
+                         style="white-space: normal;"/>
+                </div>
+            </div>
+        </div>
+    </td>
+</script>
+<script type="text/html" id="showSnapshot_tmpl">
+    <td class="oj-helper-text-align-end">
+        <button data-bind="visible: hasSnapshot,
+                           click: $parent.showStack,
+                           attr: {id: 'apm_showSnapshot'+rowIndex},
+                           ojComponent: {component:'ojButton',
+                                         display : 'icons',
+                                         chroming : 'half',
+                                         icons: {start:'fa fa-camera'},
+                                         label: oj.Translations.getTranslatedString('callStackProperties.SHOW_SNAPSHOT')}"/>
+    </td>
+</script>
+<script type="text/html" id="componentType_tmpl">
+    <td>
+        <span data-bind="text: componentType, attr: {id: 'tree_componentType_'+rowIndex}"></span>
+    </td>
+</script>
+<script type="text/html" id="tier_tmpl">
+    <td>
+        <span data-bind="text: (tier==='APPSERVER') ? oj.Translations.getTranslatedString('tierProperties.APP_SERVER') : ((tier==='DATABASE') ? oj.Translations.getTranslatedString('tierProperties.DATABASE') : ((tier==='EXTERNAL') ? oj.Translations.getTranslatedString('tierProperties.EXTERNAL') : tier)), attr: {id: 'tree_tier_'+rowIndex}"></span>
+    </td>
+</script>
+<script type="text/html" id="response_time_tmpl">
+    <td>
+        <div data-bind="if: displayCharts">
+            <div data-bind="template: {name: 'timePercentageWidget',
+                                       data: {time: linkResponseTime, maxTime: $parent.instanceData().responseTime, relativeStartTime: startTime-$parent.instanceData().startTime,
+                                              tier: tier, labelId: 'tree_linkResponseTime_'+rowIndex,
+                                              dateTimeUtils: $parent.dateTimeUtils, apmConstants: $parent.apmConstants,
+                                              tooltip: $parent.timePercentageTooltip(linkResponseTime, linkResponseTime/$parent.instanceData().responseTime*100)}}">
+            </div>
+        </div>
+        <div data-bind="ifnot: displayCharts">
+            <span data-bind="text: linkResponseTime, attr: {id: 'tree_linkResponseTime_'+rowIndex}"></span>
+        </div>
+    </td>
+</script>
+<script type="text/html" id="selfTime_pct_tmpl">
+    <td>
+        <div data-bind="if: displayCharts">
+            <div data-bind="template: {name: 'timePercentageWidget',
+                                       data: {time: selfTime, maxTime: $parent.instanceData().responseTime, relativeStartTime: 0,
+                                              tier: tier, labelId: 'tree_selfTime_'+rowIndex,
+                                              dateTimeUtils: $parent.dateTimeUtils, apmConstants: $parent.apmConstants,
+                                              tooltip: $parent.timePercentageTooltip(selfTime, selfTime/$parent.instanceData().responseTime*100)}}">
+            </div>
+        </div>
+        <div data-bind="ifnot: displayCharts">
+            <span data-bind="text: selfTime, attr: {id: 'tree_selfTime_'+rowIndex}"></span>
+        </div>
+    </td>
+</script>
+<script type="text/html" id="latency_pct_tmpl">
+    <td>
+        <div data-bind="if: displayCharts">
+            <div data-bind="template: {name: 'timePercentageWidget',
+                                       data: {time: latency, maxTime: $parent.instanceData().responseTime, relativeStartTime: 0,
+                                              tier: tier, labelId: 'tree_latency_'+rowIndex,
+                                              dateTimeUtils: $parent.dateTimeUtils, apmConstants: $parent.apmConstants,
+                                              tooltip: $parent.timePercentageTooltip(latency, latency/$parent.instanceData().responseTime*100)}}">
+            </div>
+        </div>
+        <div data-bind="ifnot: displayCharts">
+            <span data-bind="text: latency, attr: {id: 'tree_latency_'+rowIndex}"></span>
+        </div>
+    </td>
+</script>
+<script type="text/html" id="error_tmpl">
+    <td>
+        <div data-bind="if: hadFault">
+            <div data-bind="if: $data.errorDetailsId !== undefined && $data.errorDetailsId !== null && $data.errorDetailsId.length > 0">
+                <button data-bind="click: $parent.showError,
+                                   attr: {id: 'tree_error_'+rowIndex},
+                                   ojComponent: {component:'ojButton',
+                                                 display : 'icons',
+                                                 chroming : 'half',
+                                                 icons: {start: 'fa fa-lg apm-error-icon-with-badge'},
+                                                 label: oj.Translations.getTranslatedString('instanceProperties.ERROR') + ': ' + oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_SHOW_ERROR')}"/>
+            </div>
+            <div data-bind="ifnot: $data.errorDetailsId !== undefined && $data.errorDetailsId !== null && $data.errorDetailsId.length > 0">
+                <span data-bind="attr: {title: oj.Translations.getTranslatedString('instanceProperties.ERROR') + ': ' + oj.Translations.getTranslatedString('instanceProperties.NO_ERROR_DETAILS_AVAILABLE'), id: 'tree_error_'+rowIndex}">
+                    <i class="fa fa-lg fa-times-circle error-color"></i>
+                </span>
+            </div>
+        </div>
+        <div data-bind="ifnot: hadFault">
+            <span data-bind="attr: {title: oj.Translations.getTranslatedString('instanceProperties.NO_ERROR'), id: 'tree_error_'+rowIndex}">
+                <div class="oj-flex" style="width: 100%; height: 20px;"/>
+            </span>
+        </div>
+    </td>
+</script>
+<script type="text/html" id="callType_tmpl">
+    <td>
+        <span data-bind="attr: {title: (callType==='SYNC') ? oj.Translations.getTranslatedString('callTypeProperties.SYNC') : ((callType==='ASYNC') ? oj.Translations.getTranslatedString('callTypeProperties.ASYNC') : oj.Translations.getTranslatedString('callTypeProperties.UNKNOWN')), id: 'tree_callType_'+rowIndex}">
+            <i data-bind="attr: {class: (callType==='SYNC') ? 'fa fa-arrows-h arrow-color' : ((callType==='ASYNC') ? 'fa fa-long-arrow-right arrow-color' : ''),
+                                 title: (callType==='SYNC') ? oj.Translations.getTranslatedString('callTypeProperties.SYNC') : ((callType==='ASYNC') ? oj.Translations.getTranslatedString('callTypeProperties.ASYNC') : oj.Translations.getTranslatedString('callTypeProperties.UNKNOWN'))}">
+                         </i>
+        </span>
+    </td>
+</script>

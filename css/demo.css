@@ -1,0 +1,9 @@
+.demo-filmstrip-item {
+    box-sizing: border-box;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<div id="componentContent" style="width: 1px; min-width: 100%;">
+    <div id="routing-container">
+        <div id="tabsIconOnly" data-bind="ojComponent:{ component: 'ojTabs',
+                                              orientation: 'horizontal',
+                                              }">
+            <!-- tab bar -->
+            <ul data-bind="foreach: router.states" >
+                <li data-bind="attr: {id: 'tab-'+id}">
+               <span data-bind="attr: {title: label}">
+                   <span data-bind="attr: { class: 'fa-stack', style: 'padding-right: 7px;'}">
+                       <i data-bind="attr: { class: 'apm-tab-icon fa fa-fw fa-2x fa-sitemap fa-rotate-270'}"></i>
+                   </span>
+                   <h2><label class="apm-tab-label" style="vertical-align: middle;" data-bind="text: label"/></h2>
+               </span>
+                </li>
+            </ul>
+
+            <!-- tab contents -->
+            <!-- ko foreach: router.states -->
+            <div data-bind="attr: {id: 'tc-'+id}">
+                <!-- ko if: $parent.router.stateId() === id -->
+                <div data-bind="ojModule: value.path"></div>
+                <!-- /ko -->
+            </div>
+            <!-- /ko -->
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
