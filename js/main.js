@@ -197,11 +197,12 @@ require(['ojs/ojcore',
             $(document).ready(function() {
 
                ko.applyBindings(new HeaderViewModel(),document.getElementById('headerWrapper'));
+                   
                 oj.Router.sync().then(function()
                 {
                     ko.applyBindings(viewModel, document.getElementById('routing-container'));
                 });
-
+   ko.applyBindings(document.getElementById('headerdata'));
         });
 
         }
