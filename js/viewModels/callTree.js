@@ -123,17 +123,17 @@ define(['ojs/ojcore',
             self.infoPopupDataSource = ko.observableArray();
 
             self.treeTableColumns = [
-                {id: 'operationName', title: oj.Translations.getTranslatedString('instanceProperties.NAME'), shown: true, widthWeight: 60, column: {field: 'operationName', headerTemplate: 'tree_hdr_name_tmpl', template: 'tree_name_tmpl', style: 'min-width: 200px;'}},
-                {id: 'sqlId', title: oj.Translations.getTranslatedString('instanceProperties.SQL_ID'), shown: true, widthWeight: 0, column: {field: 'sqlId', headerTemplate: 'tree_hdr_sqlId_tmpl', template: 'sqlId_tmpl'}},
-                {id: 'hasSnapshot', title: oj.Translations.getTranslatedString('instanceProperties.SNAPSHOT'), shown: true, widthWeight: 0, column: {field: 'hasSnapshot', headerTemplate: 'tree_hdr_showSnapshot_tmpl', template: 'showSnapshot_tmpl'}},
-                {id: 'componentType', title: oj.Translations.getTranslatedString('instanceProperties.COMPONENT_TYPE'), shown: true, widthWeight: 0, column: {field: 'componentType', headerTemplate: 'tree_hdr_compType_tmpl', template: 'componentType_tmpl'}},
-                {id: 'tier', title: oj.Translations.getTranslatedString('instanceProperties.TIER'), shown: true, widthWeight: 0, column: {field: 'tier', headerTemplate: 'tree_hdr_tier_tmpl', template: 'tier_tmpl'}},
-                {id: 'startTime', title: oj.Translations.getTranslatedString('instanceProperties.CALL_START_TIME'), shown: true, widthWeight: 10, column: {field: 'startTime', headerTemplate: 'tree_hdr_start_time_tmpl', template: 'startTime_tmpl', style: 'white-space: normal; overflow: visible;'}},
-                {id: 'linkResponseTime', title: oj.Translations.getTranslatedString('instanceProperties.RESPONSE_TIME'), shown: true, widthWeight: 10, column: {field: 'linkResponseTime', headerTemplate: 'tree_hdr_response_time_tmpl', template: 'response_time_tmpl'}},
-                {id: 'selfTime', title: oj.Translations.getTranslatedString('instanceProperties.SELF_TIME'), shown: true, widthWeight: 10, column: {field: 'selfTime', headerTemplate: 'tree_hdr_selfTime_tmpl', template: 'selfTime_pct_tmpl', style: 'min-width: 70px;'}},
-                {id: 'latency', title: oj.Translations.getTranslatedString('instanceProperties.LATENCY'), shown: true, widthWeight: 10, column: {field: 'latency', headerTemplate: 'tree_hdr_latency_tmpl', template: 'latency_pct_tmpl'}},
-                {id: 'hadFault', title: oj.Translations.getTranslatedString('instanceProperties.ERROR'), shown: true, widthWeight: 0, column: {field: 'hadFault', headerTemplate: 'tree_hdr_error_tmpl', template: 'error_tmpl', style: 'text-align: center;'}},
-                {id: 'callType', title: oj.Translations.getTranslatedString('instanceProperties.CALL_TYPE'), shown: true, widthWeight: 0, column: {field: 'callType', headerTemplate: 'tree_hdr_callType_tmpl', template: 'callType_tmpl', style: 'text-align: center; min-width: 65px;'}}
+                {id: 'operationName', HeaderText: oj.Translations.getTranslatedString('instanceProperties.NAME'), shown: true, widthWeight: 60, field: 'operationName', headerTemplate: 'tree_hdr_name_tmpl', template: 'tree_name_tmpl', style: 'min-width: 200px;'},
+                {id: 'sqlId', HeaderText: oj.Translations.getTranslatedString('instanceProperties.SQL_ID'), shown: true, widthWeight: 0, field: 'sqlId', headerTemplate: 'tree_hdr_sqlId_tmpl', template: 'sqlId_tmpl'},
+                {id: 'hasSnapshot', HeaderText: oj.Translations.getTranslatedString('instanceProperties.SNAPSHOT'), shown: true, widthWeight: 0, field: 'hasSnapshot', headerTemplate: 'tree_hdr_showSnapshot_tmpl', template: 'showSnapshot_tmpl'},
+                {id: 'componentType', HeaderText: oj.Translations.getTranslatedString('instanceProperties.COMPONENT_TYPE'), shown: true, widthWeight: 0, field: 'componentType', headerTemplate: 'tree_hdr_compType_tmpl', template: 'componentType_tmpl'},
+                {id: 'tier', HeaderText: oj.Translations.getTranslatedString('instanceProperties.TIER'), shown: true, widthWeight: 0,field: 'tier', headerTemplate: 'tree_hdr_tier_tmpl', template: 'tier_tmpl'},
+                {id: 'startTime', HeaderText: oj.Translations.getTranslatedString('instanceProperties.CALL_START_TIME'), shown: true, widthWeight: 10, field: 'startTime', headerTemplate: 'tree_hdr_start_time_tmpl', template: 'startTime_tmpl', style: 'white-space: normal; overflow: visible;'},
+                {id: 'linkResponseTime', HeaderText: oj.Translations.getTranslatedString('instanceProperties.RESPONSE_TIME'), shown: true, widthWeight: 10, field: 'linkResponseTime', headerTemplate: 'tree_hdr_response_time_tmpl', template: 'response_time_tmpl'},
+                {id: 'selfTime', HeaderText: oj.Translations.getTranslatedString('instanceProperties.SELF_TIME'), shown: true, widthWeight: 10, field: 'selfTime', headerTemplate: 'tree_hdr_selfTime_tmpl', template: 'selfTime_pct_tmpl', style: 'min-width: 70px;'},
+                {id: 'latency', HeaderText: oj.Translations.getTranslatedString('instanceProperties.LATENCY'), shown: true, widthWeight: 10, field: 'latency', headerTemplate: 'tree_hdr_latency_tmpl', template: 'latency_pct_tmpl'},
+                {id: 'hadFault', HeaderText: oj.Translations.getTranslatedString('instanceProperties.ERROR'), shown: true, widthWeight: 0, field: 'hadFault', headerTemplate: 'tree_hdr_error_tmpl', template: 'error_tmpl', style: 'text-align: center;'},
+                {id: 'callType', HeaderText: oj.Translations.getTranslatedString('instanceProperties.CALL_TYPE'), shown: true, widthWeight: 0, field: 'callType', headerTemplate: 'tree_hdr_callType_tmpl', template: 'callType_tmpl', style: 'text-align: center; min-width: 65px;'}
             ];
             self.menuIdForTreeTable = 'apm_calltree_treetable_menu';
 
@@ -998,6 +998,7 @@ define(['ojs/ojcore',
 
 
             self.getDetail();
+            self.loadTable();
         };
 
         return callTree;

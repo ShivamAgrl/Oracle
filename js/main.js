@@ -36,7 +36,7 @@ requirejs.config({
     config: {
         ojL10n: {
             merge: {
-                //'ojtranslations/nls/ojtranslations': 'resources/nls/menu'
+                'ojtranslations/nls/ojtranslations': 'resources/nls/main'
             }
         }
     }
