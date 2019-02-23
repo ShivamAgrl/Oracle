@@ -60,7 +60,7 @@ require(['ojs/ojcore',
     'ojs/ojtoolbar',
     'ojs/ojmenu',
     'ojs/ojselectcombobox',
-        'ojs/ojCollapsible',
+        'ojs/ojcollapsible',
         'ojs/ojtabs',
         'ojs/ojmodule',
         'ojs/ojrouter',
@@ -81,7 +81,7 @@ require(['ojs/ojcore',
             router.configure(
                 {
                     'preface':  { label: 'Calltree',     value: {
-                            path: 'calltree',
+                            path: 'callTree',
                             iconClass:'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
                         }, isDefault: true },
                     'chapter2': { label: 'Snapshot', value: {
