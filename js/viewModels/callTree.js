@@ -37,7 +37,7 @@ define(['ojs/ojcore',
             self.colorUtils = ColorUtils.getInstance();  //used by LA Messages Tile
             self.mscUtils = MscUtils.getInstance();
 
-
+            self.rowData = window.g_activeReportXmlData;
 
 
             self.dateTimeUtils = DateTimeUtils.getInstance();
@@ -607,8 +607,21 @@ define(['ojs/ojcore',
 
                 var startTime=data.selfStartTime;
                 var threadId=data.threadId;
-                var threadIdLink=instanceLink+'/selfSnapshots/'+threadId+'/'+startTime;
+                var threadIdLink='_selfSnapshots_'+threadId+'_'+startTime;
 
+                   var tempData = window.g_activeReportXmlData;
+                
+                var sa = tempData.split("Fxtmodel");
+                    for( i = 0 ; i < sa.length ; i ++)
+                    {
+                        if(sa[i].indexOf(threadIdLink) != -1 )
+                        {
+                            var as = sa[i];
+                        }
+                    }
+                   selfSnapshots =  as.substring(as.indexOf(threadIdLink + ".json}") +  threadIdLink.length + 6 , as.indexOf("<!--"));
+                    
+                  selfSnapshots = JSON.parse(selfSnapshots);
                 // Made null because data from earlier selection is made visible
                 self.selfTreeTableDS1=null;
                 self.selfStackTreeTableDatasource(null);
@@ -616,8 +629,7 @@ define(['ojs/ojcore',
                 self.selfCallee=null;
                 self.emptyTextValue(oj.Translations.getTranslatedString('headerProperties.NO_DATA'));
 
-                window.apmManager.ajaxUtil.ajaxGetWithRetry( threadIdLink, function(selfSnapshots)
-                {
+                
                     $('#apm_snapshot_popup').ojDialog('open');
                     self.noData(!selfSnapshots);
                     if (!selfSnapshots)
@@ -651,21 +663,6 @@ define(['ojs/ojcore',
 
                         }
                     }
-                },window.apmManager.ajaxUtilAjaxOptions )
-                    .fail (function (jqXHR, textStatus, errorThrown)
-                    {
-                        // Set the error
-                        window.apmManager.errorManager.setRestError(jqXHR.url, jqXHR, textStatus, errorThrown );
-                        self.setNoData(); // if we have error, then for sure there is no data
-                        self.emptyTextValue(oj.Translations.getTranslatedString('headerProperties.NO_DATA'));
-                    })
-                    // .done executes when request is done, but NOT when .fail
-                    .done (function (data, textStatus, jqXHR)
-                    {
-                        // we are here, call succeeded, clear any errors associated with this url
-                        window.apmManager.errorManager.clearRestError(jqXHR.url);
-                    });
-
                 self.selfStackTreeTableDatasource(null);
 
             };

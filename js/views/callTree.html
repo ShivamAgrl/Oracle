@@ -384,5 +384,17 @@
         </span>
     </td>
 </script>
-    
 </div>
+ <div id="apm_snapshot_popup"
+                     data-bind=" ojComponent: {component: 'ojDialog', initialVisibility: 'hide', modal:true, rootAttributes:{style:'min-width: 50%'}}">
+                    <!-- Note: the user must provide the aria-labelledby attribute for the dialog to be accessible -->
+                    <div class="oj-dialog-header oj-helper-clearfix" aria-labelledby="snapshotDialogTitleId">
+                        <span class="oj-dialog-title">
+                            <i class="fa fa-camera"></i>
+                            <span id="snapshotDialogTitleId" data-bind="text : snapshotDialogTitle"/>
+                        </span>
+                    </div>
+                    <div class="oj-dialog-body">
+                        <div data-bind="template: {name: 'requestSelfSnapshotRegionModel', data: {mainModel : mainModel, showCallerButton : false}}"></div>
+                    </div>
+                </div>
