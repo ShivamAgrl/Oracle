@@ -1,0 +1,27 @@
+<div class="oj-flex">
+    <div class="oj-sm-12 oj-flex-item">
+        <div data-bind="style: {position: 'relative', height: TABLE_BAR_HEIGHT}">
+            <div data-bind="ojComponent: {
+                                component: 'ojStatusMeterGauge', 
+                                min: 0, 
+                                max: maxTime, 
+                                value: time,
+                                metricLabel: {rendered: 'off'},
+                                plotArea: {rendered: 'off'},
+                                borderRadius: '0em',
+                                visualEffects: 'none',
+                                indicatorSize: 1.0,
+                                color: (tier==='APPSERVER' || tier.toLowerCase()==='application') ? COLOR_APP_SERVER : (tier.toLowerCase()==='database' ? COLOR_DATABASE : (tier.toLowerCase()==='external' ? COLOR_EXTERNAL : 'gray')),
+                                borderColor: (tier==='APPSERVER' || tier==='application') ? COLOR_APP_SERVER : (tier.toLowerCase()==='database' ? COLOR_DATABASE : (tier.toLowerCase()==='external' ? COLOR_EXTERNAL : 'gray')),
+                                shortDesc: tooltip
+                                },
+                            style: {width: '100%', height: TABLE_BAR_HEIGHT, 
+                                    position: 'absolute', top: '0px', left: (relativeStartTime/maxTime*100)+'%', opacity: 0.7}
+                           ">
+            </div> 
+            <label data-bind="text: dateTimeUtils.displayNumber(time,0), attr: {id: labelId}"
+                   style="position: absolute; top: 3px; left: 2px;">
+            </label>
+        </div>
+    </div>
+</div>

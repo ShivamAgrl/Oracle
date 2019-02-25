@@ -20,7 +20,8 @@ define(['ojs/ojcore',
         'ojs/ojflattenedtreetabledatasource',
         'ojs/ojflattenedtreedatagriddatasource',
         'ojs/ojpagingtabledatasource',
-        'ojs/ojjsontreedatasource'
+        'ojs/ojjsontreedatasource',
+        'ojs/ojgauge'
     ],
     function(oj, ko, $, DateTimeUtils, RegionUtils, InstanceUtils, ColorUtils, MscUtils)  {
 

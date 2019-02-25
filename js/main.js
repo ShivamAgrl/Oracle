@@ -54,6 +54,7 @@ require(['ojs/ojcore',
     'app',
     'knockout',
         'text!../html/collapse.html',
+        'text!../html/timePercentageWidget.html',
     'ojs/ojknockout',
     'ojs/ojchart',
     'ojs/ojbutton',
@@ -66,12 +67,13 @@ require(['ojs/ojcore',
         'ojs/ojrouter',
     ],
 
-        function(oj, $, app, ko,collapse) // this callback gets executed when all required modules are loaded
+        function(oj, $, app, ko,collapse,timePercentageWidget) // this callback gets executed when all required modules are loaded
         {
             // Retrieve the parent router from the parameters
             var self=this;
             oj.koStringTemplateEngine.install();
             ko.templates['collapse']= collapse;
+            ko.templates['timePercentageWidget']= timePercentageWidget;
 
             oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
