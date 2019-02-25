@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fa949159-9580-40d3-aef0-e305bffd11cd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/apm.alta.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/apm.alta.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/collapse.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/collapse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +21,8 @@
       <file leaf-file-name="callTree.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="246" column="37" selection-start-line="246" selection-start-column="29" selection-end-line="246" selection-end-column="37" />
+            <state relative-caret-position="1756">
+              <caret line="224" column="48" lean-forward="true" selection-start-line="224" selection-start-column="48" selection-end-line="224" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -45,18 +45,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chartUtils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/utils/chartUtils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="dateTimeUtils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/utils/dateTimeUtils.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,13 +60,25 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+            <state relative-caret-position="204">
+              <caret line="106" selection-start-line="106" selection-end-line="106" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apm.alta.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="collapse.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/collapse.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="40" column="81" lean-forward="true" selection-start-line="40" selection-start-column="81" selection-end-line="40" selection-end-column="81" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apm.alta.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/apm.alta.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="413">
@@ -157,10 +157,10 @@
       <find>response_time_tmpl</find>
       <find>hdr_response_time</find>
       <find>response</find>
-      <find>qs</find>
-      <find />
       <find>JetFW_iconfont.woff</find>
       <find>texture.png</find>
+      <find />
+      <find>qs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -174,7 +174,6 @@
         <option value="$PROJECT_DIR$/rout.html" />
         <option value="$PROJECT_DIR$/js/rout.js" />
         <option value="$PROJECT_DIR$/collapse.html" />
-        <option value="$PROJECT_DIR$/html/collapse.html" />
         <option value="$PROJECT_DIR$/html/views/callTree.html" />
         <option value="$PROJECT_DIR$/js/viewModels/rout.js" />
         <option value="$PROJECT_DIR$/js/utils/chartUtils.js" />
@@ -185,8 +184,9 @@
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/viewModels/callTree.js" />
         <option value="$PROJECT_DIR$/js/views/callTree.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/apm.alta.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/html/collapse.html" />
       </list>
     </option>
   </component>
@@ -199,7 +199,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1592" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -355,12 +355,12 @@
       <workItem from="1550739131594" duration="7568000" />
       <workItem from="1550752474451" duration="3347000" />
       <workItem from="1550817136687" duration="3426000" />
-      <workItem from="1551073991078" duration="1190000" />
+      <workItem from="1551073991078" duration="3857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66576000" />
+    <option name="totallyTimeSpent" value="69243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1096" extended-state="6" />
@@ -374,7 +374,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32953367" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32953367" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -638,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/collapse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="22" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/viewModels/rout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -716,20 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="246" column="37" selection-start-line="246" selection-start-column="29" selection-end-line="246" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/rout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -740,17 +719,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/apm.alta.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
           <caret line="218" column="100" lean-forward="true" selection-start-line="218" selection-start-column="100" selection-end-line="218" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1756">
+          <caret line="224" column="48" lean-forward="true" selection-start-line="224" selection-start-column="48" selection-end-line="224" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/collapse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="40" column="81" lean-forward="true" selection-start-line="40" selection-start-column="81" selection-end-line="40" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
