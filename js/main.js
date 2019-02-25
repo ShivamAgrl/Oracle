@@ -3,6 +3,7 @@
  * Copyright (c) 2014, 2018, Oracle and/or its affiliates.
  * The Universal Permissive License (UPL), Version 1.0
  */
+ var g_activeReportXmlData = "";
 requirejs.config({
     // Path mappings for the logical module names
     paths: 
@@ -71,6 +72,36 @@ require(['ojs/ojcore',
         {
             // Retrieve the parent router from the parameters
             var self=this;
+			//var g_activeReportXmlData = "";
+			
+function emxActiveReportMessageReceived(event)
+{
+    console.log("+++++ Message received::emxActiveReportMessageReceived!!! :: g_emMode: ");
+    console.log(event);
+	if(typeof event.data != "object")
+	{
+		if(event.data.indexOf("Fxtmodel") != -1)
+		{
+			console.log("+++++ Message received::emxActiveReportMessageReceived!!! in main");
+			g_activeReportXmlData = event.data;
+		}
+	}
+	
+        //  Framework (either JET or omc) is posting other messages with event.data set to an object {id: 1, message: "oj-setImmeidate"}. 
+        //  This will override the value of g_activeReportXmlData with the active report xml. Hence put additional checks
+        //  window.DBCSPERF_APP_MODE = "ACTIVE_REPORT" always in active report mode and hence will not suffice
+        // if (event.data && (event.data.indexOf("<report") !== -1)) {  //DOES'NT work, since event.data may not be a string always.
+}
+
+if (typeof window.addEventListener !== 'undefined')
+{
+    console.log("+++++ activeReportInit.js: window.addEventListener: ");
+    window.addEventListener("message", emxActiveReportMessageReceived, false);
+} else if (typeof window.attachEvent !== 'undefined')
+{
+    console.log("+++++ activeReportInit.js: window.attachEvent: ");
+    window.attachEvent("onmessage", emxActiveReportMessageReceived);
+}
             oj.koStringTemplateEngine.install();
             ko.templates['collapse']= collapse;
             ko.templates['timePercentageWidget']= timePercentageWidget;

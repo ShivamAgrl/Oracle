@@ -184,12 +184,12 @@
     </td>
 </script>
 <script type="text/html" id="sqlId_tmpl">
-    <td>
+ <td>
         <div data-bind="if: sqlId()">
             <div data-bind="ifnot: $data.sqlIdUrl">
                 <span data-bind="text: sqlId().replace(/[,]/g, ', '), attr: {id: 'sqlId_'+rowIndex}"
                       style="white-space: normal;"/>
-                <div style="display:inline" data-bind="if: disableEMCCButton">
+                <div style="display:inline" data-bind="if: $parent.disableEMCCButton">
                     <button data-bind="click: $parent.sqlDatabaseToolModel.showAddPopupMenu,attr: {title: oj.Translations.getTranslatedString('databasesqlproperties.ADD_DETAILS'), id: 'addemccbutton_'+rowIndex},
                                                              ojComponent: {component: 'ojButton', icons: {start:'fa fa-plus'},
                                                              chroming : 'half'},}"></button>
@@ -202,7 +202,7 @@
                                                              ojComponent: {component: 'ojButton', icons: {start:'fa fa-edit'},
                                                              chroming : 'half'}"></button>
             </div>
-            <div data-bind="if: false">      <!-- true for 1.24+ with dbperf changes -->
+            <div data-bind="if: false">       true for 1.24+ with dbperf changes 
                 <div data-bind="if: ITAN_DBCSPERF_URL">
                     <a href="" class="link"
                        data-bind="attr:{id: 'sqlId_'+rowIndex,
