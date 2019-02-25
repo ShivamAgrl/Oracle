@@ -56,6 +56,7 @@ require(['ojs/ojcore',
     'knockout',
         'text!../html/collapse.html',
         'text!../html/timePercentageWidget.html',
+        'text!../html/tableContextMenuRegion.html',
     'ojs/ojknockout',
     'ojs/ojchart',
     'ojs/ojbutton',
@@ -66,9 +67,10 @@ require(['ojs/ojcore',
         'ojs/ojtabs',
         'ojs/ojmodule',
         'ojs/ojrouter',
+        'ojs/ojbutton'
     ],
 
-        function(oj, $, app, ko,collapse,timePercentageWidget) // this callback gets executed when all required modules are loaded
+        function(oj, $, app, ko,collapse,timePercentageWidget,tableContextMenuRegion) // this callback gets executed when all required modules are loaded
         {
             // Retrieve the parent router from the parameters
             var self=this;
@@ -105,6 +107,7 @@ if (typeof window.addEventListener !== 'undefined')
             oj.koStringTemplateEngine.install();
             ko.templates['collapse']= collapse;
             ko.templates['timePercentageWidget']= timePercentageWidget;
+            ko.templates['tableContextMenuRegion']= tableContextMenuRegion;
 
             oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
@@ -118,7 +121,7 @@ if (typeof window.addEventListener !== 'undefined')
                             iconClass:'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
                         }, isDefault: true },
                     'chapter2': { label: 'Snapshot', value: {
-                            path: 'snapshot',
+                            path: 'snapShot',
                             iconClass:'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'}},
 
                 });

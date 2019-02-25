@@ -21,7 +21,10 @@ define(['ojs/ojcore',
         'ojs/ojflattenedtreedatagriddatasource',
         'ojs/ojpagingtabledatasource',
         'ojs/ojjsontreedatasource',
-        'ojs/ojgauge'
+        'ojs/ojgauge',
+        'ojs/ojbutton',
+        'ojs/ojcomponentcore',
+        'ojs/ojpagingcontrol'
     ],
     function(oj, ko, $, DateTimeUtils, RegionUtils, InstanceUtils, ColorUtils, MscUtils)  {
 
@@ -274,19 +277,19 @@ define(['ojs/ojcore',
                 });
             };
 
-            self.flatTableColumnsInfo = [
-                {id: 'startTime', title: oj.Translations.getTranslatedString('instanceProperties.CALL_START_TIME'), shown: true, widthWeight: 10, column: {field: 'startTime', headerRenderer: self.call_start_time_hdr_func, template: 'startTime_tmpl', style: 'white-space: normal; overflow: visible;', sortable: 'enabled', sortProperty: 'startTime'}},
-                {id: 'calledByOpName', title: oj.Translations.getTranslatedString('instanceProperties.CALLER'), shown: true, widthWeight: 30, column: {field: 'calledByOpName', headerRenderer: self.caller_hdr_func, template: 'caller_tmpl', style: 'white-space: normal; word-break: break-all; min-width: 150px;', sortable: 'enabled', sortProperty: 'calledByOpName'}},
-                {id: 'operationName', title: oj.Translations.getTranslatedString('instanceProperties.CALLEE'), shown: true, widthWeight: 30, column: {field: 'operationName', headerRenderer: self.callee_hdr_func, template: 'callee_tmpl', style: 'white-space: normal; word-break: break-all; min-width: 150px;', sortable: 'enabled', sortProperty: 'operationName'}},
-                {id: 'sqlId', title: oj.Translations.getTranslatedString('instanceProperties.SQL_ID'), shown: true, widthWeight: 0, column: {field: 'sqlId', headerRenderer: self.sql_id_hdr_func, template: 'sqlId_tmpl', sortable: 'enabled', sortProperty: 'sqlId'}},
-                {id: 'hasSnapshot', title: oj.Translations.getTranslatedString('instanceProperties.SNAPSHOT'), shown: true, widthWeight: 0, column: {field: 'hasSnapshot', headerRenderer: self.show_snapshot_hdr_func, template: 'showSnapshot_tmpl', sortable: 'enabled', sortProperty: 'hasSnapshot'}},
-                {id: 'componentType', title: oj.Translations.getTranslatedString('instanceProperties.COMPONENT_TYPE'), shown: true, widthWeight: 0, column: {field: 'componentType', headerRenderer: self.component_type_hdr_func, template: 'componentType_tmpl', sortable: 'enabled', sortProperty: 'componentType'}},
-                {id: 'tier', title: oj.Translations.getTranslatedString('instanceProperties.TIER'), shown: true, widthWeight: 0, column: {field: 'tier', headerRenderer: self.tier_hdr_func, template: 'tier_tmpl', sortable: 'enabled', sortProperty: 'tier'}},
-                {id: 'linkResponseTime', title: oj.Translations.getTranslatedString('instanceProperties.RESPONSE_TIME'), shown: true, widthWeight: 10, column: {field: 'linkResponseTime', headerRenderer: self.response_time_hdr_func, template: 'response_time_tmpl', sortable: 'enabled', sortProperty: 'linkResponseTime'}},
-                {id: 'selfTime', title: oj.Translations.getTranslatedString('instanceProperties.SELF_TIME'), shown: true, widthWeight: 10, column: {field: 'selfTime', headerRenderer: self.self_time_hdr_func, template: 'selfTime_pct_tmpl', style: 'min-width: 70px;', sortable: 'enabled', sortProperty: 'selfTime'}},
-                {id: 'latency', title: oj.Translations.getTranslatedString('instanceProperties.LATENCY'), shown: true, widthWeight: 10, column: {field: 'latency', headerRenderer: self.latency_hdr_func, template: 'latency_pct_tmpl', sortable: 'enabled', sortProperty: 'latency'}},
-                {id: 'hadFault', title: oj.Translations.getTranslatedString('instanceProperties.ERROR'), shown: true, widthWeight: 0, column: {field: 'hadFault', headerRenderer: self.error_hdr_func, template: 'error_tmpl', style: 'text-align: center;', sortable: 'enabled', sortProperty: 'hadFault'}},
-                {id: 'callType', title: oj.Translations.getTranslatedString('instanceProperties.CALL_TYPE'), shown: true, widthWeight: 0, column: {field: 'callType', headerRenderer: self.call_type_hdr_func, template: 'callType_tmpl', style: 'text-align: center; min-width: 90px;', sortable: 'enabled', sortProperty: 'callType'}}
+            self.flatTableColumns = [
+                {id: 'startTime', HeaderText: oj.Translations.getTranslatedString('instanceProperties.CALL_START_TIME'), shown: true, widthWeight: 10,field: 'startTime', headerRenderer: self.call_start_time_hdr_func, template: 'startTime_tmpl', style: 'white-space: normal; overflow: visible;', sortable: 'enabled', sortProperty: 'startTime'},
+                {id: 'calledByOpName', HeaderText: oj.Translations.getTranslatedString('instanceProperties.CALLER'), shown: true, widthWeight: 30,field: 'calledByOpName', headerRenderer: self.caller_hdr_func, template: 'caller_tmpl', style: 'white-space: normal; word-break: break-all; min-width: 150px;', sortable: 'enabled', sortProperty: 'calledByOpName'},
+                {id: 'operationName', HeaderText: oj.Translations.getTranslatedString('instanceProperties.CALLEE'), shown: true, widthWeight: 30, field: 'operationName', headerRenderer: self.callee_hdr_func, template: 'callee_tmpl', style: 'white-space: normal; word-break: break-all; min-width: 150px;', sortable: 'enabled', sortProperty: 'operationName'},
+                {id: 'sqlId', HeaderText: oj.Translations.getTranslatedString('instanceProperties.SQL_ID'), shown: true, widthWeight: 0,field: 'sqlId', headerRenderer: self.sql_id_hdr_func, template: 'sqlId_tmpl', sortable: 'enabled', sortProperty: 'sqlId'},
+                {id: 'hasSnapshot', HeaderText: oj.Translations.getTranslatedString('instanceProperties.SNAPSHOT'), shown: true, widthWeight: 0,field: 'hasSnapshot', headerRenderer: self.show_snapshot_hdr_func, template: 'showSnapshot_tmpl', sortable: 'enabled', sortProperty: 'hasSnapshot'},
+                {id: 'componentType', HeaderText: oj.Translations.getTranslatedString('instanceProperties.COMPONENT_TYPE'), shown: true, widthWeight: 0, field: 'componentType', headerRenderer: self.component_type_hdr_func, template: 'componentType_tmpl', sortable: 'enabled', sortProperty: 'componentType'},
+                {id: 'tier', HeaderText: oj.Translations.getTranslatedString('instanceProperties.TIER'), shown: true, widthWeight: 0, field: 'tier', headerRenderer: self.tier_hdr_func, template: 'tier_tmpl', sortable: 'enabled', sortProperty: 'tier'},
+                {id: 'linkResponseTime', HeaderText: oj.Translations.getTranslatedString('instanceProperties.RESPONSE_TIME'), shown: true, widthWeight: 10,field: 'linkResponseTime', headerRenderer: self.response_time_hdr_func, template: 'response_time_tmpl', sortable: 'enabled', sortProperty: 'linkResponseTime'},
+                {id: 'selfTime', HeaderText: oj.Translations.getTranslatedString('instanceProperties.SELF_TIME'), shown: true, widthWeight: 10, field: 'selfTime', headerRenderer: self.self_time_hdr_func, template: 'selfTime_pct_tmpl', style: 'min-width: 70px;', sortable: 'enabled', sortProperty: 'selfTime'},
+                {id: 'latency', HeaderText: oj.Translations.getTranslatedString('instanceProperties.LATENCY'), shown: true, widthWeight: 10,field: 'latency', headerRenderer: self.latency_hdr_func, template: 'latency_pct_tmpl', sortable: 'enabled', sortProperty: 'latency'},
+                {id: 'hadFault', HeaderText: oj.Translations.getTranslatedString('instanceProperties.ERROR'), shown: true, widthWeight: 0, field: 'hadFault', headerRenderer: self.error_hdr_func, template: 'error_tmpl', style: 'text-align: center;', sortable: 'enabled', sortProperty: 'hadFault'},
+                {id: 'callType', HeaderText: oj.Translations.getTranslatedString('instanceProperties.CALL_TYPE'), shown: true, widthWeight: 0,field: 'callType', headerRenderer: self.call_type_hdr_func, template: 'callType_tmpl', style: 'text-align: center; min-width: 90px;', sortable: 'enabled', sortProperty: 'callType'}
             ];
             self.menuIdForFlatTable = 'apm_calltree_flattable_menu';
 
@@ -578,6 +581,20 @@ define(['ojs/ojcore',
                         children[i].attr.id = stackFrame.attr.id + ":" + i;
                         fillStackProbeMap(children[i]);
                     }
+                }
+            };
+            self.viewValueChange = function(selectedItem)
+            {
+                if (selectedItem.originalEvent && selectedItem.originalEvent.type === "change")
+                {
+                    self.emptyTextValue = ko.observable(oj.Translations.getTranslatedString('headerProperties.LOADING'));
+                    var val = $('#instDetViewBS').ojButtonset("option", "checked");
+                    self.flatTableViewable(val === 'tableView');
+                    self.treeTableViewable(val === 'treeView');
+                    self.treeTableDatasource(null);
+                    self.flatTableDatasource(null);
+                    setTimeout(self.loadTable, 1);
+                    return true;
                 }
             };
 

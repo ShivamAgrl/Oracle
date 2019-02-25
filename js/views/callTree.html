@@ -1,3 +1,34 @@
+<div class="oj-flex" align="right">
+    <div class="oj-flex-item">
+        <!--this popup show the stack tree in a dialog. and it is filtered according to the probe which user clicks-->
+
+        <div id="instDetViewBS"
+             data-bind="ojComponent: {component: 'ojButtonset', 
+                                              chroming: 'half',
+                                              optionChange: viewValueChange}">
+            <label data-bind="attr: {for: 'treeId'}"></label>
+            <input type="radio" name="viewRadio" aria-controls="tableContainer"
+                   data-bind="value: 'treeView', 
+                              attr: {id: 'treeId', checked: treeTableViewable},
+                              ojComponent: {component: 'ojButton',
+                                            display: 'icons',
+                                            icons: {start: 'fa fa-list-ul'},
+                                            label: oj.Translations.getTranslatedString('instanceProperties.TREE_TABLE')}
+                           "/>
+            <label data-bind="attr: {for: 'tableId'}"></label>
+            <input type="radio" name="viewRadio" aria-controls="tableContainer"
+                   data-bind="value: 'tableView', 
+                              attr: {id: 'tableId', checked: flatTableViewable},
+                              ojComponent: {component: 'ojButton',
+                                            display: 'icons',
+                                            icons: {start: 'fa fa-table'},
+                                            label: oj.Translations.getTranslatedString('instanceProperties.FLAT_TABLE')}
+                           "/>
+        </div>
+    </div>
+</div>
+<div class="oj-flex" id="tableContainer">
+    <div class="oj-sm-12 oj-flex-item" data-bind="if:treeTableViewable">
 <table id="instDet_treeT" aria-labelledby="callTreeLabel" class="apm-tall-table-header"
        data-bind="ojComponent: {
                                         component: 'ojTable',
@@ -66,6 +97,36 @@
         <label data-bind="text: oj.Translations.getTranslatedString('instanceProperties.CALL_TYPE')"/>
     </th>
 </script>
+    </div>
+    <div class="oj-sm-12 oj-flex-item" data-bind="if:flatTableViewable">
+        <div class="oj-table-panel-top" align="right" data-bind="if:numLinks() >NUM_ITEMS_PER_PAGE">
+            <div id="pagingTop" data-bind="ojComponent: {component: 'ojPagingControl', 
+                                                                 data:flatTableDatasource, 
+                                                                 pageSize:NUM_ITEMS_PER_PAGE,
+                                                                 pageOptions: {layout: ['rangeText', 'nav']}}"/>
+        </div>
+
+        <table id="instDet_flatT" aria-labelledby="callTreeLabel" class="apm-tall-table-header"
+               data-bind="ojComponent: {
+                                    component: 'ojTable', 
+                                    data:flatTableDatasource,
+                                    emptyText:emptyTextValue,
+                                    ready:readyHandler,
+                                    selectionMode: {row: 'single'},
+                                    dnd: {reorder: {columns: 'enabled'}},
+                                    contextMenu: '#'+menuIdForFlatTable,
+                                    columnsDefault: {headerClassName: 'apm-table-columns-header-default', sortable: 'auto'}, 
+                                    columns:flatTableColumns,
+                                    rootAttributes: {style: 'width: 100%;'}},
+                                  attr: {summary: oj.Translations.getTranslatedString('instanceProperties.CALL_TREE') + ' ' + oj.Translations.getTranslatedString('instanceProperties.FLAT_TABLE')}">
+        </table>
+        <div class="oj-table-panel-bottom" align="right" data-bind="if:numLinks() >NUM_ITEMS_PER_PAGE">
+            <div id="pagingBottom" data-bind="ojComponent: {component: 'ojPagingControl', 
+                                                                    data:flatTableDatasource, 
+                                                                    pageSize:NUM_ITEMS_PER_PAGE,
+                                                                    pageOptions: {layout: ['rangeText', 'nav']}}"/>
+        </div>
+    </div>
 <script type="text/html" id="tree_name_tmpl">
     <td>
         <div style="display: table-cell;"
@@ -323,3 +384,5 @@
         </span>
     </td>
 </script>
+    
+</div>

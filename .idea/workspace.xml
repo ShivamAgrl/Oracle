@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa949159-9580-40d3-aef0-e305bffd11cd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/html/timePercentageWidget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/tableContextMenuRegion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/viewModels/callTree.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/viewModels/callTree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/views/callTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/callTree.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,17 +23,8 @@
       <file leaf-file-name="callTree.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="70" column="41" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="timePercentageWidget.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/timePercentageWidget.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
+            <state relative-caret-position="188">
+              <caret line="123" column="87" selection-start-line="123" selection-start-column="72" selection-end-line="123" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -40,17 +32,17 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+            <state relative-caret-position="425">
+              <caret line="111" column="79" lean-forward="true" selection-start-line="111" selection-start-column="79" selection-end-line="111" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="callTree.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="callTree.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state relative-caret-position="136">
+              <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -58,7 +50,7 @@
       <file leaf-file-name="dateTimeUtils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/utils/dateTimeUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
+            <state relative-caret-position="5066">
               <caret line="301" column="15" selection-start-line="301" selection-start-column="15" selection-end-line="301" selection-end-column="15" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -67,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="146" column="49" lean-forward="true" selection-start-line="146" selection-start-column="49" selection-end-line="146" selection-end-column="49" />
+            <state relative-caret-position="-3637">
+              <caret line="149" column="13" selection-start-line="148" selection-start-column="12" selection-end-line="149" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -94,34 +86,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rout.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/rout.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="colorUtils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/utils/colorUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
+            <state>
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/utils/constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -131,20 +102,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>VALUE_TIMEPERIOD_LAST30MINUTES</find>
-      <find>createConverter</find>
-      <find>datasource</find>
-      <find>urlParams</find>
-      <find>massageTree</find>
-      <find>setupApmHeader</find>
-      <find>treeTableColumns</find>
       <find>start</find>
       <find>parent</find>
       <find>parent.dateTimeUtils</find>
@@ -154,7 +118,6 @@
       <find>treeTableViewable</find>
       <find>parentNode</find>
       <find>displayTime</find>
-      <find>mainModel</find>
       <find>response_time_tmpl</find>
       <find>hdr_response_time</find>
       <find>response</find>
@@ -164,10 +127,17 @@
       <find>timePercentageWidget</find>
       <find>template</find>
       <find>time</find>
-      <find>276</find>
       <find>ojStatusMeterGauge</find>
+      <find>276</find>
+      <find>mainModel().</find>
       <find>qs</find>
       <find>ready</find>
+      <find>tableContextMenuRegion</find>
+      <find>mainmodel().</find>
+      <find>flattab</find>
+      <find>mainModel</find>
+      <find>title</find>
+      <find>paging</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -188,12 +158,14 @@
         <option value="$PROJECT_DIR$/js/utils/regionUtils.js" />
         <option value="$PROJECT_DIR$/js/utils/messageUtils.js" />
         <option value="$PROJECT_DIR$/js/utils/dateTimeUtils.js" />
-        <option value="$PROJECT_DIR$/js/views/callTree.html" />
         <option value="$PROJECT_DIR$/css/apm.alta.css" />
-        <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/js/viewModels/callTree.js" />
         <option value="$PROJECT_DIR$/html/collapse.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/viewModels/snapShot.js" />
+        <option value="$PROJECT_DIR$/html/snapShot.html" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/js/views/callTree.html" />
+        <option value="$PROJECT_DIR$/js/viewModels/callTree.js" />
       </list>
     </option>
   </component>
@@ -266,30 +238,6 @@
               <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
               <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="oj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="oj" type="462c0819:PsiDirectoryNode" />
-              <item name="v5.1.0" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="oj" type="462c0819:PsiDirectoryNode" />
-              <item name="v5.1.0" type="462c0819:PsiDirectoryNode" />
-              <item name="min" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -297,6 +245,12 @@
               <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="viewModels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -324,18 +278,18 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Linters.ClosureLinter" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\OracleJETComponentInteraction\js" />
-      <recent name="D:\OracleJETComponentInteraction\js\views" />
-      <recent name="D:\OracleJETComponentInteraction\html" />
-      <recent name="D:\OracleJETComponentInteraction\js\viewModels" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\OracleJETComponentInteraction\html" />
       <recent name="D:\OracleJETComponentInteraction" />
       <recent name="D:\OracleJETComponentInteraction\js" />
       <recent name="D:\OracleJETComponentInteraction\js\utils" />
       <recent name="D:\OracleJETComponentInteraction\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OracleJETComponentInteraction\js" />
+      <recent name="D:\OracleJETComponentInteraction\js\views" />
+      <recent name="D:\OracleJETComponentInteraction\html" />
+      <recent name="D:\OracleJETComponentInteraction\js\viewModels" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -393,27 +347,25 @@
       <workItem from="1550739131594" duration="7568000" />
       <workItem from="1550752474451" duration="3347000" />
       <workItem from="1550817136687" duration="3426000" />
-      <workItem from="1551073991078" duration="7541000" />
+      <workItem from="1551073991078" duration="11237000" />
+      <workItem from="1551092349810" duration="3768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72927000" />
+    <option name="totallyTimeSpent" value="80391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32953367" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32953367" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -422,24 +374,26 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32953367" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Messages" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
@@ -456,17 +410,12 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/utils/colorUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7871">
-          <caret line="463" column="34" lean-forward="true" selection-start-line="463" selection-start-column="34" selection-end-line="463" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3349">
-          <caret line="197" column="59" lean-forward="true" selection-start-line="197" selection-start-column="59" selection-end-line="197" selection-end-column="59" />
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -700,9 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -745,15 +691,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/colorUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
+        <state>
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -770,13 +713,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="70" column="41" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/html/snapShot.html" />
     <entry file="file://$PROJECT_DIR$/html/timePercentageWidget.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -784,23 +721,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/dateTimeUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
+        <state relative-caret-position="5066">
           <caret line="301" column="15" selection-start-line="301" selection-start-column="15" selection-end-line="301" selection-end-column="15" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -810,14 +733,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="146" column="49" lean-forward="true" selection-start-line="146" selection-start-column="49" selection-end-line="146" selection-end-column="49" />
+        <state relative-caret-position="-3637">
+          <caret line="149" column="13" selection-start-line="148" selection-start-column="12" selection-end-line="149" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="111" column="79" lean-forward="true" selection-start-line="111" selection-start-column="79" selection-end-line="111" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="123" column="87" selection-start-line="123" selection-start-column="72" selection-end-line="123" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
         </state>
       </provider>
     </entry>
