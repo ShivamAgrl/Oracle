@@ -2,43 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa949159-9580-40d3-aef0-e305bffd11cd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/de/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/de/eumMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/de/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/es/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/es/eumMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/es/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/fr/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/fr/eumMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/fr/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/it/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/it/eumMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/it/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/ja/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/ja/eumMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/ja/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/ko/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/ko/eumMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/ko/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/pt/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/pt/eumMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/pt/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/root/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/root/eumMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/root/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/zh-Hans/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/zh-Hans/eumMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/zh-Hans/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/zh-Hant/apmMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/zh-Hant/eumMsg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/resources/nls/zh-Hant/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/viewModels/callTree.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/viewModels/callTree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/callTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/callTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/apm.alta.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/apm.alta.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,8 +21,8 @@
       <file leaf-file-name="callTree.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="250" column="161" lean-forward="true" selection-start-line="250" selection-start-column="161" selection-end-line="250" selection-end-column="161" />
+            <state relative-caret-position="651">
+              <caret line="246" column="37" selection-start-line="246" selection-start-column="29" selection-end-line="246" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -64,17 +30,17 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="106">
+              <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="callTree.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="callTree.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="296" column="36" selection-start-line="296" selection-start-column="31" selection-end-line="296" selection-end-column="36" />
+            <state relative-caret-position="3740">
+              <caret line="225" column="57" selection-start-line="225" selection-start-column="44" selection-end-line="225" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -82,12 +48,10 @@
       <file leaf-file-name="chartUtils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/utils/chartUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="68">
               <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#span#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,7 +60,7 @@
       <file leaf-file-name="dateTimeUtils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/utils/dateTimeUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
+            <state relative-caret-position="5066">
               <caret line="301" column="15" selection-start-line="301" selection-start-column="15" selection-end-line="301" selection-end-column="15" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -108,12 +72,17 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="117" column="39" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="39" />
-              <folding>
-                <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apm.alta.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/apm.alta.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="218" column="100" lean-forward="true" selection-start-line="218" selection-start-column="100" selection-end-line="218" selection-end-column="100" />
             </state>
           </provider>
         </entry>
@@ -126,15 +95,6 @@
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rout.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/viewModels/rout.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="90" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -171,17 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>text!views/</find>
-      <find>template</find>
-      <find>mainModel().</find>
-      <find>ojcom</find>
-      <find>data</find>
-      <find>getUrlParam</find>
-      <find>snapshotData</find>
-      <find>geturlp</find>
-      <find>LAMessagesErrorMsg</find>
-      <find>instanceSqlSummary</find>
-      <find>displayDateTimeWithMilliseconds</find>
       <find>DisplayUtils</find>
       <find>tableContextMenuModel</find>
       <find>messageUtils</find>
@@ -201,6 +150,17 @@
       <find>responseTime</find>
       <find>getTimeValueOnly</find>
       <find>chart</find>
+      <find>treeTableViewable</find>
+      <find>parentNode</find>
+      <find>displayTime</find>
+      <find>mainModel</find>
+      <find>response_time_tmpl</find>
+      <find>hdr_response_time</find>
+      <find>response</find>
+      <find>qs</find>
+      <find />
+      <find>JetFW_iconfont.woff</find>
+      <find>texture.png</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -221,11 +181,12 @@
         <option value="$PROJECT_DIR$/js/utils/instanceUtils.js" />
         <option value="$PROJECT_DIR$/js/utils/regionUtils.js" />
         <option value="$PROJECT_DIR$/js/utils/messageUtils.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/utils/dateTimeUtils.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/viewModels/callTree.js" />
         <option value="$PROJECT_DIR$/js/views/callTree.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/apm.alta.css" />
       </list>
     </option>
   </component>
@@ -264,6 +225,19 @@
               <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
               <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="oj" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
@@ -381,11 +355,12 @@
       <workItem from="1550739131594" duration="7568000" />
       <workItem from="1550752474451" duration="3347000" />
       <workItem from="1550817136687" duration="3426000" />
+      <workItem from="1551073991078" duration="1190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61393000" />
+    <option name="totallyTimeSpent" value="66576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1096" extended-state="6" />
@@ -393,33 +368,22 @@
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
       <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32953367" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32953367" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -688,24 +652,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/rout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/chartUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="68">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#span#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -725,9 +677,6 @@
           <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/utils/mscUtils.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/regionUtils.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -752,7 +701,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/dateTimeUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
+        <state relative-caret-position="5066">
           <caret line="301" column="15" selection-start-line="301" selection-start-column="15" selection-end-line="301" selection-end-column="15" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -760,35 +709,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="117" column="39" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="39" />
-          <folding>
-            <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="3740">
+          <caret line="225" column="57" selection-start-line="225" selection-start-column="44" selection-end-line="225" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="250" column="161" lean-forward="true" selection-start-line="250" selection-start-column="161" selection-end-line="250" selection-end-column="161" />
+        <state relative-caret-position="651">
+          <caret line="246" column="37" selection-start-line="246" selection-start-column="29" selection-end-line="246" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
+    <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="296" column="36" selection-start-line="296" selection-start-column="31" selection-end-line="296" selection-end-column="36" />
+        <state relative-caret-position="106">
+          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/rout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="64" column="41" lean-forward="true" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/apm.alta.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="218" column="100" lean-forward="true" selection-start-line="218" selection-start-column="100" selection-end-line="218" selection-end-column="100" />
         </state>
       </provider>
     </entry>
