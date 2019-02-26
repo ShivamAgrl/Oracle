@@ -24,7 +24,8 @@ define(['ojs/ojcore',
         'ojs/ojgauge',
         'ojs/ojbutton',
         'ojs/ojcomponentcore',
-        'ojs/ojpagingcontrol'
+        'ojs/ojpagingcontrol',
+         'ojs/ojdialog'
     ],
     function(oj, ko, $, DateTimeUtils, RegionUtils, InstanceUtils, ColorUtils, MscUtils)  {
 

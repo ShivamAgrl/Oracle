@@ -54,23 +54,25 @@ require(['ojs/ojcore',
     'jquery',
     'app',
     'knockout',
-        'text!../html/collapse.html',
-        'text!../html/timePercentageWidget.html',
-        'text!../html/tableContextMenuRegion.html',
+    'text!../html/collapse.html',
+    'text!../html/timePercentageWidget.html',
+    'text!../html/tableContextMenuRegion.html',
+    'text!../html/requestSelfSnapshotRegionModel.html',
     'ojs/ojknockout',
     'ojs/ojchart',
     'ojs/ojbutton',
     'ojs/ojtoolbar',
     'ojs/ojmenu',
     'ojs/ojselectcombobox',
-        'ojs/ojcollapsible',
-        'ojs/ojtabs',
-        'ojs/ojmodule',
-        'ojs/ojrouter',
-        'ojs/ojbutton'
+    'ojs/ojcollapsible',
+    'ojs/ojtabs',
+    'ojs/ojmodule',
+    'ojs/ojrouter',
+    'ojs/ojbutton',
+    'ojs/ojconveyorbelt'
     ],
 
-        function(oj, $, app, ko,collapse,timePercentageWidget,tableContextMenuRegion) // this callback gets executed when all required modules are loaded
+        function(oj, $, app, ko,collapse,timePercentageWidget,tableContextMenuRegion,requestSelfSnapshotRegionModel) // this callback gets executed when all required modules are loaded
         {
             // Retrieve the parent router from the parameters
             var self=this;
@@ -108,6 +110,7 @@ if (typeof window.addEventListener !== 'undefined')
             ko.templates['collapse']= collapse;
             ko.templates['timePercentageWidget']= timePercentageWidget;
             ko.templates['tableContextMenuRegion']= tableContextMenuRegion;
+            ko.templates['requestSelfSnapshotRegionModel']= requestSelfSnapshotRegionModel;
 
             oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
