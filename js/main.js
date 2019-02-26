@@ -119,129 +119,32 @@ if (typeof window.addEventListener !== 'undefined')
             var router = oj.Router.rootInstance;
             router.configure(
                 {
-                    'preface':  { label: 'Calltree',     value: {
+                    'calltree':  { label: 'CallTree',     value: {
                             path: 'callTree',
                             iconClass:'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
                         }, isDefault: true },
-                    'chapter2': { label: 'Snapshot', value: {
-                            path: 'snapShot',
-                            iconClass:'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'}},
+                    'Snapshot': { label: 'Snapshot', value: {
+                            path: 'snapshot',
+                            iconClass:'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'}}
 
                 });
             var viewModel =
                 {
                     router: router
                 };
-
-
-
-            function FooterViewModel() {
-                var self = this;
-
-                var aboutOracle = 'http://www.oracle.com/us/corporate/index.html#menu-about';
-                var contactUs = 'http://www.oracle.com/us/corporate/contact/index.html';
-                var legalNotices = 'http://www.oracle.com/us/legal/index.html';
-                var termsOfUse = 'http://www.oracle.com/us/legal/terms/index.html';
-                var privacyRights = 'http://www.oracle.com/us/legal/privacy/index.html';
-
-                self.ojVersion = ko.observable('v' + oj.version + ', rev: ' + oj.revision);
-
-                self.footerLinks = ko.observableArray([
-                    new FooterNavModel('About Oracle', 'aboutOracle', aboutOracle),
-                    new FooterNavModel('Contact Us', 'contactUs', contactUs),
-                    new FooterNavModel('Legal Notices', 'legalNotices', legalNotices),
-                    new FooterNavModel('Terms Of Use', 'termsOfUse', termsOfUse),
-                    new FooterNavModel('Your Privacy Rights', 'yourPrivacyRights', privacyRights)
-                ]);
-
-            }
-
-            function FooterNavModel(name, id, linkTarget) {
-
-                this.name = name;
-                this.linkId = id;
-                this.linkTarget = linkTarget;
-            }
-
-
-            function HeaderViewModel() {
-                var self = this;
-
-                //
-                // Dropdown menu states
-                //
-                self.selectedMenuItem = ko.observable("(None selected yet)");
-
-                self.menuItemSelect = function(event, ui) {
-                    switch (ui.item.attr("id")) {
-                        case "open":
-                            this.selectedMenuItem(ui.item.children("a").text());
-                            break;
-                        default:
-                            // this.selectedMenuItem(ui.item.children("a").text());
-                    }
-                };
-
-                // Data for application name
-                 var appName = {
-                    "id": "qs",
-                    "name": "JET QuickStart Component Interaction"
-                };
-
-                //
-                // Toolbar buttons
-                //
-                var toolbarData = {
-                    // user name in toolbar
-                    "userName": "john.hancock@oracle.com",
-                    "toolbar_buttons": [
-                        {
-                            "label": "toolbar_button1",
-                            "iconClass": "demo-palette-icon-24",
-                            "url": "#"
-                        },
-                        {
-                            "label": "toolbar_button2",
-                            "iconClass": "demo-gear-icon-16",
-                            "url": "#"
-                        }
-                    ],
-                    // Data for global nav dropdown menu embedded in toolbar.
-                    "global_nav_dropdown_items": [
-                        {"label": "preferences",
-                            "url": "#"
-                        },
-                        {"label": "help",
-                            "url": "#"
-                        },
-                        {"label": "about",
-                            "url": "#"
-                        },
-                        {"label": "sign out",
-                            "url": "#"
-                        }
-                    ]
-                }
-
-                self.appId = appName.id;
-                self.appName = appName.name;
-
-                self.userName = ko.observable(toolbarData.userName);
-                self.toolbarButtons = toolbarData.toolbar_buttons;
-                self.globalNavItems = toolbarData.global_nav_dropdown_items;
-
-            }
-
-
-            $(document).ready(function() {
-
-               ko.applyBindings(new HeaderViewModel(),document.getElementById('headerWrapper'));
-                   
-                oj.Router.sync().then(function()
+   oj.Router.sync().then(function()
                 {
                     ko.applyBindings(viewModel, document.getElementById('routing-container'));
                 });
-   ko.applyBindings(document.getElementById('headerdata'));
+           var viewModel2 =
+                {
+                   
+                };
+
+
+
+            $(document).ready(function() {
+   ko.applyBindings(viewModel2, document.getElementById('headerdata'));
         });
 
         }

@@ -1010,15 +1010,7 @@ define(['ojs/ojcore',
                 }
             };
 
-            self.refresh = function()
-            {
-                window.apmManager.setApmHeaderIcon ( window.apmManager.pageIcons.requestDetail );
-                window.apmManager.integrationManager.updateViewLogLink(oj.Translations.getTranslatedString('headerProperties.VIEW_RELATED_LOG'), null);
-
-                //getDetail() will get the request object and setup currentObject again
-                self.getDetail();
-            };
-
+   
 
             self.getDetail();
             self.loadTable();

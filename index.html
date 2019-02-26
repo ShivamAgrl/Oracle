@@ -553,9 +553,8 @@ Best practice patterns will be provided as part of the JET website in a future r
                     <!-- tab contents -->
                     <!-- ko foreach: router.states -->
                     <div data-bind="attr: {id: 'tc-'+id}">
-                        <!-- ko if: $parent.router.stateId() === id -->
+                        
                         <div data-bind="ojModule: value.path"></div>
-                        <!-- /ko -->
                     </div>
                     <!-- /ko -->
                 </div>
