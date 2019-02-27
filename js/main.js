@@ -112,7 +112,7 @@ if (typeof window.addEventListener !== 'undefined')
             ko.templates['tableContextMenuRegion']= tableContextMenuRegion;
             ko.templates['requestSelfSnapshotRegionModel']= requestSelfSnapshotRegionModel;
 
-            oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
+          oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
             // Retrieve the router static instance and configure the states
 

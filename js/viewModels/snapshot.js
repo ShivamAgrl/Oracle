@@ -7,14 +7,34 @@
 /**
  * snpashot module
  */
-define(['ojs/ojcore', 'knockout'
-], function (oj, ko) {
+define(['ojs/ojcore', 
+    'knockout',
+    'jquery',
+    '../utils/dateTimeUtils',
+    '../utils/regionUtils',
+    '../viewModels/callTree',
+    'ojs/ojknockout',
+    'ojs/ojtable',
+    'ojs/ojrowexpander',
+    'ojs/ojbutton',
+    'ojs/ojdialog',
+    'ojs/ojarraytabledatasource',
+    'ojs/ojjsontreedatasource'
+], function (oj, ko,callTree) {
     /**
      * The view model for the main content view template
      */
-    function snpashotContentViewModel() {
+    function snapshot() {
         var self = this;
+
+        var callee= new callTree();
+        callee.data();
+
+
+        //
+        // refreshCallStackData();
+
     }
-    
-    return snpashotContentViewModel;
+
+    return snapshot;
 });

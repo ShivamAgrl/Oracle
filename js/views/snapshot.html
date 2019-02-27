@@ -1,8 +1,177 @@
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<div class="oj-flex" style="height: 10px;">
+</div>
+<div data-bind="ifnot: isJvmServer">
+    <span id="apm_snapshot_not_available" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.SNAPSHOT_NOT_AVAILABLE_MESSAGE')"></span>
+</div>
+<div data-bind="if: isJvmServer">
+    <div data-bind="ifnot: isSnapshotVisible">
+        <span id="apm_snapshot_not_available1" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.NO_SNAPSHOT_AVAILABLE_FOR_JAVA_AGENT')"></span>
+    </div>
+    <div data-bind="if: isSnapshotVisible">
+        <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline oj-form-cols-labels-inline oj-form-cols-max2 oj-flex-items-pad">
 
-<h1>snpashot</h1>
-add
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label for="total_snapshots" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.TOTAL_SNAPSHOT')" class="page_subtitle"/>
+                </div>
+                <div class="oj-flex-item">
+                    <label id="total_snapshots" data-bind="text: totalSnapshots " class="value_text"/>
+                </div>
+            </div>
+
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label for="apm_memoryAllocation" data-bind="text: oj.Translations.getTranslatedString('requestProperties.MEMORY_ALLOCATION')" class="page_subtitle"/>
+                </div>
+                <div class="oj-flex-item">
+                    <label id="apm_memoryAllocation" data-bind="text: instanceMemory " class="value_text"/>
+                    <label id="apm_memoryAllocationRate" data-bind="text: instanceMemoryRate " class="value_text"/>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label for="apm_cpuUsage" data-bind="text: oj.Translations.getTranslatedString('requestProperties.CPU_USAGE')" class="page_subtitle"/>
+                </div>
+                <div class="oj-flex-item">
+                    <label id="apm_cpuUsage" data-bind="text: instanceCpu " class="value_text"/>
+                    <label id="apm_cpuUsagePercent" data-bind="text: instanceCpuPercent " class="value_text"/>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label for="apm_gcOverhead" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.GC_OVERHEAD')" class="page_subtitle"/>
+                </div>
+                <div class="oj-flex-item">
+                    <label id="apm_gcOverhead" data-bind="text: gcOverhead " class="value_text"/>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <label for="apm_blockTime" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.BLOCK_TIME')" class="page_subtitle"/>
+                </div>
+                <div class="oj-flex-item">
+                    <label id="apm_blockTime" data-bind="text: blockTime " class="value_text"/>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="oj-flex" style="height: 10px;">
+        </div>
+        <div class="oj-flex oj-flex-items-pad">
+            <div class="oj-flex-item" style="padding: 0px;">
+                <div class="oj-panel" style="padding: 0px;" align="left">
+
+                    <div class="oj-flex" style="height: 10px;">
+                    </div>
+                    <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline oj-form-cols-labels-inline oj-form-cols-max2 oj-flex-items-pad">
+                        <h3>Snapshots By Operation</h3>
+                        <div class="oj-flex-item">
+                            <div class="oj-flex-item" align="right">
+                                <label id="snapshotInfoMessage" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.SNAPSHOT_TIMELINE_MESSAGE') " class="page_subtitle"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline oj-form-cols-labels-inline oj-form-cols-max2 oj-flex-items-pad">
+
+                        <div class="oj-flex">
+                            <div data-bind="with: snapshotData">
+                                <div id="apmSnapshotTimelineChart" data-bind="ojComponent: {
+            component: 'ojChart',
+            type: 'line',
+            series: series,
+            legend: legendSections,
+            timeAxisType: 'mixedFrequency',
+            zoomAndScroll: 'live',
+            xAxis: xAxis,
+            yAxis: yAxis,
+            sorting: 'descending',
+            drill: drillFunction,
+            styleDefaults: { dataItemGaps: '0%', markerDisplayed:'off', lineStyle:'solid'}
+        }"
+                                     style="width: 1100px;height: 350px;">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="dialogWrapper">
+
+                        <div style="display:none" id="snapshotDetailDialog"
+                             data-bind="ojComponent:{component: 'ojDialog',
+                                rootAttributes: {  style: 'width: 70vw; height: 70vh;'}
+                                                   }">
+
+                            <div class="oj-dialog-header oj-helper-clearfix" aria-labelledby="snapshotDetailDialogTitleId">
+                        <span class="oj-dialog-title">
+                            <i class="fa fa-camera"></i>
+                            <span id="snapshotDetailDialogTitleId" data-bind="text : snapshotDetailDialogTitle"/>
+                        </span>
+                            </div>
+                            <div class="oj-dialog-body">
+
+                                <div class="oj-flex" id="tableContainer">
+                                    <table id="call_treeT" aria-labelledby="stackTreeLabel"
+                                           data-bind="ojComponent: {
+                                            component: 'ojTable',
+                                            data: snapshotDetailTreeTableDatasource,
+                                            emptyText: emptyTextValue,
+                                            selectionMode: {row: 'single'},
+                                            rowTemplate: 'snapshot_row_template',
+                                            display:'grid',
+                                            columnsDefault: {sortable: 'none'},
+                                            columns: [{headerTemplate: 'tree_hdr_method_name_tmpl', headerStyle: 'width: 50%;'},
+                                                      {headerTemplate: 'tree_hdr_fileName_tmpl', headerStyle: 'width: 35%;'},
+                                                      {headerTemplate: 'tree_hdr_line_tmpl', headerStyle: 'white-space: normal; overflow: visible;width:15%;', style: 'white-space: normal; overflow: visible; '}
+                                                     ],
+                                            rootAttributes: {style: 'width: 100%;'}},
+                                      attr: {summary: oj.Translations.getTranslatedString('instanceProperties.CALL_TREE') + ' ' + oj.Translations.getTranslatedString('instanceProperties.TREE_TABLE')}"
+                                           style="width: 100%;">
+                                    </table>
+
+                                    <!--need to add tooltips-->
+                                    <script type="text/html" id="tree_hdr_method_name_tmpl">
+                                        <th data-bind="attr: {title: oj.Translations.getTranslatedString('callStackProperties.METHOD_NAME')}">
+                                            <label data-bind="text: oj.Translations.getTranslatedString('callStackProperties.METHOD_NAME')"/>
+                                        </th>
+                                    </script>
+                                    <script type="text/html" id="tree_hdr_fileName_tmpl">
+                                        <th data-bind="attr: {title: oj.Translations.getTranslatedString('callStackProperties.FILE_NAME')}">
+                                            <label data-bind="text: oj.Translations.getTranslatedString('callStackProperties.FILE_NAME')"/>
+                                        </th>
+                                    </script>
+                                    <script type="text/html" id="tree_hdr_line_tmpl">
+                                        <th data-bind="attr: {title: oj.Translations.getTranslatedString('callStackProperties.LINE_NUMBER')}">
+                                            <label data-bind="text: oj.Translations.getTranslatedString('callStackProperties.LINE_NUMBER')"/>
+                                        </th>
+                                    </script>
+
+                                    <script type="text/html" id="snapshot_row_template">
+                                        <tr>
+                                            <td>
+                                                <span data-bind="text: methodName,  style: { fontWeight: (isProbe ? 'bold': 'normal'), display: 'table', 'white-space': 'normal', 'word-break': 'break-all'} "></span>
+
+                                            </td>
+                                            <td>
+                                                <span style="display: table; white-space: normal; word-break: break-all;" data-bind="text: fileName"></span>
+                                            </td>
+                                            <td class="oj-helper-text-align-end">
+                                                <span data-bind="text: (lineNumber > 0? lineNumber : '')"></span>
+                                            </td>
+                                        </tr>
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
