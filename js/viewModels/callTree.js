@@ -988,7 +988,7 @@ define(['ojs/ojcore',
 
                 }
 
-                self.selfStackTreeTableDatasource(null);
+                //self.selfStackTreeTableDatasource(null);
 
             };
 

@@ -6,7 +6,8 @@
 
 define(['ojs/ojcore',
     'knockout',
-    'jquery'
+    'jquery',
+    'ojL10n!resources/nls/main'
 
 ],
 function(oj, ko, $, nls )
