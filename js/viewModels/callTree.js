@@ -8,11 +8,12 @@
 define(['ojs/ojcore',
         'knockout',
         'jquery',
-        '../utils/dateTimeUtils',
-        '../utils/regionUtils',
-        '../utils/instanceUtils',
-        '../utils/colorUtils',
-        '../utils/mscUtils',
+        'utils/dateTimeUtils',
+        'utils/regionUtils',
+        'utils/instanceUtils',
+        'utils/apmConstants',
+        'utils/colorUtils',
+        'utils/mscUtils',
         'ojs/ojtable',
         'ojs/ojdialog',
         'ojs/ojrowexpander',
@@ -27,7 +28,7 @@ define(['ojs/ojcore',
         'ojs/ojpagingcontrol',
          'ojs/ojdialog'
     ],
-    function(oj, ko, $, DateTimeUtils, RegionUtils, InstanceUtils, ColorUtils, MscUtils)  {
+    function(oj, ko, $, DateTimeUtils, RegionUtils, InstanceUtils, apmConstants, ColorUtils, MscUtils)  {
 
         function callTree()
         {
@@ -38,6 +39,7 @@ define(['ojs/ojcore',
 
             self.colorUtils = ColorUtils.getInstance();  //used by LA Messages Tile
             self.mscUtils = MscUtils.getInstance();
+            self.apmConstants = apmConstants.getInstance();
             self.snapshotTimeData=ko.observable();
             self.rowData = window.g_activeReportXmlData;
 
@@ -324,15 +326,15 @@ define(['ojs/ojcore',
                     if (!data)
                     {
                         self.emptyTextValue(oj.Translations.getTranslatedString('headerProperties.NO_DATA'));
-                        self.getRequestTypeData(); //this will setup the requesttype info in the header
+                            
                     }
-                    else
+                     else
                     {
                         if(data.rootOperation.instanceSqlSummary)
                         {
                             var finding = [];
                             var input = data.rootOperation.instanceSqlSummary,count=0;
-                            for( i=0 ;i<data.rootOperation.instanceSqlSummary.length;i++)
+                           for( i=0 ;i<data.rootOperation.instanceSqlSummary.length;i++)
                             {
                                 var str = String(input[i].operationName);
                                 if(str.includes('[') && input[i].totalCount>20)
@@ -344,7 +346,7 @@ define(['ojs/ojcore',
                                         totalResponseTime :input[i].totalResponseTime
                                     });
                                     count++;
-                                }
+                                 }
                             }
                             if( count !=0)
                             {
@@ -352,7 +354,8 @@ define(['ojs/ojcore',
                             }
                             self.datasource(new oj.ArrayTableDataSource(self.showallfinding, {idAttribute: 'operationName'}));
                         }
-
+                        data.startTimeDate = self.dateTimeUtils.displayDateTimeWithMilliseconds(data.startTime, oj);
+                        data.endTimeDate = self.dateTimeUtils.displayDateTimeWithMilliseconds(data.endTime, oj);
                         self.instanceData(data);
 
                         // put root in an array so it is displayed in tree table
@@ -361,8 +364,8 @@ define(['ojs/ojcore',
                         self.flatTable = new Array();
 
 
-                        var appServerType = MscUtils.getInstance().getAppserverType(data.rootOperationMetadata.appServerInfo.appServerType);
-                        if (appServerType === APPSERVER_TYPE_NODEJS )
+                        var appServerType = self.mscUtils.getAppserverType(data.rootOperationMetadata.appServerInfo.appServerType);
+                        if (appServerType === self.apmConstants.appserverType.NODEJS)
                         {
                             self.isJvmServer(false);
                         }
@@ -427,7 +430,7 @@ define(['ojs/ojcore',
                         }
                         var responsePctDisplay = self.dateTimeUtils.displayNumber(responsePct)+'%';
                         tierList.push({label: name
-                            ,tierColor: COLOR_APP_SERVER
+                            ,tierColor: self.apmConstants.color.APP_SERVER
                             ,responsePct: responsePct
                             ,responsePctDisplay: responsePctDisplay
                             ,responsePctToolTip: name+': '+responsePctDisplay
@@ -443,7 +446,7 @@ define(['ojs/ojcore',
                         }
                         responsePctDisplay = self.dateTimeUtils.displayNumber(responsePct)+'%';
                         tierList.push({label: name
-                            ,tierColor: COLOR_DATABASE
+                            ,tierColor: self.apmConstants.color.DATABASE
                             ,responsePct: responsePct
                             ,responsePctDisplay: responsePctDisplay
                             ,responsePctToolTip: name+': '+responsePctDisplay
@@ -459,7 +462,7 @@ define(['ojs/ojcore',
                         }
                         responsePctDisplay = self.dateTimeUtils.displayNumber(responsePct)+'%';
                         tierList.push({label: name
-                            ,tierColor: COLOR_EXTERNAL
+                            ,tierColor: self.apmConstants.color.EXTERNAL
                             ,responsePct: responsePct
                             ,responsePctDisplay: responsePctDisplay
                             ,responsePctToolTip: name+': '+responsePctDisplay
@@ -493,16 +496,15 @@ define(['ojs/ojcore',
                             firstLinkType = firstLink.operationGenre;
 
 
-
                         var path = data.rootOperationMetadata.appServerInfo.appServerPath;
-                        if (data.rootOperationMetadata.appServerInfo.appServerType === TARGET_TYPE_NODEJS)
+                        if (data.rootOperationMetadata.appServerInfo.appServerType === self.apmConstants.targetType.NODEJS)
                             path = data.rootOperationMetadata.appServerInfo.appServerName; // for Node.js, the real path is saved in appServerName
-                        var viewLogTargetInfos = [{type: data.rootOperationMetadata.appServerInfo.appServerType,
-                            value: data.rootOperationMetadata.hostInfo.hostName,
-                            port: data.rootOperationMetadata.appServerInfo.appServerPort,
-                            sslport: data.rootOperationMetadata.appServerInfo.appServerSslPort,
-                            portslist: data.rootOperationMetadata.appServerInfo.appServerPortsList,
-                            path: path}];
+                        var viewLogTargetInfos = [{type: data.rootOperationMetadata.appServerInfo.appServerType, 
+                                                   value: data.rootOperationMetadata.hostInfo.hostName,
+                                                   port: data.rootOperationMetadata.appServerInfo.appServerPort,
+                                                   sslport: data.rootOperationMetadata.appServerInfo.appServerSslPort,
+                                                   portslist: data.rootOperationMetadata.appServerInfo.appServerPortsList,
+                                                   path: path}];
 
                         // find all database info
                         for (var i = 0; i < data.operationMetadata.length; i++) {
@@ -516,22 +518,26 @@ define(['ojs/ojcore',
                                     if (index > 0)
                                     {
                                         var dbUrl = oneLink.operationName.substring(index+1);
-                                        viewLogTargetInfos.push({type:TARGET_TYPE_DB, value: dbUrl});
+                                        viewLogTargetInfos.push({type:self.apmConstants.targetType.DB, value: dbUrl});
                                     }
                                 }
                             }
                         }
+                        
+                       
+                        setTimeout(self.loadTable, 1);
+                        
+                       
 
                         //Remove snapshot tab if it is not a Java Server.
                         /* Below condition has no effect. Seeking help.
-                        var appServerType = MscUtils.getInstance().getAppserverType(data.rootOperationMetadata.appServerInfo.appServerType);
-                        if (appServerType === APPSERVER_TYPE_NODEJS || appServerType === APPSERVER_TYPE_DOTNET)
+                        var appServerType = DisplayUtils.getInstance().getAppserverType(data.rootOperationMetadata.appServerInfo.appServerType);
+                        if (appServerType === self.apmConstants.appserverType.NODEJS || appServerType === self.apmConstants.appserverType.DOTNET)
                         {
                             self.subtabrouter.states.pop();
                         }
                         */
                     }
-
 
 
             };

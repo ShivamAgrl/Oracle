@@ -5,10 +5,11 @@
 define(['ojs/ojcore',
     'knockout',
     'jquery',
-    '../utils/dateTimeUtils',
-    '../utils/chartUtils'
+    'utils/dateTimeUtils',
+    'utils/apmConstants',
+    'utils/chartUtils'
 ],
-function(oj, ko, $, DateTimeUtils, ChartUtils)
+function(oj, ko, $, DateTimeUtils, ApmConstants, ChartUtils)
 {
     var InstanceUtils = (function () {
     var instance;
@@ -30,37 +31,38 @@ function(oj, ko, $, DateTimeUtils, ChartUtils)
     function instanceUtils() { 
             var self = this;
             self.dateTimeUtils = DateTimeUtils.getInstance();
+            self.apmConstants = ApmConstants.getInstance();
             self.chartUtils = ChartUtils.getInstance();
             
             self.instanceSeriesInfo =  [{chartValueAttr: "maxInstances"
                            ,name: oj.Translations.getTranslatedString('chartProperties.MAX_TIME')+' '+
                                   oj.Translations.getTranslatedString('chartProperties.INSTANCE_SUFFIX')
-                           ,markerColor: COLOR_MAX_TIME
+                           ,markerColor: self.apmConstants.color.MAX_TIME
                            ,markerShape: "triangleUp"}
                           ,{chartValueAttr: "normalInstances"
                            ,name: oj.Translations.getTranslatedString('chartProperties.NORMAL')+' '+
                                   oj.Translations.getTranslatedString('chartProperties.INSTANCE_SUFFIX')
-                           ,markerColor: COLOR_PRIMARY
+                           ,markerColor: self.apmConstants.color.PRIMARY
                            ,markerShape: "circle"}
                           ,{chartValueAttr: "minInstances"
                            ,name: oj.Translations.getTranslatedString('chartProperties.MIN_TIME')+' '+
                                   oj.Translations.getTranslatedString('chartProperties.INSTANCE_SUFFIX')
-                           ,markerColor: COLOR_MIN_TIME
+                           ,markerColor: self.apmConstants.color.MIN_TIME
                            ,markerShape: "triangleDown"}
                           ,{chartValueAttr: "faultInstances"
                            ,name: oj.Translations.getTranslatedString('chartProperties.FAULT')+' '+
                                   oj.Translations.getTranslatedString('chartProperties.INSTANCE_SUFFIX')
-                           ,markerColor: COLOR_ERROR
+                           ,markerColor: self.apmConstants.color.ERROR
                            ,markerShape: "diamond"}
                           ,{chartValueAttr: "otherInstances"
                            ,name: oj.Translations.getTranslatedString('chartProperties.OTHER_REASON')+' '+
                                   oj.Translations.getTranslatedString('chartProperties.INSTANCE_SUFFIX')
-                           ,markerColor: COLOR_SECONDARY
+                           ,markerColor: self.apmConstants.color.SECONDARY
                            ,markerShape: "square"}
                           ,{chartValueAttr: "syntheticInstances"
                            ,name: oj.Translations.getTranslatedString('chartProperties.SYNTHETIC')+' '+
                                   oj.Translations.getTranslatedString('chartProperties.INSTANCE_SUFFIX')
-                           ,markerColor: COLOR_SECONDARY
+                           ,markerColor: self.apmConstants.color.SECONDARY
                            ,markerShape: "square"}
                           ];
 
@@ -84,7 +86,7 @@ function(oj, ko, $, DateTimeUtils, ChartUtils)
                             seriesObj.markerSize = markerSize;
                             seriesObj.markerDisplayed = "on";
                             seriesObj.lineType = "none";
-                            seriesObj.units = TIME_UNIT_MILLISECONDS;
+                            seriesObj.units = self.apmConstants.timeUnit.MILLISECONDS;
                             if (lastChartSeries.alertSeriesIndex)
                             {
                                 lastChartSeries.alertSeriesIndex++;
@@ -100,7 +102,7 @@ function(oj, ko, $, DateTimeUtils, ChartUtils)
                     self.areInstancesShownInTimeRange = function(timeRange)
                     {
                         // instances are only shown if time period is less than 2 days
-                        return timeRange <= self.dateTimeUtils.getMillisecondsFromTimePeriodName(VALUE_TIMEPERIOD_LASTDAY) * 2;
+                        return timeRange <= self.dateTimeUtils.getMillisecondsFromTimePeriodName(self.apmConstants.timePeriod.LASTDAY) * 2;
                     };
                     
                     self.formatErrorStack = function(unformattedErrorStack)
