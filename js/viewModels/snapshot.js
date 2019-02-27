@@ -10,9 +10,7 @@
 define(['ojs/ojcore', 
     'knockout',
     'jquery',
-    '../utils/dateTimeUtils',
-    '../utils/regionUtils',
-    '../viewModels/callTree',
+    'viewModels/callTree',
     'ojs/ojknockout',
     'ojs/ojtable',
     'ojs/ojrowexpander',
@@ -20,15 +18,16 @@ define(['ojs/ojcore',
     'ojs/ojdialog',
     'ojs/ojarraytabledatasource',
     'ojs/ojjsontreedatasource'
-], function (oj, ko,callTree) {
+], function (oj, ko,$,callTree) {
     /**
      * The view model for the main content view template
      */
     function snapshot() {
         var self = this;
+        self.mainModel = new callTree();
+        console.log( self.mainModel);
+        self.mainModel.snapshotDataCompute();
 
-        var callee= new callTree();
-        callee.data();
 
 
         //

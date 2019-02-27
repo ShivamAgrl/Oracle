@@ -599,6 +599,223 @@ define(['ojs/ojcore',
                     return true;
                 }
             };
+            self.getColorForThreadState = function(threadState)
+            {
+                if(threadState == "RUNNABLE")
+                    return '#83CDDE';
+                if (threadState == "LOCK" || threadState == "TIMED_WAITING")
+                    return '#FFB54D';
+                if(threadState == "DB")
+                    return '#E371B2';
+                if (threadState == "NETWORK")
+                    return '#309FDB';
+                if (threadState == "OTHER")
+                    return '#8561C8';
+                if (threadState == "IO")
+                    return '#47BDEF';
+
+
+            };
+
+            self.snapshotDataCompute = ko.computed(function()
+            {
+
+                self.chart={series: []};
+                var chart1={series: []};
+
+                var temp2 = window.g_activeReportXmlData;
+                var p = temp2.split("Fxtmodel");
+                for( i = 0 ; i < p.length ; i ++)
+                {
+                    if(p[i].indexOf("_snapshots.json") != -1 )
+                    {
+                        var z = p[i];
+                    }
+                }
+                var  snapshots;
+                if( z.indexOf("<!--") != -1)
+                    snapshots =  z.substring(z.indexOf("_snapshots.json") +  "_snapshots.json".length + 1 , z.indexOf("<!--"));
+
+                if( z.indexOf(" -->") != -1)
+                    snapshots =  z.substring(z.indexOf("_snapshots.json") +  "_snapshots.json".length + 1 , z.indexOf(" -->"));
+                snapshots = JSON.parse(snapshots);
+                    if (!snapshots)
+                    {
+                        self.emptyTextValue(oj.Translations.getTranslatedString('headerProperties.NO_DATA'));
+                    }
+                    else {
+
+                        var refObjValue = [];
+                        var minX=0;
+                        var maxX=0;
+                        var processed=false;
+                        self.snapshotItems = snapshots;
+                        if (snapshots.items)
+                        {
+                            snapshots.items=snapshots.items.reverse();
+                            self.totalSnapshots(snapshots.items.length);
+
+                            for(var i=0;i<snapshots.items.length;i++)
+
+                            {
+                                processed=false;
+
+
+                                for( var j=0;j<chart1.series.length;j++)
+                                {
+                                    if(snapshots.items[i].callerOperationName == chart1.series[j].name)
+                                    {
+                                        chart1.series[j].items.push( {y: j, x: snapshots.items[i].snapshotTimeStamp,id:""+snapshots.items[i].threadId+"id"+i, markerDisplayed:'on', markerShape: 'circle',markerSize:20,
+                                            shortDesc : 'Thread Id : '+ snapshots.items[i].threadId+ '\nThread State : '+snapshots.items[i].threadState + ' \nSnapshot Timestamp : '+self.dateTimeUtils.displayDateTimeWithMilliseconds(snapshots.items[i].snapshotTimeStamp, oj),
+                                            color: self.getColorForThreadState(snapshots.items[i].threadState),drilling: 'on'} );
+                                        chart1.series[j].items.push( {y: j, x: snapshots.items[i].callerStartTime, shortDesc: '',id:'lineStartId'+i,drilling: 'off'} );
+                                        chart1.series[j].items.push( {y: j, x: snapshots.items[i].callerEndTime, shortDesc: '',id:'lineEndId'+i,drilling: 'off'} );
+                                        processed=true;
+                                    }
+                                }
+
+                                if(!processed) {
+                                    chart1.series.push({
+                                        id: snapshots.items[i].callerOperationName+" id"+i,
+                                        name: snapshots.items[i].callerOperationName,
+                                        items: [],
+                                        lineStyle:'solid',
+                                        displayInLegend: 'off',
+                                        color:' #ED813E'
+                                    });
+                                    chart1.series[j].items.push( {y: j, x: snapshots.items[i].snapshotTimeStamp,id:""+snapshots.items[i].threadId+"id"+i, markerDisplayed:'on', markerShape: 'circle',markerSize:20,
+                                        shortDesc: 'Thread Id : '+ snapshots.items[i].threadId+ '\nThread State : '+snapshots.items[i].threadState + ' \nSnapshot Timestamp : '+self.dateTimeUtils.displayDateTimeWithMilliseconds(snapshots.items[i].snapshotTimeStamp, oj),
+                                        color: self.getColorForThreadState(snapshots.items[i].threadState), drilling: 'on'} );
+
+                                    chart1.series[j].items.push( {y: j, x: snapshots.items[i].callerStartTime, shortDesc: '', id:'lineStartId'+i,drilling: 'off'} );
+                                    chart1.series[j].items.push( {y: j, x: snapshots.items[i].callerEndTime, shortDesc: '',id:'lineEndId'+i,drilling: 'off'} );
+                                }
+
+                                if(minX ==0) {
+                                    minX = snapshots.items[i].snapshotTimeStamp;
+                                }
+
+                                if(snapshots.items[i].snapshotTimeStamp<minX)
+                                {
+                                    minX=snapshots.items[i].snapshotTimeStamp;
+                                }
+                                if(snapshots.items[i].snapshotTimeStamp>maxX)
+                                {
+                                    maxX=snapshots.items[i].snapshotTimeStamp;
+                                }
+
+                            }
+                        }
+                        for( var j=0;j<chart1.series.length;j++)
+                        {
+                            refObjValue.push({type: 'line', color: 'rgba(196,206,215,1)', value: j});
+                        }
+
+                        probeNames = {format: function(value) {
+                                if(chart1.series[value])
+                                    return chart1.series[value].name;
+                                return "";
+                            }}
+
+
+
+                        chart1.xAxis = {min: minX-2000, max: maxX+2000, viewportMin: minX-2000, viewportMax: maxX+2000, axisLine: {lineWidth: 2}};
+                        chart1.yAxis = {min: 0, max: chart1.series.length, step:1,majorTick: {rendered: 'off'}, tickLabel: {converter: probeNames, scaling :'none', rendered: 'on'},referenceObjects: refObjValue};
+
+                        chart1.drillFunction=function(singleSnapshotData) {
+
+                            var threadId=arguments[1].id.slice(0,arguments[1].id.indexOf('id'));
+                            var xValue=arguments[1].data.x;
+                            self.snapshotDetailDialogTitle(null);
+                            var snapshotLink=urlParams[PARAM_INSTANCE_ID] +'/snapshotDetail/'+threadId+'/'+xValue;
+                            self.snapshotDetailTreeTableDatasource(null);
+
+                            window.apmManager.ajaxUtil.ajaxGetWithRetry( snapshotLink, function(snapshotDetailData)
+                            {
+
+                                $("#snapshotDetailDialog").ojDialog("open");
+                                if (!snapshotDetailData)
+                                {
+                                    self.emptyTextValue(oj.Translations.getTranslatedString('headerProperties.NO_DATA'));
+                                }
+                                else {
+
+                                    var option = [];
+
+
+
+                                    rootRoot = new Array();
+                                    for (var i=0;i<snapshotDetailData.children.length;i++)
+                                        rootRoot.push(snapshotDetailData.children[i]);
+
+
+
+                                    self.snapshotDetailTreeTableDatasource(null);
+
+
+                                    var jsonTreeDS1 = new oj.JsonTreeDataSource(rootRoot);
+                                    var flatTreeDS1 = new oj.FlattenedTreeDataSource(jsonTreeDS1);
+                                    var snapshotTreeTableDS1 = new oj.FlattenedTreeTableDataSource(flatTreeDS1);
+                                    self.snapshotDetailTreeTableDatasource(snapshotTreeTableDS1);
+
+
+
+
+
+                                }
+                            },window.apmManager.ajaxUtilAjaxOptions )
+                                .fail (function (jqXHR, textStatus, errorThrown)
+                                {
+                                    // Set the error
+                                    window.apmManager.errorManager.setRestError(jqXHR.url, jqXHR, textStatus, errorThrown );
+                                    self.setNoData(); // if we have error, then for sure there is no data
+                                    self.emptyTextValue(oj.Translations.getTranslatedString('headerProperties.NO_DATA'));
+                                })
+                                // .done executes when request is done, but NOT when .fail
+                                .done (function (data, textStatus, jqXHR)
+                                {
+                                    // we are here, call succeeded, clear any errors associated with this url
+                                    window.apmManager.errorManager.clearRestError(jqXHR.url);
+                                });
+
+                            self.snapshotDetailDialogTitle(arguments[1].seriesData.name);
+                        };
+
+
+                        chart1.legendSections={sections: [], position: 'end' };
+
+                        chart1.legendSections.sections.push( {title: 'Thread States',items:[]});
+
+                        chart1.legendSections.sections[0].items.push( {text: "RUNNABLE", color: "#83CDDE", markerShape: "square"} );
+                        chart1.legendSections.sections[0].items.push( {text: "LOCK", color: "#FFB54D", markerShape: "square"});
+                        chart1.legendSections.sections[0].items.push( {text: "DB", color: "#E371B2", markerShape: "square"});
+                        chart1.legendSections.sections[0].items.push( {text: "NETWORK", color: "#309FDB", markerShape: "square"});
+                        chart1.legendSections.sections[0].items.push( {text: "IO", color: "#47BDEF", markerShape: "square"});
+                        chart1.legendSections.sections[0].items.push( {text: "OTHER", color: "#8561C8", markerShape: "square"});
+                        chart1.legendSections.sections[0].items.push( {text: "RESPONSE TIME", color: "#ED813E", symbolType: "line", lineStyle: "solid"});
+
+
+                        self.chart=chart1;
+                        self.chart.xAxis=chart1.xAxis;
+                        self.chart.legendSections=chart1.legendSections;
+                        self.chart.drillFunction=chart1.drillFunction;
+                        self.chart.yAxis=chart1.yAxis;
+                        self.chart.series=chart1.series;
+                        return self.chart;
+                    }
+
+
+                self.chart=chart1;
+                self.chart.xAxis=chart1.xAxis;
+                self.chart.yAxis=chart1.yAxis;
+                self.chart.drillFunction=chart1.drillFunction;
+                self.chart.legendSections=chart1.legendSections;
+                self.chart.series=chart1.series;
+                return self.chart;
+            },self).extend({ notify: 'always' });
+
+
+
 
             // this method is used to filter the stack data according to probe
             //when data == null; it resets the treeModel to its original value
@@ -766,26 +983,6 @@ define(['ojs/ojcore',
                 }
 
                 self.selfStackTreeTableDatasource(null);
-
-            };
-
-
-
-            self.getColorForThreadState = function(threadState)
-            {
-                if(threadState == "RUNNABLE")
-                    return '#83CDDE';
-                if (threadState == "LOCK" || threadState == "TIMED_WAITING")
-                    return '#FFB54D';
-                if(threadState == "DB")
-                    return '#E371B2';
-                if (threadState == "NETWORK")
-                    return '#309FDB';
-                if (threadState == "OTHER")
-                    return '#8561C8';
-                if (threadState == "IO")
-                    return '#47BDEF';
-
 
             };
 

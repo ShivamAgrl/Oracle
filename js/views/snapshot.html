@@ -1,13 +1,13 @@
 <div class="oj-flex" style="height: 10px;">
 </div>
-<div data-bind="ifnot: isJvmServer">
+<div data-bind="ifnot: mainModel.isJvmServer">
     <span id="apm_snapshot_not_available" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.SNAPSHOT_NOT_AVAILABLE_MESSAGE')"></span>
 </div>
-<div data-bind="if: isJvmServer">
-    <div data-bind="ifnot: isSnapshotVisible">
+<div data-bind="if: mainModel.isJvmServer">
+    <div data-bind="ifnot: mainModel.isSnapshotVisible">
         <span id="apm_snapshot_not_available1" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.NO_SNAPSHOT_AVAILABLE_FOR_JAVA_AGENT')"></span>
     </div>
-    <div data-bind="if: isSnapshotVisible">
+    <div data-bind="if: mainModel.isSnapshotVisible">
         <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline oj-form-cols-labels-inline oj-form-cols-max2 oj-flex-items-pad">
 
             <div class="oj-flex">
@@ -15,7 +15,7 @@
                     <label for="total_snapshots" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.TOTAL_SNAPSHOT')" class="page_subtitle"/>
                 </div>
                 <div class="oj-flex-item">
-                    <label id="total_snapshots" data-bind="text: totalSnapshots " class="value_text"/>
+                    <label id="total_snapshots" data-bind="text: mainModel.totalSnapshots " class="value_text"/>
                 </div>
             </div>
 
@@ -24,8 +24,8 @@
                     <label for="apm_memoryAllocation" data-bind="text: oj.Translations.getTranslatedString('requestProperties.MEMORY_ALLOCATION')" class="page_subtitle"/>
                 </div>
                 <div class="oj-flex-item">
-                    <label id="apm_memoryAllocation" data-bind="text: instanceMemory " class="value_text"/>
-                    <label id="apm_memoryAllocationRate" data-bind="text: instanceMemoryRate " class="value_text"/>
+                    <label id="apm_memoryAllocation" data-bind="text: mainModel.instanceMemory " class="value_text"/>
+                    <label id="apm_memoryAllocationRate" data-bind="text: mainModel.instanceMemoryRate " class="value_text"/>
                 </div>
             </div>
             <div class="oj-flex">
@@ -33,8 +33,8 @@
                     <label for="apm_cpuUsage" data-bind="text: oj.Translations.getTranslatedString('requestProperties.CPU_USAGE')" class="page_subtitle"/>
                 </div>
                 <div class="oj-flex-item">
-                    <label id="apm_cpuUsage" data-bind="text: instanceCpu " class="value_text"/>
-                    <label id="apm_cpuUsagePercent" data-bind="text: instanceCpuPercent " class="value_text"/>
+                    <label id="apm_cpuUsage" data-bind="text: mainModel.instanceCpu " class="value_text"/>
+                    <label id="apm_cpuUsagePercent" data-bind="text: mainModel.instanceCpuPercent " class="value_text"/>
                 </div>
             </div>
             <div class="oj-flex">
@@ -42,7 +42,7 @@
                     <label for="apm_gcOverhead" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.GC_OVERHEAD')" class="page_subtitle"/>
                 </div>
                 <div class="oj-flex-item">
-                    <label id="apm_gcOverhead" data-bind="text: gcOverhead " class="value_text"/>
+                    <label id="apm_gcOverhead" data-bind="text: mainModel.gcOverhead " class="value_text"/>
                 </div>
             </div>
             <div class="oj-flex">
@@ -50,7 +50,7 @@
                     <label for="apm_blockTime" data-bind="text: oj.Translations.getTranslatedString('callStackProperties.BLOCK_TIME')" class="page_subtitle"/>
                 </div>
                 <div class="oj-flex-item">
-                    <label id="apm_blockTime" data-bind="text: blockTime " class="value_text"/>
+                    <label id="apm_blockTime" data-bind="text: mainModel.blockTime " class="value_text"/>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
                     <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline oj-form-cols-labels-inline oj-form-cols-max2 oj-flex-items-pad">
 
                         <div class="oj-flex">
-                            <div data-bind="with: snapshotData">
+                            <div data-bind="with: mainModel.snapshotDataCompute">
                                 <div id="apmSnapshotTimelineChart" data-bind="ojComponent: {
             component: 'ojChart',
             type: 'line',
@@ -105,7 +105,7 @@
                             <div class="oj-dialog-header oj-helper-clearfix" aria-labelledby="snapshotDetailDialogTitleId">
                         <span class="oj-dialog-title">
                             <i class="fa fa-camera"></i>
-                            <span id="snapshotDetailDialogTitleId" data-bind="text : snapshotDetailDialogTitle"/>
+                            <span id="snapshotDetailDialogTitleId" data-bind="text : mainModel.snapshotDetailDialogTitle"/>
                         </span>
                             </div>
                             <div class="oj-dialog-body">
@@ -114,8 +114,8 @@
                                     <table id="call_treeT" aria-labelledby="stackTreeLabel"
                                            data-bind="ojComponent: {
                                             component: 'ojTable',
-                                            data: snapshotDetailTreeTableDatasource,
-                                            emptyText: emptyTextValue,
+                                            data: mainModel.snapshotDetailTreeTableDatasource,
+                                            emptyText: mainModel.emptyTextValue,
                                             selectionMode: {row: 'single'},
                                             rowTemplate: 'snapshot_row_template',
                                             display:'grid',

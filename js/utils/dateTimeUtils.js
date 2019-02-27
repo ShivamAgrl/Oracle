@@ -6,7 +6,9 @@
 define(['ojs/ojcore',
     'knockout',
     'jquery',
+    'ojs/ojvalidation',
     '../utils/messageUtils'
+
 ],
 function(oj, ko, $, MessageUtils)
 {
