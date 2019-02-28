@@ -730,10 +730,8 @@ define(['ojs/ojcore',
 
                         chart1.drillFunction=function(singleSnapshotData) {
 
-                            var threadId= singleSnapshotData.threadId;
-                            var xValue=arguments[1].data.x;
+
                             self.snapshotDetailDialogTitle(null);
-                            var snapshotLink='_snapshotDetail_'+threadId+'/'+xValue;
                             self.snapshotDetailTreeTableDatasource(null);
 
                             var tempData = window.g_activeReportXmlData;
@@ -767,7 +765,7 @@ define(['ojs/ojcore',
 
 
 
-                                    //self.snapshotDetailTreeTableDatasource(null);
+                                    self.snapshotDetailTreeTableDatasource(null);
 
 
                                     var jsonTreeDS1 = new oj.JsonTreeDataSource(rootRoot);
