@@ -50,6 +50,7 @@ define(['ojs/ojcore',
             self.regionUtils = RegionUtils.getInstance();
             self.instanceUtils = InstanceUtils.getInstance();
             self.showFinding = ko.observable(false);
+            self.externalDeploymentInfo = ko.observable('');
             self.disableEMCCButton = ko.observable(false);
             self.showallfinding = ko.observableArray([]);
             self.datasource = ko.observable(new oj.ArrayTableDataSource([]));
@@ -333,6 +334,7 @@ define(['ojs/ojcore',
             // Get instance details for a given parameters:
             self.getDetail = function()
             {
+                  self.externalDeploymentInfo(""); 
                 self.LAMessagesErrorMsg("");
                 self.LAMessagesCharts(new Array());
                 self.LAMessagesMaxCount(0);
@@ -812,8 +814,8 @@ define(['ojs/ojcore',
 
 
                                     rootRoot = new Array();
-                                    for (var i=0;i<snapshotDetailData.aggregatedStack[0].children[0].children.length;i++)
-                                        rootRoot.push(snapshotDetailData.aggregatedStack[0].children[0].children[i]);
+                                    for (var i=0;i<snapshotDetailData.aggregatedStack[0].children.length;i++)
+                                        rootRoot.push(snapshotDetailData.aggregatedStack[0].children[i]);
 
 
 

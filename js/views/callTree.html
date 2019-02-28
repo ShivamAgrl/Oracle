@@ -137,11 +137,11 @@
         </div>
         <span style="display: table-cell; vertical-align: top; white-space: normal; word-break: break-all; -ms-word-break: break-all; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto;">
         <!-- ko if: calledOperationLink === null -->
-            <span data-bind="text: tier === 'EXTERNAL' ? oj.Translations.getTranslatedString('requestProperties.ON', operationName, externalDeploymentInfo()) : operationName,
+            <span data-bind="text:  operationName,
                              attr: {id: 'tree_operationName_'+rowIndex}"/>
             <!-- /ko -->
             <!-- ko ifnot: calledOperationLink === null -->
-            <a href="#" data-bind="text: tier === 'EXTERNAL' ? oj.Translations.getTranslatedString('requestProperties.ON', operationName, externalDeploymentInfo()) : operationName,
+            <a href="#" data-bind="text:  operationName,
                                    click: $parent.gotoCalledOperation,
                                    attr: {id: 'tree_operationName_'+rowIndex}"/>
             <!-- /ko -->
@@ -230,16 +230,9 @@
 <script type="text/html" id="callee_tmpl">
     <td>
         <span data-bind="ifnot: calledOperationLink !== null">
-            <label data-bind="text: tier !== 'EXTERNAL' ? operationName : oj.Translations.getTranslatedString('requestProperties.ON', operationName, externalDeploymentInfo()),
+            <label data-bind="text:  operationName,
                               attr: {id: 'tree_operationName_'+rowIndex}"
                    style="display: table-cell; vertical-align: top; white-space: normal; word-break: break-all;"></label>
-        </span>
-        <span data-bind="if: calledOperationLink !== null">
-            <a href="#"
-               data-bind="text: tier !== 'EXTERNAL' ? operationName : oj.Translations.getTranslatedString('requestProperties.ON', operationName, externalDeploymentInfo()),
-                          click: $parent.gotoCalledOperation,
-                          attr: {id: 'tree_operationName_'+rowIndex}"
-               style="display: table-cell; vertical-align: top; white-space: normal; word-break: break-all; cursor: pointer"></a>
         </span>
         <span style="display: inline;" data-bind="template: {name: 'fieldsJson_tmpl'}"></span>
     </td>
