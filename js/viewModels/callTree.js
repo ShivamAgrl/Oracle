@@ -68,7 +68,7 @@ define(['ojs/ojcore',
             self.LAMessagesMaxCount = ko.observable(0);
             self.allDataGotten = ko.observable(false);
 
-            self.NUM_ITEMS_PER_PAGE = 50;
+            self.NUM_ITEMS_PER_PAGE = 5;
             self.MAX_NUM_CALLS_TO_EXPAND_ALL = 50;
             self.MAX_NUM_KIDS_FOR_ROOT_TO_EXPAND = 50;
             self.logTimeAddOn = 300000; //5 minutes
@@ -730,14 +730,25 @@ define(['ojs/ojcore',
 
                         chart1.drillFunction=function(singleSnapshotData) {
 
-                            var threadId=arguments[1].id.slice(0,arguments[1].id.indexOf('id'));
+                            var threadId= singleSnapshotData.threadId;
                             var xValue=arguments[1].data.x;
                             self.snapshotDetailDialogTitle(null);
-                            var snapshotLink=urlParams[PARAM_INSTANCE_ID] +'/snapshotDetail/'+threadId+'/'+xValue;
+                            var snapshotLink='_snapshotDetail_'+threadId+'/'+xValue;
                             self.snapshotDetailTreeTableDatasource(null);
 
-                            window.apmManager.ajaxUtil.ajaxGetWithRetry( snapshotLink, function(snapshotDetailData)
+                            var tempData = window.g_activeReportXmlData;
+
+                            var sa = tempData.split("Fxtmodel");
+                            for( i = 0 ; i < sa.length ; i ++)
                             {
+                                if(sa[i].indexOf("_snapshotDetail.json") != -1 )
+                                {
+                                    var as = sa[i];
+                                }
+                            }
+                            snapshotDetailData =  as.substring(as.indexOf("_snapshotDetail.json") +  "_snapshotDetail.json".length + 1 , as.indexOf("<!--"));
+
+                            snapshotDetailData = JSON.parse(snapshotDetailData);
 
                                 $("#snapshotDetailDialog").ojDialog("open");
                                 if (!snapshotDetailData)
@@ -751,12 +762,12 @@ define(['ojs/ojcore',
 
 
                                     rootRoot = new Array();
-                                    for (var i=0;i<snapshotDetailData.children.length;i++)
-                                        rootRoot.push(snapshotDetailData.children[i]);
+                                    for (var i=0;i<snapshotDetailData.aggregatedStack[0].children[0].children.length;i++)
+                                        rootRoot.push(snapshotDetailData.aggregatedStack[0].children[0].children[i]);
 
 
 
-                                    self.snapshotDetailTreeTableDatasource(null);
+                                    //self.snapshotDetailTreeTableDatasource(null);
 
 
                                     var jsonTreeDS1 = new oj.JsonTreeDataSource(rootRoot);
@@ -769,20 +780,7 @@ define(['ojs/ojcore',
 
 
                                 }
-                            },window.apmManager.ajaxUtilAjaxOptions )
-                                .fail (function (jqXHR, textStatus, errorThrown)
-                                {
-                                    // Set the error
-                                    window.apmManager.errorManager.setRestError(jqXHR.url, jqXHR, textStatus, errorThrown );
-                                    self.setNoData(); // if we have error, then for sure there is no data
-                                    self.emptyTextValue(oj.Translations.getTranslatedString('headerProperties.NO_DATA'));
-                                })
-                                // .done executes when request is done, but NOT when .fail
-                                .done (function (data, textStatus, jqXHR)
-                                {
-                                    // we are here, call succeeded, clear any errors associated with this url
-                                    window.apmManager.errorManager.clearRestError(jqXHR.url);
-                                });
+
 
                             self.snapshotDetailDialogTitle(arguments[1].seriesData.name);
                         };
@@ -1058,7 +1056,7 @@ define(['ojs/ojcore',
                     option.expanded.push(ids);
                 }
 
-                self.stackTreeTableDatasource(null);
+               // self.stackTreeTableDatasource(null);
 
                 var rootRoot = new Array();
                 if(label === oj.Translations.getTranslatedString('callStackProperties.SHOW_CALLER'))
