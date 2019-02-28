@@ -9,6 +9,7 @@ define(['ojs/ojcore',
         'knockout',
         'jquery',
         'utils/dateTimeUtils',
+        'viewModels/apmHeaderTitle',
         'utils/regionUtils',
         'utils/instanceUtils',
         'utils/apmConstants',
@@ -28,7 +29,7 @@ define(['ojs/ojcore',
         'ojs/ojpagingcontrol',
          'ojs/ojdialog'
     ],
-    function(oj, ko, $, DateTimeUtils, RegionUtils, InstanceUtils, apmConstants, ColorUtils, MscUtils)  {
+    function(oj, ko, $, DateTimeUtils, apmHeaderTitle, RegionUtils, InstanceUtils, apmConstants, ColorUtils, MscUtils)  {
 
         function callTree()
         {
@@ -39,6 +40,7 @@ define(['ojs/ojcore',
 
             self.colorUtils = ColorUtils.getInstance();  //used by LA Messages Tile
             self.mscUtils = MscUtils.getInstance();
+            self.apmHeaderTitle = apmHeaderTitle.getInstance();
             self.apmConstants = apmConstants.getInstance();
             self.snapshotTimeData=ko.observable();
             self.rowData = window.g_activeReportXmlData;
@@ -297,7 +299,36 @@ define(['ojs/ojcore',
             ];
             self.menuIdForFlatTable = 'apm_calltree_flattable_menu';
 
-
+  self.displayAppserver = function(hostName, appServerInfo)
+            {
+                if (appServerInfo.appServerSslPort === undefined || appServerInfo.appServerSslPort === null) {
+                    if (appServerInfo.appServerPort && appServerInfo.appServerPort !== -1 && appServerInfo.appServerPort !== 0)
+                        return hostName + ":" + appServerInfo.appServerPort;
+                    else if (appServerInfo.appServerPortsList && (appServerInfo.appServerPortsList.length > 0))
+                    {
+                        //in case of tomcat with AJP port only, there is no http nor https port defined
+                        var tokens = appServerInfo.appServerPortsList.split(',');
+                        if (tokens.length > 0)
+                        {
+                            var tokens2 = tokens[0].split(':');
+                            if (tokens2.length > 1)
+                                return hostName + ":" + tokens2[1].trim(); // just use the port
+                            else if (tokens2.length > 0)
+                                return hostName + ":" + tokens[0].trim(); //use the whole token 
+                        }
+                    }
+                    return hostName;
+                }
+                
+                else if (appServerInfo.appServerPort === 0 && appServerInfo.appServerSslPort === 0)
+                    return hostName;
+                
+                else
+                {
+                    var useSSLPort = appServerInfo.appServerSslPort !== null && appServerInfo.appServerSslPort !== 0;
+                    return hostName + ":" + (useSSLPort ? appServerInfo.appServerSslPort : appServerInfo.appServerPort);
+                }
+            };
             //
             // Get instance details for a given parameters:
             self.getDetail = function()
@@ -524,7 +555,28 @@ define(['ojs/ojcore',
                             }
                         }
                         
-                       
+                           self.apmHeaderTitle.setupApmHeader ({ pageIcon:  { colorClass: 'request-type', shapeClass: 'fa-sitemap fa-rotate-270 fa-inverse request-type-adj', outlineClass: 'fa-circle', backgroundClass: 'request-type-bg', alt: oj.Translations.getTranslatedString('headerProperties.REQUEST_TYPE_DETAIL_ALT')}
+                            ,pageHeader: oj.Translations.getTranslatedString('headerProperties.INSTANCE')
+                            ,subtype: firstLinkType
+                            ,idSuffix: 'Server_Request_Instance'
+                            ,labelMdWidth: 3
+                            ,title1: data.requestTypeName
+                            ,title1Label: ''
+                            ,title2: data.startTimeDate
+                            ,title2Label: oj.Translations.getTranslatedString('instanceProperties.START_TIME')
+                            ,title3: data.endTimeDate
+                            ,title3Label: oj.Translations.getTranslatedString('instanceProperties.END_TIME')
+                            ,hideTimeSelector: true
+                            ,column2: {labelMdWidth: 3
+                                ,title2: data.instanceSummary.isAbridged ? oj.Translations.getTranslatedString('generalProperties.YES') + ' ' + oj.Translations.getTranslatedString('instanceProperties.SHOWING_N_OF_M_LINKS', self.numLinks(), data.instanceSummary.linkCount)
+                                    : oj.Translations.getTranslatedString('generalProperties.NO') + ' ' + oj.Translations.getTranslatedString('instanceProperties.SHOWING_ALL_M_LINKS', data.instanceSummary.linkCount)
+                                ,title2Label: oj.Translations.getTranslatedString('instanceProperties.ABRIDGED')
+                                ,title3: self.displayAppserver(data.rootOperationMetadata.hostInfo.hostName, data.rootOperationMetadata.appServerInfo)
+                                ,title3Label: oj.Translations.getTranslatedString('headerProperties.APP_SERVER')
+                                ,title4: data.instanceSummary.ecid ? data.instanceSummary.ecid : oj.Translations.getTranslatedString('generalProperties.NONE')
+                                ,title4Label: oj.Translations.getTranslatedString('instanceProperties.ECID')
+                            }
+                        });
                         setTimeout(self.loadTable, 1);
                         
                        

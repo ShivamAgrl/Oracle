@@ -1,0 +1,154 @@
+<!--
+********************************************************************************
+18Aug14  -   AniaD: created this file, to accomodate wireframe changes.
+******************************************************************************** 
+Copyright (C), 2016,2018, Oracle and / or affiliates. All rights reserved.
+-->
+<!-- APM specific header stuff -->
+<div class="oj-flex"> 
+    <!-- ko ifnot: title1 && title1().trim().length > 0 -->
+    <div class="oj-flex-item">
+        <div class="oj-flex oj-flex-items-pad">
+            <div class="oj-flex-item page_title" data-bind="attr: {id: 'pageHeader_'+idSuffix()}">
+                <h1><span data-bind="text: pageHeader"></span></h1>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>
+<!-- ko if: title1 && title1().trim().length > 0 -->
+<div class="oj-flex-bar" data-bind="attr: {id: 'pageHeader_'+idSuffix()}">
+    <div class="oj-flex-bar-start" style="padding: 5px;">
+        <!-- ko if: pageIcon() -->
+            <span  data-bind="attr: {class: 'fa-stack tab-icon-size ' + pageIcon().colorClass} "> 
+                <i data-bind="attr: {class: 'fa fa-stack-2x ' + pageIcon().outlineClass}"></i>
+                <i data-bind="attr: {class: 'fa fa-stack-1x ' + pageIcon().shapeClass}" ></i>
+            </span>
+        <!-- /ko -->
+    </div>
+    <div class="oj-flex-bar-middle">
+        <!-- ko if: hasCurrentObject -->
+        <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible', expanded: true}" style="width: 100%;">
+            <h1> <span>
+                <!-- ko ifnot: showTitle1Link() -->
+                    <label data-bind="text: title1" id="title1b" style="white-space: normal; word-break: break-all;"></label>
+                <!-- /ko -->
+                <!-- ko if: showTitle1Link() -->
+                    <a href="#" data-bind="click: title1ClickFunction" style="white-space: normal; word-break: break-all;">
+                        <span data-bind="text: title1" id="title1b"></span>
+                    </a>
+                <!-- /ko -->
+                <!-- ko if: dialogInfoData() -->
+                <appserver-info-dialog params= '{infoDetails : dialogInfoData(), dataIndex:  "0"}' data-bind="attr: {id: 'appServerInfoDialog_0'}" > </appserver-info-dialog>   
+                <!-- /ko -->
+                </span>  </h1>
+            <div class="oj-flex" style="padding-top: 0px;">
+                <div data-bind="attr: {class: 'oj-flex-item oj-sm-12 oj-md-'+(showColumn2() ? (showColumn3() ? '4' : '6') : '12')}">
+                    <div class="oj-flex">
+                        <div data-bind="attr: {class: 'oj-flex-item oj-sm-'+$data.labelSmWidth()+' oj-md-'+$data.labelMdWidth()+' oj-lg-'+$data.labelLgWidth()}">
+                            <span data-bind="text: oj.Translations.getTranslatedString('headerProperties.TYPE')" class="page_subtitle"/>
+                        </div>
+                        <div class="oj-flex-item">
+                            <span data-bind="text: entityType, attr: {id: 'entityType'}" class="value_text"></span>
+                        </div>
+                    </div>
+                    <div data-bind="template: {name: 'columnTemplate', data: $data}"></div>
+                </div>
+                <!-- ko if: showColumn2 -->
+                    <div  data-bind="attr: {class: 'oj-flex-item oj-sm-12 oj-md-'+(showColumn3() ? '4' : '6')}">
+                        <div data-bind="template: {name: 'columnTemplate', data: column2}"></div>
+                    </div>
+                    <!-- ko if: showColumn3 -->
+                        <div  data-bind="attr: {class: 'oj-flex-item oj-sm-12 oj-md-4'}">
+                            <div data-bind="template: {name: 'columnTemplate', data: column3}"></div>
+                        </div>
+                    <!-- /ko -->    
+                <!-- /ko -->    
+            </div>    
+        </div>
+        <!-- /ko -->
+    </div>
+</div>
+<!-- /ko -->
+<script type="text/html" id="columnTemplate">
+    <div data-bind="template: {name: 'attributeTemplate', data: {data: $data, 
+                                                                 showAttrsTitle: showAttrsTitle2(), 
+                                                                 titleLabel: title2Label(), 
+                                                                 titleId: 'title2', 
+                                                                 titleValue: title2(), 
+                                                                 showTitleLink: showTitle2Link(), 
+                                                                 titleClickFunction: title2ClickFunction, 
+                                                                 showTitle: showTitle2()}}"></div>
+    <div data-bind="template: {name: 'attributeTemplate', data: {data: $data, 
+                                                                 showAttrsTitle: showAttrsTitle3(), 
+                                                                 titleLabel: title3Label(), 
+                                                                 titleId: 'title3', 
+                                                                 titleValue: title3(), 
+                                                                 showTitleLink: showTitle3Link(), 
+                                                                 titleClickFunction: title3ClickFunction, 
+                                                                 showTitle: showTitle3()}}"></div>
+    <div data-bind="template: {name: 'attributeTemplate', data: {data: $data, 
+                                                                 showAttrsTitle: showAttrsTitle4(), 
+                                                                 titleLabel: title4Label(), 
+                                                                 titleId: 'title4', 
+                                                                 titleValue: title4(), 
+                                                                 showTitleLink: showTitle4Link(), 
+                                                                 titleClickFunction: title4ClickFunction, 
+                                                                 showTitle: showTitle4()}}"></div>
+    <div data-bind="template: {name: 'attributeTemplate', data: {data: $data, 
+                                                                 showAttrsTitle: showAttrsTitle5(), 
+                                                                 titleLabel: title5Label(), 
+                                                                 titleId: 'title5', 
+                                                                 titleValue: title5(), 
+                                                                 showTitleLink: showTitle5Link(), 
+                                                                 titleClickFunction: title5ClickFunction, 
+                                                                 showTitle: showTitle5()}}"></div>
+<script type="text/html" id="attributeTemplate">
+    <!-- ko if: showAttrsTitle -->
+    <div class="oj-flex">
+        <div data-bind="attr: {class: 'oj-flex-item oj-sm-'+data.labelSmWidth()+' oj-md-'+data.labelMdWidth()+' oj-lg-'+data.labelLgWidth()}">
+            <span data-bind="text: titleLabel, attr: {id: data.idPrefix+titleId+'_label'}" class="page_subtitle"/>
+        </div>
+        <div class="oj-flex-item">
+            <div class="page_value_align" data-bind="attr: {title: oj.Translations.getTranslatedString('pageProperties.ATTRIBUTES_TOOLTIP', data.attr1(), titleValue, data.attr2())}">
+            <!-- ko if: data.hasOwnProperty("attr1") -->
+            <span data-bind="text: data.attr1, attr: {id: data.idPrefix+'attr1'}" class="page_subtitle value_text" style="float:left;"></span>
+            <!-- /ko -->
+            <!-- ko if: data.hasOwnProperty(titleId) && titleValue !== oj.Translations.getTranslatedString('generalProperties.NOT_APPLICABLE') -->
+            <span style="float:left;line-height:1.3;">&nbsp;&#187;&nbsp;</span>
+            <!-- ko if: showTitleLink -->
+            <a href="#" data-bind="click: function(){titleClickFunction(data);}" 
+               class="header_link_value_text">
+                <span data-bind="text: titleValue, attr: {id: data.idPrefix+titleId+'l'}" style="float:left;"></span>
+            </a>
+            <!-- /ko -->
+            <!-- ko ifnot: showTitleLink -->
+            <span data-bind="text: titleValue, attr: {id: data.idPrefix+titleId+'b'}" class="page_subtitle value_text" style="float:left;"></span>
+            <!-- /ko -->
+            <!-- /ko -->
+            <!-- ko if: data.hasOwnProperty("attr2") && data.attr2() !== oj.Translations.getTranslatedString('generalProperties.NOT_APPLICABLE') --> 
+            <span style="float:left;line-height:1.3;">&nbsp;&#187;&nbsp;</span>
+            <span data-bind="text: data.attr2, attr: {id: data.idPrefix+'attr2'}" class="page_subtitle value_text" style="float:left;"></span>
+            <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: showTitle && !showAttrsTitle -->
+    <div class="oj-flex">
+        <div data-bind="attr: {class: 'oj-flex-item oj-sm-'+data.labelSmWidth()+' oj-md-'+data.labelMdWidth()+' oj-lg-'+data.labelLgWidth()}">
+            <span data-bind="text: titleLabel, attr: {id: data.idPrefix+titleId+'_label'}" class="page_subtitle"/>
+        </div>
+        <div class="oj-flex-item">
+            <!-- ko if: showTitleLink -->
+	    <a href="#" data-bind="click: function(){titleClickFunction(data);}" class="header_link_value_text">
+                <span data-bind="text: titleValue, attr: {id: data.idPrefix+titleId+'l'}"></span>
+            </a>
+            <!-- /ko -->
+            <!-- ko ifnot: showTitleLink -->
+	    	<span data-bind="text: titleValue, attr: {id: data.idPrefix+titleId+'b'}" class="value_text"></span>
+            <!-- /ko -->
+        </div>
+    </div>
+    <!-- /ko -->
+</script>

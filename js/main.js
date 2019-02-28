@@ -54,8 +54,9 @@ require(['ojs/ojcore',
     'jquery',
     'app',
     'knockout',
-    'text!../html/collapse.html',
+    './viewModels/apmHeaderTitle',
     'text!../html/timePercentageWidget.html',
+    'text!./views/apmHeaderTitle.html',
     'text!../html/tableContextMenuRegion.html',
     'text!../html/requestSelfSnapshotRegionModel.html',
     'ojs/ojknockout',
@@ -72,10 +73,12 @@ require(['ojs/ojcore',
     'ojs/ojconveyorbelt'
     ],
 
-        function(oj, $, app, ko,collapse,timePercentageWidget,tableContextMenuRegion,requestSelfSnapshotRegionModel) // this callback gets executed when all required modules are loaded
+        function(oj, $, app, ko,ApmHeaderTitle ,timePercentageWidget, apmHeaderTitle, tableContextMenuRegion, requestSelfSnapshotRegionModel) // this callback gets executed when all required modules are loaded
         {
             // Retrieve the parent router from the parameters
             var self=this;
+            
+            self.ApmHeaderTitle =  ApmHeaderTitle.getInstance(); 
 			//var g_activeReportXmlData = "";
 			
 function emxActiveReportMessageReceived(event)
@@ -107,15 +110,12 @@ if (typeof window.addEventListener !== 'undefined')
     window.attachEvent("onmessage", emxActiveReportMessageReceived);
 }
             oj.koStringTemplateEngine.install();
-            ko.templates['collapse']= collapse;
             ko.templates['timePercentageWidget']= timePercentageWidget;
             ko.templates['tableContextMenuRegion']= tableContextMenuRegion;
             ko.templates['requestSelfSnapshotRegionModel']= requestSelfSnapshotRegionModel;
+            ko.templates['apmHeaderTitle']= apmHeaderTitle;
 
-          oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
-
-            // Retrieve the router static instance and configure the states
-
+      
             var router = oj.Router.rootInstance;
             router.configure(
                 {

@@ -5,6 +5,24 @@
         <group name="OracleJETComponentInteraction">
             <file>file:/C:/Users/sspathak/Documents/NetBeansProjects/OracleJETComponentInteraction/index.html</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/html/timePercentageWidget.html</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/viewModels/callTree.js</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/utils/chartUtils.js</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/index.html</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/utils/dateTimeUtils.js</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/viewModels/snapshot.js</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/html/requestSelfSnapshotRegionModel.html</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/views/snapshot.html</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/html/tableContextMenuRegion.html</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/utils/apmConstants.js</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/utils/mscUtils.js</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/html/collapse.html</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/views/callTree.html</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/utils/messageUtils.js</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/main.js</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/html/rout.html</file>
+            <file>file:/E:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/emsaasui/apmUi/Oracle/js/resources/nls/main.js</file>
+        </group>
     </open-files>
 </project-private>
