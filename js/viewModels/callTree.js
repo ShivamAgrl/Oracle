@@ -579,6 +579,104 @@ define(['ojs/ojcore',
                                 ,title4Label: oj.Translations.getTranslatedString('instanceProperties.ECID')
                             }
                         });
+                        for( i = 0 ; i < sa.length ; i ++)
+                        {
+                            if(sa[i].indexOf("_snapshotDetail.json") != -1 )
+                            {
+                                var z = sa[i];
+                            }
+                        }
+                        var snapshotData =  z.substring(z.indexOf("_snapshotDetail.json") +  "_snapshotDetail.json".length + 1 , z.indexOf("<!--"));
+
+                        snapshotData = JSON.parse(snapshotData);
+                        self.snapshotTimeData(snapshotData);
+                        if (snapshotData)
+                        {
+                            self.snapshotDialogTitle(snapshotData.aggregatedStack[0].attr.methodName);
+                            self.stackData = snapshotData.aggregatedStack;
+                            fillStackProbeMapAndIds(snapshotData.aggregatedStack);
+                            self.stackTreeTableDatasource(null);
+                            var jsonTreeDS1 = new oj.JsonTreeDataSource(snapshotData.aggregatedStack);
+                            var flatTreeDS1 = new oj.FlattenedTreeDataSource(jsonTreeDS1, []);
+                            self.treeTableDS1 = new oj.FlattenedTreeTableDataSource(flatTreeDS1);
+                            self.stackTreeTableDatasource(self.treeTableDS1);
+                            self.frequency(snapshotData.frequency + " " + oj.Translations.getTranslatedString('generalProperties.MS'));
+                            self.totalSnapshots(snapshotData.totalSnapshots);
+                            var snapshotVisible=self.totalSnapshots() >= 1;
+                            self.isSnapshotVisible(snapshotVisible);
+
+                            if (snapshotData.instanceThreadCount < 1)
+                            {
+                                self.instanceThreadCount(oj.Translations.getTranslatedString('generalProperties.NONE'));
+                            }
+                            else
+                            {
+                                self.instanceThreadCount(snapshotData.instanceThreadCount);
+                            }
+
+                            if (!snapshotData.firstSnapshotTimeStamp)
+                            {
+                                self.firstSnapshotTimeStamp(oj.Translations.getTranslatedString('generalProperties.NONE'));
+                            }
+                            else
+                            {
+                                self.firstSnapshotTimeStamp(self.dateTimeUtils.displayDateTimeWithMilliseconds(snapshotData.firstSnapshotTimeStamp, oj));
+                            }
+
+                            self.gcOverhead(snapshotData.gcOverhead + " " + oj.Translations.getTranslatedString('generalProperties.MS'));
+
+                            self.instanceCpu(self.dateTimeUtils.displayTime(snapshotData.instanceCpu, self.apmConstants.timeUnit.MILLISECONDS));
+                            self.instanceCpuPercent(oj.Translations.getTranslatedString('instanceProperties.OPEN_BRACKET')+self.dateTimeUtils.displayNumber((snapshotData.instanceCpu/Math.max(snapshotData.totalResponseTime,0.01))*100)
+                                + oj.Translations.getTranslatedString('instanceProperties.PERCENTAGE') + oj.Translations.getTranslatedString('instanceProperties.CLOSE_BRACKET'));
+                            self.instanceMemory(self.dateTimeUtils.adjustMemory(snapshotData.instanceMemory,2) +" "+ self.dateTimeUtils.adjustedMemoryUnit(snapshotData.instanceMemory));
+                            self.instanceMemoryRate(oj.Translations.getTranslatedString('instanceProperties.OPEN_BRACKET')+self.dateTimeUtils.displayNumber((self.dateTimeUtils.adjustMemory(snapshotData.instanceMemory,2)/Math.max(snapshotData.totalResponseTime,0.01))*1000)
+                                +' ' + self.dateTimeUtils.adjustedMemoryUnit(snapshotData.instanceMemory) +oj.Translations.getTranslatedString('instanceProperties.SLASH') + oj.Translations.getTranslatedString('instanceProperties.SECONDS') + oj.Translations.getTranslatedString('instanceProperties.CLOSE_BRACKET'));
+                            self.blockTime(snapshotData.instanceBlockTime + " " + oj.Translations.getTranslatedString('generalProperties.MS'));
+
+                            var threadPieList = new Array();
+                            var runnableValue = 0.00;
+                            var lockValue = 0.00;
+                            var totalOtherValue = 0.00;
+                            var dbWaitingValue = 0.00;
+                            var networkWaitingValue = 0.00;
+                            var ioWaitingValue = 0.00;
+
+                            if (snapshotData.totalSnapshots > 0)
+                            {
+                                runnableValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.RUNNABLE === undefined ? 0.00 : snapshotData.threadStateMap.RUNNABLE),2);
+                                lockValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.LOCK === undefined ? 0.00 : snapshotData.threadStateMap.LOCK),2);
+                                totalOtherValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.OTHER === undefined ? 0.00 : snapshotData.threadStateMap.OTHER),2);
+                                dbWaitingValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.DB === undefined ? 0.00 : snapshotData.threadStateMap.DB),2);
+                                networkWaitingValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.NETWORK === undefined ? 0.00 : snapshotData.threadStateMap.NETWORK),2);
+                                ioWaitingValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.IO === undefined ? 0.00 : snapshotData.threadStateMap.IO),2);
+                            }
+                            if(lockValue != 0.00)
+                            {
+                                threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_LOCK'), color: self.apmConstants.color.THREAD_STATE_LOCK, borderColor: self.apmConstants.color.THREAD_STATE_LOCK, items: [lockValue]});
+                            }
+                            if(dbWaitingValue != 0.00)
+                            {
+                                threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_DB'), color: self.apmConstants.color.THREAD_STATE_DB, borderColor: self.apmConstants.color.THREAD_STATE_DB, items: [dbWaitingValue]});
+                            }
+                            if(networkWaitingValue != 0.00)
+                            {
+                                threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_NETWORK'), color: self.apmConstants.color.THREAD_STATE_NETWORK, borderColor: self.apmConstants.color.THREAD_STATE_NETWORK, items: [networkWaitingValue]});
+                            }
+                            if(ioWaitingValue != 0.00)
+                            {
+                                threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_IO'), color: self.apmConstants.color.THREAD_STATE_IO, borderColor: self.apmConstants.color.THREAD_STATE_IO, items: [ioWaitingValue]});
+                            }
+                            if(runnableValue != 0.00)
+                            {
+                                threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_RUNNABLE'),  color: self.apmConstants.color.THREAD_STATE_RUNNABLE, borderColor: self.apmConstants.color.THREAD_STATE_RUNNABLE, items: [runnableValue]});
+                            }
+                            if(totalOtherValue != 0.00)
+                            {
+                                threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_OTHER'),  color: self.apmConstants.color.THREAD_STATE_OTHER, borderColor: self.apmConstants.color.THREAD_STATE_OTHER, items: [totalOtherValue]});
+                            }
+                            self.threadPieCharts(threadPieList);
+
+                        }
                         setTimeout(self.loadTable, 1);
                         
                        
@@ -939,104 +1037,7 @@ define(['ojs/ojcore',
                         }
                     }
 
-                    for( i = 0 ; i < sa.length ; i ++)
-                {
-                    if(sa[i].indexOf("_snapshotDetail.json") != -1 )
-                    {
-                        var as = sa[i];
-                    }
-                }
-               var snapshotData =  as.substring(as.indexOf("_snapshotDetail.json") +  "_snapshotDetail.json".length + 1 , as.indexOf("<!--"));
-                
-                snapshotData = JSON.parse(snapshotData);
-                self.snapshotTimeData(snapshotData);
-                if (snapshotData)
-                {
-                    self.snapshotDialogTitle(snapshotData.aggregatedStack[0].attr.methodName);
-                    self.stackData = snapshotData.aggregatedStack;
-                    fillStackProbeMapAndIds(snapshotData.aggregatedStack);
-                    self.stackTreeTableDatasource(null);
-                    var jsonTreeDS1 = new oj.JsonTreeDataSource(snapshotData.aggregatedStack);
-                    var flatTreeDS1 = new oj.FlattenedTreeDataSource(jsonTreeDS1, []);
-                    self.treeTableDS1 = new oj.FlattenedTreeTableDataSource(flatTreeDS1);
-                    self.stackTreeTableDatasource(self.treeTableDS1);
-                    self.frequency(snapshotData.frequency + " " + oj.Translations.getTranslatedString('generalProperties.MS'));
-                    self.totalSnapshots(snapshotData.totalSnapshots);
-                    var snapshotVisible=self.totalSnapshots() >= 1;
-                    self.isSnapshotVisible(snapshotVisible);
 
-                    if (snapshotData.instanceThreadCount < 1)
-                    {
-                        self.instanceThreadCount(oj.Translations.getTranslatedString('generalProperties.NONE'));
-                    }
-                    else
-                    {
-                        self.instanceThreadCount(snapshotData.instanceThreadCount);
-                    }
-
-                    if (!snapshotData.firstSnapshotTimeStamp)
-                    {
-                        self.firstSnapshotTimeStamp(oj.Translations.getTranslatedString('generalProperties.NONE'));
-                    }
-                    else
-                    {
-                        self.firstSnapshotTimeStamp(self.dateTimeUtils.displayDateTimeWithMilliseconds(snapshotData.firstSnapshotTimeStamp, oj));
-                    }
-
-                    self.gcOverhead(snapshotData.gcOverhead + " " + oj.Translations.getTranslatedString('generalProperties.MS'));
-
-                    self.instanceCpu(self.dateTimeUtils.displayTime(snapshotData.instanceCpu, self.apmConstants.timeUnit.MILLISECONDS));
-                    self.instanceCpuPercent(oj.Translations.getTranslatedString('instanceProperties.OPEN_BRACKET')+self.dateTimeUtils.displayNumber((snapshotData.instanceCpu/Math.max(snapshotData.totalResponseTime,0.01))*100)
-                        + oj.Translations.getTranslatedString('instanceProperties.PERCENTAGE') + oj.Translations.getTranslatedString('instanceProperties.CLOSE_BRACKET'));
-                    self.instanceMemory(self.dateTimeUtils.adjustMemory(snapshotData.instanceMemory,2) +" "+ self.dateTimeUtils.adjustedMemoryUnit(snapshotData.instanceMemory));
-                    self.instanceMemoryRate(oj.Translations.getTranslatedString('instanceProperties.OPEN_BRACKET')+self.dateTimeUtils.displayNumber((self.dateTimeUtils.adjustMemory(snapshotData.instanceMemory,2)/Math.max(snapshotData.totalResponseTime,0.01))*1000)
-                        +' ' + self.dateTimeUtils.adjustedMemoryUnit(snapshotData.instanceMemory) +oj.Translations.getTranslatedString('instanceProperties.SLASH') + oj.Translations.getTranslatedString('instanceProperties.SECONDS') + oj.Translations.getTranslatedString('instanceProperties.CLOSE_BRACKET'));
-                    self.blockTime(snapshotData.instanceBlockTime + " " + oj.Translations.getTranslatedString('generalProperties.MS'));
-
-                    var threadPieList = new Array();
-                    var runnableValue = 0.00;
-                    var lockValue = 0.00;
-                    var totalOtherValue = 0.00;
-                    var dbWaitingValue = 0.00;
-                    var networkWaitingValue = 0.00;
-                    var ioWaitingValue = 0.00;
-
-                    if (snapshotData.totalSnapshots > 0)
-                    {
-                        runnableValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.RUNNABLE === undefined ? 0.00 : snapshotData.threadStateMap.RUNNABLE),2);
-                        lockValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.LOCK === undefined ? 0.00 : snapshotData.threadStateMap.LOCK),2);
-                        totalOtherValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.OTHER === undefined ? 0.00 : snapshotData.threadStateMap.OTHER),2);
-                        dbWaitingValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.DB === undefined ? 0.00 : snapshotData.threadStateMap.DB),2);
-                        networkWaitingValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.NETWORK === undefined ? 0.00 : snapshotData.threadStateMap.NETWORK),2);
-                        ioWaitingValue = self.dateTimeUtils.displayNumber((snapshotData.threadStateMap.IO === undefined ? 0.00 : snapshotData.threadStateMap.IO),2);
-                    }
-                    if(lockValue != 0.00)
-                    {
-                        threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_LOCK'), color: self.apmConstants.color.THREAD_STATE_LOCK, borderColor: self.apmConstants.color.THREAD_STATE_LOCK, items: [lockValue]});
-                    }
-                    if(dbWaitingValue != 0.00)
-                    {
-                        threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_DB'), color: self.apmConstants.color.THREAD_STATE_DB, borderColor: self.apmConstants.color.THREAD_STATE_DB, items: [dbWaitingValue]});
-                    }
-                    if(networkWaitingValue != 0.00)
-                    {
-                        threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_NETWORK'), color: self.apmConstants.color.THREAD_STATE_NETWORK, borderColor: self.apmConstants.color.THREAD_STATE_NETWORK, items: [networkWaitingValue]});
-                    }
-                    if(ioWaitingValue != 0.00)
-                    {
-                        threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_IO'), color: self.apmConstants.color.THREAD_STATE_IO, borderColor: self.apmConstants.color.THREAD_STATE_IO, items: [ioWaitingValue]});
-                    }
-                    if(runnableValue != 0.00)
-                    {
-                        threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_RUNNABLE'),  color: self.apmConstants.color.THREAD_STATE_RUNNABLE, borderColor: self.apmConstants.color.THREAD_STATE_RUNNABLE, items: [runnableValue]});
-                    }
-                    if(totalOtherValue != 0.00)
-                    {
-                        threadPieList.push({name: oj.Translations.getTranslatedString('instanceProperties.THREAD_STATE_OTHER'),  color: self.apmConstants.color.THREAD_STATE_OTHER, borderColor: self.apmConstants.color.THREAD_STATE_OTHER, items: [totalOtherValue]});
-                    }
-                    self.threadPieCharts(threadPieList);
-
-                }
 
                 //self.selfStackTreeTableDatasource(null);
 

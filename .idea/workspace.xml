@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa949159-9580-40d3-aef0-e305bffd11cd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/viewModels/callTree.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/viewModels/callTree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/views/snapshot.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/snapshot.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,119 +22,17 @@
       <file leaf-file-name="callTree.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1768">
+            <state relative-caret-position="17">
               <caret line="104" column="92" selection-start-line="104" selection-start-column="74" selection-end-line="104" selection-end-column="92" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dateTimeUtils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/utils/dateTimeUtils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="540" column="20" selection-start-line="540" selection-start-column="20" selection-end-line="540" selection-end-column="20" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#h2#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="798">
+              <caret line="535" column="20" selection-start-line="535" selection-start-column="20" selection-end-line="535" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -139,10 +40,9 @@
       <file leaf-file-name="snapshot.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/snapshot.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1377">
-              <caret line="81" column="27" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
+            <state relative-caret-position="229">
+              <caret line="70" column="195" lean-forward="true" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="195" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
@@ -158,8 +58,8 @@
       <file leaf-file-name="snapshot.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/viewModels/snapshot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+            <state relative-caret-position="390">
+              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -167,41 +67,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="colorUtils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/utils/colorUtils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="98" column="6" selection-start-line="98" selection-start-column="6" selection-end-line="98" selection-end-column="6" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="callTree.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="callTree.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-273">
-              <caret line="734" selection-start-line="734" selection-end-line="734" />
+            <state relative-caret-position="313">
+              <caret line="1121" column="85" lean-forward="true" selection-start-line="1121" selection-start-column="85" selection-end-line="1121" selection-end-column="85" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apmConstants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/utils/apmConstants.js">
+      <file leaf-file-name="requestSelfSnapshotRegionModel.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/requestSelfSnapshotRegionModel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="2" selection-start-column="2" selection-end-column="2" />
+            <state relative-caret-position="85">
+              <caret line="5" column="31" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chartUtils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/utils/chartUtils.js">
+      <file leaf-file-name="activeReportInit.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/utils/activeReportInit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state relative-caret-position="2226">
+              <caret line="154" lean-forward="true" selection-start-line="154" selection-end-line="154" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="98" column="96" selection-start-line="98" selection-start-column="96" selection-end-line="98" selection-end-column="96" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apmHeaderTitle.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/viewModels/apmHeaderTitle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activeReport.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/utils/activeReport.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -218,14 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mainModel</find>
-      <find>title</find>
-      <find>paging</find>
-      <find>showsta</find>
-      <find>tempd</find>
-      <find>../jet/</find>
-      <find>demo-filmstrip-item</find>
-      <find>oldData</find>
       <find>firstSnapshotTimeStamp</find>
       <find>old</find>
       <find>snapshitdata</find>
@@ -245,9 +155,17 @@
       <find>numpage</find>
       <find>pagin</find>
       <find>NUM_ITEMS_PER_PAGE</find>
-      <find>instancecpu</find>
       <find>snapshotDetailTreeTableDatasource</find>
       <find>sa</find>
+      <find>.TOTAL_SNAPSHOT</find>
+      <find>instanceMemory</find>
+      <find>totalSnapshots</find>
+      <find>total_snapshots</find>
+      <find>mainModel</find>
+      <find>mainModel.</find>
+      <find>instancecpu</find>
+      <find>getdetail</find>
+      <find>refres</find>
     </findStrings>
     <replaceStrings>
       <replace>../</replace>
@@ -273,20 +191,20 @@
         <option value="$PROJECT_DIR$/html/collapse.html" />
         <option value="$PROJECT_DIR$/js/viewModels/snapShot.js" />
         <option value="$PROJECT_DIR$/html/snapShot.html" />
-        <option value="$PROJECT_DIR$/html/requestSelfSnapshotRegionModel.html" />
         <option value="$PROJECT_DIR$/js/views/callTree.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/demo.css" />
         <option value="$PROJECT_DIR$/css/apm.alta.css" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/viewModels/dfdsf" />
         <option value="$PROJECT_DIR$/js/utils/chartUtils.js" />
         <option value="$PROJECT_DIR$/js/utils/snapUtil.js" />
         <option value="$PROJECT_DIR$/js/utils/snapUtils.js" />
-        <option value="$PROJECT_DIR$/js/viewModels/snapshot.js" />
         <option value="$PROJECT_DIR$/js/utils/dateTimeUtils.js" />
+        <option value="$PROJECT_DIR$/html/requestSelfSnapshotRegionModel.html" />
+        <option value="$PROJECT_DIR$/js/viewModels/snapshot.js" />
         <option value="$PROJECT_DIR$/js/views/snapshot.html" />
         <option value="$PROJECT_DIR$/js/viewModels/callTree.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
   </component>
@@ -300,10 +218,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1219" />
-    <option name="y" value="16" />
-    <option name="width" value="1598" />
-    <option name="height" value="898" />
+    <option name="x" value="1592" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -313,7 +231,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -341,27 +258,6 @@
               <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
               <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="oj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="oj" type="462c0819:PsiDirectoryNode" />
-              <item name="v5.1.0" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="viewModels" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -374,10 +270,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="call&#9;FILE&#9;file://D:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/OracleJETComponentInteraction/js/viewModels/callTree.js&#10;main&#9;FILE&#9;file://D:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/OracleJETComponentInteraction/js/main.js&#10;active&#9;FILE&#9;file://D:/jetty-distribution-7.6.4.v20120524/webapps/ROOT/OracleJETComponentInteraction/js/utils/activeReportInit.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.karma.karma_node_package_dir" value="" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
@@ -474,48 +372,58 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120588000" />
+    <option name="totallyTimeSpent" value="129804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24604847" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32953367" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32953367" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32020727" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32953367" />
-      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32953367" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32953367" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
@@ -531,35 +439,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/viewModels/callTree.js</url>
-          <line>730</line>
-          <properties lambdaOrdinal="-1" />
+          <line>882</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/viewModels/callTree.js</url>
-          <line>823</line>
-          <properties lambdaOrdinal="-1" />
+          <line>975</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17935">
-          <caret line="1060" column="17" selection-start-line="1060" selection-start-column="17" selection-end-line="1060" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewModels/rout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="18" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/collapse.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1394">
@@ -702,13 +594,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/footer.js" />
-    <entry file="file://$PROJECT_DIR$/js/utils/activeReportInit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="89" column="25" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -716,13 +601,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewModels/rout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="90" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewModels/rout.js" />
     <entry file="file://$PROJECT_DIR$/js/utils/instanceUtils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -744,13 +623,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/rout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/html/rout.html" />
     <entry file="file://$PROJECT_DIR$/html/snapShot.html" />
     <entry file="file://$PROJECT_DIR$/html/timePercentageWidget.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -785,21 +658,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/requestSelfSnapshotRegionModel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/viewModels/dfdsf" />
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="107" column="1" lean-forward="true" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/chartUtils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -818,141 +677,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/snapUtils.js" />
-    <entry file="file://$PROJECT_DIR$/js/viewModels/snapshot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/views/snapshot.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="27" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/apmConstants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="540" column="20" selection-start-line="540" selection-start-column="20" selection-end-line="540" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#4;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#5;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#h2#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1768">
-          <caret line="104" column="92" selection-start-line="104" selection-start-column="74" selection-end-line="104" selection-end-column="92" />
         </state>
       </provider>
     </entry>
@@ -965,7 +693,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/dateTimeUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="102">
           <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -973,10 +701,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewModels/apmHeaderTitle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/utils/activeReportInit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2226">
+          <caret line="154" lean-forward="true" selection-start-line="154" selection-end-line="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/utils/activeReport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="104" column="92" selection-start-line="104" selection-start-column="74" selection-end-line="104" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/requestSelfSnapshotRegionModel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewModels/snapshot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/views/snapshot.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="70" column="195" lean-forward="true" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="195" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-273">
-          <caret line="734" selection-start-line="734" selection-end-line="734" />
+        <state relative-caret-position="313">
+          <caret line="1121" column="85" lean-forward="true" selection-start-line="1121" selection-start-column="85" selection-end-line="1121" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="98" column="96" selection-start-line="98" selection-start-column="96" selection-end-line="98" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="535" column="20" selection-start-line="535" selection-start-column="20" selection-end-line="535" selection-end-column="20" />
         </state>
       </provider>
     </entry>
