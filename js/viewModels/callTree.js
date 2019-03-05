@@ -556,7 +556,19 @@ define(['ojs/ojcore',
                                 }
                             }
                         }
-                        
+                        var tile1 = self.rowData.split("<!--Tile1 data !-->");
+                        var tile1data = "<" + tile1[1].substring(tile1[1].indexOf("<div") + 1);
+                         document.getElementById("sr_alerts_tile-container").innerHTML = tile1data ;
+                        var tile2 = self.rowData.split("<!--Tile2 data !-->");
+                        var tile2data = "<" + tile2[1].substring(tile2[1].indexOf("<div") + 1);
+                         document.getElementById("instDet_response_tile-container").innerHTML = tile2data ;
+                          var tile3 = self.rowData.split("<!--Tile3 data !-->");
+                        var tile3data = "<" + tile3[1].substring(tile3[1].indexOf("<div") + 1);
+                         document.getElementById("instDet_calls_tile-container").innerHTML = tile3data ;
+                          
+                          var tile4 = self.rowData.split("<!--Tile4 data !-->");
+                        var tile4data = "<" + tile4[1].substring(tile4[1].indexOf("<div") + 1);
+                         document.getElementById("instDet_errors_tile-container").innerHTML = tile4data ;
                            self.apmHeaderTitle.setupApmHeader ({ pageIcon:  { colorClass: 'request-type', shapeClass: 'fa-sitemap fa-rotate-270 fa-inverse request-type-adj', outlineClass: 'fa-circle', backgroundClass: 'request-type-bg', alt: oj.Translations.getTranslatedString('headerProperties.REQUEST_TYPE_DETAIL_ALT')}
                             ,pageHeader: oj.Translations.getTranslatedString('headerProperties.INSTANCE')
                             ,subtype: firstLinkType
@@ -882,21 +894,22 @@ define(['ojs/ojcore',
 
                         chart1.drillFunction=function(singleSnapshotData) {
 
-
+                            var threadId=arguments[1].id.slice(0,arguments[1].id.indexOf('id'));
+                            var xValue=arguments[1].data.x;
                             self.snapshotDetailDialogTitle(null);
                             self.snapshotDetailTreeTableDatasource(null);
-
+                            var snapshotLink = "_snapshotDetail_" + threadId + "_" + xValue + ".json";
                             var tempData = window.g_activeReportXmlData;
 
                             var sa = tempData.split("Fxtmodel");
                             for( i = 0 ; i < sa.length ; i ++)
                             {
-                                if(sa[i].indexOf("_snapshotDetail.json") != -1 )
+                                if(sa[i].indexOf(snapshotLink) != -1 )
                                 {
                                     var as = sa[i];
                                 }
                             }
-                            snapshotDetailData =  as.substring(as.indexOf("_snapshotDetail.json") +  "_snapshotDetail.json".length + 1 , as.indexOf("<!--"));
+                            snapshotDetailData =  as.substring(as.indexOf(snapshotLink) +  snapshotLink.length + 1 , as.indexOf("<!--"));
 
                             snapshotDetailData = JSON.parse(snapshotDetailData);
 
@@ -912,8 +925,8 @@ define(['ojs/ojcore',
 
 
                                     rootRoot = new Array();
-                                    for (var i=0;i<snapshotDetailData.aggregatedStack[0].children.length;i++)
-                                        rootRoot.push(snapshotDetailData.aggregatedStack[0].children[i]);
+                                    for (var i=0;i<snapshotDetailData.children.length;i++)
+                                        rootRoot.push(snapshotDetailData.children[i]);
 
 
 
