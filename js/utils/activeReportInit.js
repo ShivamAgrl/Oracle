@@ -108,7 +108,7 @@ function writeIframe()
 
         var iFrameElement = document.createElement("iframe");
         iFrameElement.id = "iframe";
-        iFrameElement.src = componentURL + '?emMode=emx_active_report&dbcsperf-debug=true';
+        iFrameElement.src = componentURL + 'index.html';
         iFrameElement.width = "100%";
         iFrameElement.height = "99%";
         document.getElementsByTagName('body')[0].appendChild(iFrameElement);
