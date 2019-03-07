@@ -215,7 +215,7 @@
 </script>
 <script type="text/html" id="startTime_tmpl">
     <td>
-        <span data-bind="text: startTime, attr: {id: 'tree_startTime_'+rowIndex}"></span>
+        <span data-bind="text: $parent.dateTimeUtils.displayTimeWithMilliseconds(startTime, oj), attr: {id: 'tree_startTime_'+rowIndex}"></span>
 
     </td>
 </script>
