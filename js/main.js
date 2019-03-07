@@ -91,15 +91,18 @@ require(['ojs/ojcore',
             var router = oj.Router.rootInstance;
             router.configure(
                 {
-                    'calltree':  { label: 'CallTree',     value: {
+                    'calltree':  { label: 'CallTree',  isDefault: true ,
+                        value: {
                             path: 'callTree',
-                            iconClass:'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'
-                        }, isDefault: true },
-                    'Snapshot': { label: 'Snapshot', value: {
+                            iconClass:"fa-list-alt"
+                               }},
+                    'Snapshot': { label: 'Snapshot',
+                        isDefault: false ,
+                        value: {
                             path: 'snapshot',
-                            iconClass:'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'}}
+                            iconClass:"fa fa-camera"}}
 
-                });
+                                });
             var viewModel =
                 {
                     router: router
@@ -112,6 +115,7 @@ require(['ojs/ojcore',
                 {
                    
                 };
+
 
 
 

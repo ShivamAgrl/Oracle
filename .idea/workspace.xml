@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa949159-9580-40d3-aef0-e305bffd11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/apm.alta.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/apm.alta.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/viewModels/callTree.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/viewModels/callTree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/apmHeaderTitle.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/apmHeaderTitle.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +22,8 @@
       <file leaf-file-name="callTree.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="152" column="44" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="44" />
+            <state relative-caret-position="242">
+              <caret line="154" column="44" selection-start-line="154" selection-start-column="44" selection-end-line="154" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -50,20 +45,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apm.alta.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/apm.alta.css">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="8405" column="47" selection-start-line="8405" selection-start-column="47" selection-end-line="8405" selection-end-column="47" />
+            <state relative-caret-position="455">
+              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
+      <file leaf-file-name="activeReportInit.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/utils/activeReportInit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="126" column="2" lean-forward="true" selection-start-line="126" selection-start-column="2" selection-end-line="126" selection-end-column="2" />
+            <state relative-caret-position="696">
+              <caret line="168" column="16" selection-start-line="168" selection-start-column="16" selection-end-line="168" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -71,8 +66,8 @@
       <file leaf-file-name="collapse.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/collapse.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="595">
+              <caret line="65" column="34" lean-forward="true" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -105,8 +100,8 @@
       <file leaf-file-name="callTree.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-98">
-              <caret line="382" column="29" lean-forward="true" selection-start-line="385" selection-start-column="37" selection-end-line="385" selection-end-column="48" />
+            <state relative-caret-position="1126">
+              <caret line="382" column="29" lean-forward="true" selection-start-line="382" selection-start-column="29" selection-end-line="382" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -147,11 +142,11 @@
       <find>instancecpu</find>
       <find>getdetail</find>
       <find>refres</find>
-      <find>oj-dialog-header oj-helper-clearfix ui-draggable-handle</find>
+      <find />
       <find>snapshotDetailDialogTitleId</find>
       <find>emaas-appheader-bar</find>
       <find>find</find>
-      <find>.demo-appheader-lite .demo-appheader-appname</find>
+      <find />
       <find>showfin</find>
     </findStrings>
     <replaceStrings>
@@ -206,7 +201,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1592" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -236,6 +231,12 @@
               <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
               <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OracleJETComponentInteraction" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OracleJETComponentInteraction" type="b2602c69:ProjectViewProjectNode" />
@@ -352,33 +353,33 @@
       <workItem from="1551157811007" duration="9040000" />
       <workItem from="1551329059478" duration="5193000" />
       <workItem from="1551781069635" duration="5815000" />
-      <workItem from="1551936432155" duration="12282000" />
+      <workItem from="1551936432155" duration="13330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152429000" />
+    <option name="totallyTimeSpent" value="153477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20758693" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20758693" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32953367" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32953367" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2673575" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2673575" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
@@ -414,12 +415,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/viewModels/callTree.js</url>
-          <line>894</line>
+          <line>897</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/viewModels/callTree.js</url>
-          <line>988</line>
+          <line>991</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
@@ -550,13 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/utils/activeReportInit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="114" column="5" lean-forward="true" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/activeReport.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -648,13 +642,6 @@
     <entry file="file://$PROJECT_DIR$/css/images/demo-icons_222222_256x240.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/collapse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/views/snapshot.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-391">
@@ -667,8 +654,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/views/callTree.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="152" column="44" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="44" />
+        <state relative-caret-position="242">
+          <caret line="154" column="44" selection-start-line="154" selection-start-column="44" selection-end-line="154" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -694,10 +681,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
+    <entry file="file://$PROJECT_DIR$/js/utils/activeReportInit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-98">
-          <caret line="382" column="29" lean-forward="true" selection-start-line="385" selection-start-column="37" selection-end-line="385" selection-end-column="48" />
+        <state relative-caret-position="696">
+          <caret line="168" column="16" selection-start-line="168" selection-start-column="16" selection-end-line="168" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -712,10 +699,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/html/collapse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="65" column="34" lean-forward="true" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1126">
+          <caret line="382" column="29" lean-forward="true" selection-start-line="382" selection-start-column="29" selection-end-line="382" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="126" column="2" lean-forward="true" selection-start-line="126" selection-start-column="2" selection-end-line="126" selection-end-column="2" />
+        <state relative-caret-position="455">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
         </state>
       </provider>
     </entry>
