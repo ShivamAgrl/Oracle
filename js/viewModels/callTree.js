@@ -71,7 +71,7 @@ define(['ojs/ojcore',
             self.LAMessagesMaxCount = ko.observable(0);
             self.allDataGotten = ko.observable(false);
 
-            self.NUM_ITEMS_PER_PAGE = 5;
+            self.NUM_ITEMS_PER_PAGE = 25;
             self.MAX_NUM_CALLS_TO_EXPAND_ALL = 50;
             self.MAX_NUM_KIDS_FOR_ROOT_TO_EXPAND = 50;
             self.logTimeAddOn = 300000; //5 minutes

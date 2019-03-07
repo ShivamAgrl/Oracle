@@ -51,7 +51,6 @@ requirejs.config({
  */
 require(['ojs/ojcore',
     'jquery',
-    'app',
     'knockout',
     './viewModels/apmHeaderTitle',
     'text!../html/timePercentageWidget.html',
@@ -73,7 +72,7 @@ require(['ojs/ojcore',
     'ojs/ojconveyorbelt'
     ],
 
-        function(oj, $, app, ko,ApmHeaderTitle ,timePercentageWidget, apmHeaderTitle, tableContextMenuRegion, requestSelfSnapshotRegionModel) // this callback gets executed when all required modules are loaded
+        function(oj, $, ko,ApmHeaderTitle ,timePercentageWidget, apmHeaderTitle, tableContextMenuRegion, requestSelfSnapshotRegionModel) // this callback gets executed when all required modules are loaded
         {
             // Retrieve the parent router from the parameters
             var self=this;
@@ -91,7 +90,7 @@ require(['ojs/ojcore',
             var router = oj.Router.rootInstance;
             router.configure(
                 {
-                    'calltree':  { label: 'CallTree',  isDefault: true ,
+                    'calltree':  { label:oj.Translations.getTranslatedString('instanceProperties.CALL_TREE'),  isDefault: true ,
                         value: {
                             path: 'callTree',
                             iconClass:"fa-list-alt"
@@ -99,7 +98,7 @@ require(['ojs/ojcore',
                     'Snapshot': { label: 'Snapshot',
                         isDefault: false ,
                         value: {
-                            path: 'snapshot',
+                            path: oj.Translations.getTranslatedString('callStackProperties.SNAPSHOTS_TIMELINE'),
                             iconClass:"fa fa-camera"}}
 
                                 });
@@ -107,21 +106,10 @@ require(['ojs/ojcore',
                 {
                     router: router
                 };
-   oj.Router.sync().then(function()
+             oj.Router.sync().then(function()
                 {
-                    ko.applyBindings(viewModel, document.getElementById('routing-container'));
+                    ko.applyBindings(viewModel);
                 });
-           var viewModel2 =
-                {
-                   
-                };
-
-
-
-
-            $(document).ready(function() {
-   ko.applyBindings(viewModel2, document.getElementById('headerdata'));
-        });
 
         }
 );
