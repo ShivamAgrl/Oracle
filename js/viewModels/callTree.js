@@ -363,11 +363,11 @@ define(['ojs/ojcore',
                     }
                      else
                     {
-                        if(data.rootOperation.instanceSqlSummary)
+                        if(data.rootOperation.sqlSummary)
                         {
                             var finding = [];
-                            var input = data.rootOperation.instanceSqlSummary,count=0;
-                           for( i=0 ;i<data.rootOperation.instanceSqlSummary.length;i++)
+                            var input = data.rootOperation.sqlSummary,count=0;
+                           for( i=0 ;i<data.rootOperation.sqlSummary.length;i++)
                             {
                                 var str = String(input[i].operationName);
                                 if(str.includes('[') && input[i].totalCount>20)
@@ -375,7 +375,7 @@ define(['ojs/ojcore',
                                     self.showallfinding.push({
                                         operationName:str.substring(str.lastIndexOf("[")+1, str.lastIndexOf("]")),
                                         totalCount:input[i].totalCount,
-                                        averageResponseTime:input[i].averageResponseTime,
+                                        averageResponseTime:input[i].avgResponseTime,
                                         totalResponseTime :input[i].totalResponseTime
                                     });
                                     count++;
@@ -786,7 +786,10 @@ define(['ojs/ojcore',
 
 
             };
-
+            self.openFindingDialog = function() {
+                $("#findingDialog").ojDialog({title: oj.Translations.getTranslatedString('Findings')});
+                $('#findingDialog').ojDialog('open');
+            };
             self.snapshotDataCompute = ko.computed(function()
             {
 

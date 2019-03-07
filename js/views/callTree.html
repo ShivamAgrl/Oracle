@@ -1,7 +1,9 @@
 <div class="oj-flex" align="right">
     <div class="oj-flex-item">
         <!--this popup show the stack tree in a dialog. and it is filtered according to the probe which user clicks-->
-
+ <a style="float:left" href="#" data-bind="if:showFinding, click:openFindingDialog, attr: {title: oj.Translations.getTranslatedString('instanceProperties.FINDING_TITLE'), id: 'show_finding'} ">
+                    <i class="fa fa-2x fa-user-md" style=" color:red" aria-hidden="true"></i>
+                </a>
         <div id="instDetViewBS"
              data-bind="ojComponent: {component: 'ojButtonset', 
                                               chroming: 'half',
@@ -26,7 +28,7 @@
                            "/>
         </div>
     </div>
-</div>
+</div> 
 <div class="oj-flex" id="tableContainer">
     <div class="oj-sm-12 oj-flex-item" data-bind="if:treeTableViewable">
 <table id="instDet_treeT" aria-labelledby="callTreeLabel" class="apm-tall-table-header"
@@ -391,3 +393,56 @@
                         <div data-bind="template: {name: 'requestSelfSnapshotRegionModel'}"></div>
                     </div>
                 </div>
+<div id="findingDialog"
+     data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',
+                            rootAttributes: {style: 'width: 80%; min-width: 300px;'}}">
+    <div class="oj-dialog-body">
+        <div class="oj-flex">
+            <div class="oj-flex-item">
+                <label id="apm_findingtext" style="font-size:15px" data-bind="text:oj.Translations.getTranslatedString('instanceProperties.REQUEST_APM_FINDING')" class="value_text"></label>
+            </div>
+        </div>
+        <div style="margin-top: 20px">
+        </div>
+        <div style="width:100%" id="finding-container">
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <table id="table" summary="findng List"
+                           aria-labelledby="FindingLabel"
+                           data-bind="ojComponent: {
+                                component: 'ojTable',
+                                data: datasource,
+                                selectionMode: {row: 'single'},
+                                rowTemplate: 'finding_row_template',
+                                columns:
+                                    [{headerText: oj.Translations.getTranslatedString('instanceProperties.FINDING_SQL_STATEMENT'), field: 'operationName'},
+                                     {headerText: oj.Translations.getTranslatedString('instanceProperties.FINDING_EXECUTIONS'), field : 'totalCount'},
+                                     {headerText: oj.Translations.getTranslatedString('instanceProperties.FINDING_AVERAGE_TIME'), field: 'averageResponseTime'},
+                                     {headerText: oj.Translations.getTranslatedString('instanceProperties.FINDING_TOTAL_TIME'), field: 'totalResponseTime'}],
+                                     rootAttributes: {'style':'width: 95%; height:100%; max-height: 600px;'}}">
+                        <script type="text/html" id="finding_row_template">
+                            <tr>
+                                <td>
+                                    <label data-bind="text:operationName "  style="vertical-align: top; white-space: normal; word-break: break-all;"/>
+                                </td>
+                                <td >
+                                    <label data-bind="text:totalCount "  style="vertical-align: top; white-space: normal; float:right; word-break: break-all;"/>
+                                </td>
+                                <td>
+                                    <label data-bind="text:averageResponseTime "  style="vertical-align: top; white-space: normal; float:right; word-break: break-all;"/>
+                                </td>
+                                <td>
+                                    <label data-bind="text:totalResponseTime "  style="vertical-align: top; white-space: normal; float:right; word-break: break-all;"/>
+                                </td>
+                            </tr>
+                        </script>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div align="right">
+            <button style="margin-top:5px;margin-right:4%;" data-bind="ojComponent: {component: 'ojButton', label: oj.Translations.getTranslatedString('generalProperties.OK')}, click:function(){
+                $('#findingDialog').ojDialog('close');}, attr: {id:'findingCancel'}"> </button>
+        </div>
+    </div>
+</div>
