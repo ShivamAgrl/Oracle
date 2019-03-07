@@ -6,7 +6,7 @@ Copyright (C), 2016,2018, Oracle and / or affiliates. All rights reserved.
 -->
 <!-- APM specific header stuff -->
 <div class="oj-flex"> 
-    <!-- ko ifnot: title1 && title1().trim().length > 0 -->
+
     <div class="oj-flex-item">
         <div class="oj-flex oj-flex-items-pad">
             <div class="oj-flex-item page_title" data-bind="attr: {id: 'pageHeader_'+idSuffix()}">
@@ -14,19 +14,19 @@ Copyright (C), 2016,2018, Oracle and / or affiliates. All rights reserved.
             </div>
         </div>
     </div>
-    <!-- /ko -->
+
 </div>
-<!-- ko if: title1 && title1().trim().length > 0 -->
+
 <div class="oj-flex-bar" data-bind="attr: {id: 'pageHeader_'+idSuffix()}">
-    <div class="oj-flex-bar-start" style="padding: 5px;">
+    <div class="oj-flex-item" style="max-width:65px; padding-bottom: 3px">
         <!-- ko if: pageIcon() -->
-            <span  data-bind="attr: {class: 'fa-stack tab-icon-size ' + pageIcon().colorClass} "> 
+        <span  data-bind="attr: {class: 'fa-stack fa-2x ' + pageIcon().colorClass, title: pageIcon().alt} ">
                 <i data-bind="attr: {class: 'fa fa-stack-2x ' + pageIcon().outlineClass}"></i>
-                <i data-bind="attr: {class: 'fa fa-stack-1x ' + pageIcon().shapeClass}" ></i>
+                <i data-bind="attr: {class: 'fa fa-stack-1x ' + pageIcon().shapeClass, alt: pageIcon.alt, title: pageIcon().alt}" ></i>
             </span>
         <!-- /ko -->
     </div>
-    <div class="oj-flex-bar-middle">
+    <div class="oj-flex-bar-middle" style="padding-top: 12px;">
         <!-- ko if: hasCurrentObject -->
         <div id="collapsiblePage" data-bind="ojComponent: {component: 'ojCollapsible', expanded: true}" style="width: 100%;">
             <h1> <span>
@@ -69,7 +69,7 @@ Copyright (C), 2016,2018, Oracle and / or affiliates. All rights reserved.
         <!-- /ko -->
     </div>
 </div>
-<!-- /ko -->
+
 <script type="text/html" id="columnTemplate">
     <div data-bind="template: {name: 'attributeTemplate', data: {data: $data, 
                                                                  showAttrsTitle: showAttrsTitle2(), 

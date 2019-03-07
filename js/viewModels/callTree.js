@@ -569,7 +569,7 @@ define(['ojs/ojcore',
                           var tile4 = self.rowData.split("<!--Tile4 data !-->");
                         var tile4data = "<" + tile4[1].substring(tile4[1].indexOf("<div") + 1);
                          document.getElementById("instDet_errors_tile-container").innerHTML = tile4data ;
-                           self.apmHeaderTitle.setupApmHeader ({ pageIcon:  { colorClass: 'request-type', shapeClass: 'fa-sitemap fa-rotate-270 fa-inverse request-type-adj', outlineClass: 'fa-circle', backgroundClass: 'request-type-bg', alt: oj.Translations.getTranslatedString('headerProperties.REQUEST_TYPE_DETAIL_ALT')}
+                           self.apmHeaderTitle.setupApmHeader ({ pageIcon:  { colorClass: 'request-type', shapeClass: 'fa-sitemap fa-rotate-270 request-type-adj', outlineClass: 'fa-circle-thin', alt: oj.Translations.getTranslatedString('headerProperties.INSTANCE_DETAIL_ALT') }
                             ,pageHeader: oj.Translations.getTranslatedString('headerProperties.INSTANCE')
                             ,subtype: firstLinkType
                             ,idSuffix: 'Server_Request_Instance'

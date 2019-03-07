@@ -8403,7 +8403,7 @@ html[dir="rtl"] .oj-col { float: right; }
 .demo-appheader-appname-table-cell-middle { display: table-cell; vertical-align: middle; }
 
 /* line 447, ../../../../../web/apm/@version@/scss/_apm.alta.styles.scss */
-.demo-appheader-lite .demo-appheader-appname { font-size: 18px; font-weight: bold; color: #454545; }
+.demo-appheader-lite .demo-appheader-appname { font-weight: bold; color: #454545; }
 
 /* line 454, ../../../../../web/apm/@version@/scss/_apm.alta.styles.scss */
 .loadingIndicator { position: fixed; top: 0; margin-left: -65px; width: 120px; height: 15px; left: 50%; z-index: 999; background-color: #e6ffe0; padding: 5px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; text-align: center; border-style: solid; border-width: 1px; border-top: none; box-shadow: 2px 2px 2px #888888; }
