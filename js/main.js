@@ -98,9 +98,9 @@ require(['ojs/ojcore',
                     'Snapshot': { label: 'Snapshot',
                         isDefault: false ,
                         value: {
-                            path: oj.Translations.getTranslatedString('callStackProperties.SNAPSHOTS_TIMELINE'),
+                            label: oj.Translations.getTranslatedString('callStackProperties.SNAPSHOTS_TIMELINE'),
+                            path : 'snapshot',
                             iconClass:"fa fa-camera"}}
-
                                 });
             var viewModel =
                 {

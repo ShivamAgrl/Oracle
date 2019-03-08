@@ -796,7 +796,7 @@ define(['ojs/ojcore',
 
             };
 
-            self.snapshotDataCompute = ko.computed(function()
+            self.snapshotDataCompute = function()
             {
 
                 self.chart={series: []};
@@ -952,7 +952,7 @@ define(['ojs/ojcore',
                 self.chart.legendSections=chart1.legendSections;
                 self.chart.series=chart1.series;
                 return self.chart;
-            },self).extend({ notify: 'always' });
+            }
 
 
 
@@ -1318,9 +1318,9 @@ define(['ojs/ojcore',
                         }
                     }
                 }
-            }
-
+            };
             self.getDetail();
+            self.snapshotDataCompute
             self.loadTable();
         };
 
