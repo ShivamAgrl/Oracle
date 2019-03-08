@@ -88,7 +88,7 @@ require(['ojs/ojcore',
                             path: 'callTree',
                             iconClass:"fa-list-alt"
                                }},
-                    'Snapshot': { label: 'Snapshot',
+                    'Snapshot': { label:  oj.Translations.getTranslatedString('callStackProperties.SNAPSHOTS_TIMELINE'),
                         isDefault: false ,
                         value: {
                             label: oj.Translations.getTranslatedString('callStackProperties.SNAPSHOTS_TIMELINE'),
