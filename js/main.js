@@ -55,7 +55,6 @@ require(['ojs/ojcore',
     './viewModels/apmHeaderTitle',
     'text!../html/timePercentageWidget.html',
     'text!./views/apmHeaderTitle.html',
-    'text!../html/tableContextMenuRegion.html',
     'text!../html/requestSelfSnapshotRegionModel.html',
     'ojs/ojknockout',
     'ojs/ojchart',
@@ -72,21 +71,15 @@ require(['ojs/ojcore',
     'ojs/ojconveyorbelt'
     ],
 
-        function(oj, $, ko,ApmHeaderTitle ,timePercentageWidget, apmHeaderTitle, tableContextMenuRegion, requestSelfSnapshotRegionModel) // this callback gets executed when all required modules are loaded
+        function(oj, $, ko,ApmHeaderTitle ,timePercentageWidget, apmHeaderTitle, requestSelfSnapshotRegionModel) // this callback gets executed when all required modules are loaded
         {
             // Retrieve the parent router from the parameters
             var self=this;
-            
             self.ApmHeaderTitle =  ApmHeaderTitle.getInstance(); 
-			//var g_activeReportXmlData = "";
-
             oj.koStringTemplateEngine.install();
             ko.templates['timePercentageWidget']= timePercentageWidget;
-            ko.templates['tableContextMenuRegion']= tableContextMenuRegion;
             ko.templates['requestSelfSnapshotRegionModel']= requestSelfSnapshotRegionModel;
             ko.templates['apmHeaderTitle']= apmHeaderTitle;
-
-      
             var router = oj.Router.rootInstance;
             router.configure(
                 {
@@ -101,16 +94,11 @@ require(['ojs/ojcore',
                             label: oj.Translations.getTranslatedString('callStackProperties.SNAPSHOTS_TIMELINE'),
                             path : 'SnapshotTimeline',
                             iconClass:"fa fa-camera"}}
-                                });
-            var viewModel =
-                {
-                    router: router
-                }; 
+                                });  
              oj.Router.sync().then(function()
                 {
-                    ko.applyBindings(viewModel);
+                    ko.applyBindings({ router: router});
                 });
-
         }
 );
 
