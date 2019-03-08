@@ -35,8 +35,9 @@ define(['ojs/ojcore',
         {
 
             var self = this;
-            var data = window.g_activeReportXmlData;
+            var tempData = window.g_activeReportXmlData;
             var TREE_OPERATION_NAME_PREFIX = 'tree_operationName_';
+            var data;
 
             self.colorUtils = ColorUtils.getInstance();  //used by LA Messages Tile
             self.mscUtils = MscUtils.getInstance();
@@ -283,6 +284,27 @@ define(['ojs/ojcore',
                     headerContentDiv.attr('title', oj.Translations.getTranslatedString('tooltipProperties.INSTANCE_LINK_CALL_TYPE'));
                 });
             };
+            self.getDataString=function(linkData)
+            {
+
+                var trimData = tempData.split("Fxtmodel");
+                for( i = 0 ; i < trimData.length ; i ++)
+                {
+                    if(trimData[i].indexOf(linkData) != -1 )
+                    {
+                        var jsonData = trimData[i];
+                    }
+                }
+                var  jsonString;
+                if( jsonData.indexOf("<!--") != -1)
+                    jsonString =  jsonData.substring(jsonData.indexOf(linkData) + linkData.length + 1 , jsonData.indexOf("<!--"));
+
+                if( jsonData.indexOf(" -->") != -1)
+                    jsonString =  jsonData.substring(jsonData.indexOf(linkData) +  linkData.length + 1 , jsonData.indexOf(" -->"));
+
+                jsonString = JSON.parse(jsonString);
+                return jsonString;
+            };
 
             self.flatTableColumns = [
                 {id: 'startTime', HeaderText: oj.Translations.getTranslatedString('instanceProperties.CALL_START_TIME'), shown: true, widthWeight: 10,field: 'startTime', headerRenderer: self.call_start_time_hdr_func, template: 'startTime_tmpl', style: 'white-space: normal; overflow: visible;', sortable: 'enabled', sortProperty: 'startTime'},
@@ -300,7 +322,7 @@ define(['ojs/ojcore',
             ];
             self.menuIdForFlatTable = 'apm_calltree_flattable_menu';
 
-  self.displayAppserver = function(hostName, appServerInfo)
+            self.displayAppserver = function(hostName, appServerInfo)
             {
                 if (appServerInfo.appServerSslPort === undefined || appServerInfo.appServerSslPort === null) {
                     if (appServerInfo.appServerPort && appServerInfo.appServerPort !== -1 && appServerInfo.appServerPort !== 0)
@@ -334,26 +356,22 @@ define(['ojs/ojcore',
             // Get instance details for a given parameters:
             self.getDetail = function()
             {
-                  self.externalDeploymentInfo(""); 
+                self.externalDeploymentInfo("");
                 self.LAMessagesErrorMsg("");
                 self.LAMessagesCharts(new Array());
                 self.LAMessagesMaxCount(0);
                 self.allDataGotten(false);
 
-
-                   var tempData = window.g_activeReportXmlData;
-                
                 var sa = tempData.split("Fxtmodel");
-                    for( i = 0 ; i < sa.length ; i ++)
+                    for( i = 0 ; i < sa.length ; i++)
                     {
-                        if(sa[i].indexOf("rootOperationMetadata") != -1 )
+                        if(sa[i].indexOf("rootOperationMetadata") != -1)
                         {
                             var as = sa[i];
                         }
                     }
                    data =  as.substring(as.indexOf("json}") + 5 , as.indexOf("<!--"));
-                    
-                  data = JSON.parse(data);
+                   data = JSON.parse(data);
 
                     self.noData(!data);
                     if (!data)
@@ -565,10 +583,10 @@ define(['ojs/ojcore',
                           var tile3 = self.rowData.split("<!--Tile3 data !-->");
                         var tile3data = "<" + tile3[1].substring(tile3[1].indexOf("<div") + 1);
                          document.getElementById("instDet_calls_tile-container").innerHTML = tile3data ;
-                          
-                          var tile4 = self.rowData.split("<!--Tile4 data !-->");
+                         var tile4 = self.rowData.split("<!--Tile4 data !-->");
                         var tile4data = "<" + tile4[1].substring(tile4[1].indexOf("<div") + 1);
                          document.getElementById("instDet_errors_tile-container").innerHTML = tile4data ;
+
                            self.apmHeaderTitle.setupApmHeader ({ pageIcon:  { colorClass: 'request-type', shapeClass: 'fa-sitemap fa-rotate-270 request-type-adj', outlineClass: 'fa-circle-thin', alt: oj.Translations.getTranslatedString('headerProperties.INSTANCE_DETAIL_ALT') }
                             ,pageHeader: oj.Translations.getTranslatedString('headerProperties.INSTANCE')
                             ,subtype: firstLinkType
@@ -591,16 +609,10 @@ define(['ojs/ojcore',
                                 ,title4Label: oj.Translations.getTranslatedString('instanceProperties.ECID')
                             }
                         });
-                        for( i = 0 ; i < sa.length ; i ++)
-                        {
-                            if(sa[i].indexOf("_snapshotDetail.json") != -1 )
-                            {
-                                var z = sa[i];
-                            }
-                        }
-                        var snapshotData =  z.substring(z.indexOf("_snapshotDetail.json") +  "_snapshotDetail.json".length + 1 , z.indexOf("<!--"));
 
-                        snapshotData = JSON.parse(snapshotData);
+                        var snapshotDetail="_snapshotDetail.json"
+                        var snapshotData =  self.getDataString(snapshotDetail);
+
                         self.snapshotTimeData(snapshotData);
                         if (snapshotData)
                         {
@@ -690,19 +702,8 @@ define(['ojs/ojcore',
 
                         }
                         setTimeout(self.loadTable, 1);
-                        
-                       
 
-                        //Remove snapshot tab if it is not a Java Server.
-                        /* Below condition has no effect. Seeking help.
-                        var appServerType = DisplayUtils.getInstance().getAppserverType(data.rootOperationMetadata.appServerInfo.appServerType);
-                        if (appServerType === self.apmConstants.appserverType.NODEJS || appServerType === self.apmConstants.appserverType.DOTNET)
-                        {
-                            self.subtabrouter.states.pop();
-                        }
-                        */
                     }
-
 
             };
 
@@ -755,6 +756,7 @@ define(['ojs/ojcore',
                     }
                 }
             };
+
             self.viewValueChange = function(selectedItem)
             {
                 if (selectedItem.originalEvent && selectedItem.originalEvent.type === "change")
@@ -784,34 +786,24 @@ define(['ojs/ojcore',
                 if (threadState == "IO")
                     return '#47BDEF';
 
-
             };
-            self.openFindingDialog = function() {
+
+            self.openFindingDialog = function()
+            {
+
                 $("#findingDialog").ojDialog({title: oj.Translations.getTranslatedString('Findings')});
                 $('#findingDialog').ojDialog('open');
+
             };
+
             self.snapshotDataCompute = ko.computed(function()
             {
 
                 self.chart={series: []};
                 var chart1={series: []};
+                var jString= "_snapshots.json";
 
-                var temp2 = window.g_activeReportXmlData;
-                var p = temp2.split("Fxtmodel");
-                for( i = 0 ; i < p.length ; i ++)
-                {
-                    if(p[i].indexOf("_snapshots.json") != -1 )
-                    {
-                        var z = p[i];
-                    }
-                }
-                var  snapshots;
-                if( z.indexOf("<!--") != -1)
-                    snapshots =  z.substring(z.indexOf("_snapshots.json") +  "_snapshots.json".length + 1 , z.indexOf("<!--"));
-
-                if( z.indexOf(" -->") != -1)
-                    snapshots =  z.substring(z.indexOf("_snapshots.json") +  "_snapshots.json".length + 1 , z.indexOf(" -->"));
-                snapshots = JSON.parse(snapshots);
+                 var snapshots = self.getDataString(jString);
                     if (!snapshots)
                     {
                         self.emptyTextValue(oj.Translations.getTranslatedString('headerProperties.NO_DATA'));
@@ -899,22 +891,9 @@ define(['ojs/ojcore',
 
                             var threadId=arguments[1].id.slice(0,arguments[1].id.indexOf('id'));
                             var xValue=arguments[1].data.x;
-                            self.snapshotDetailDialogTitle(null);
-                            self.snapshotDetailTreeTableDatasource(null);
                             var snapshotLink = "_snapshotDetail_" + threadId + "_" + xValue + ".json";
-                            var tempData = window.g_activeReportXmlData;
 
-                            var sa = tempData.split("Fxtmodel");
-                            for( i = 0 ; i < sa.length ; i ++)
-                            {
-                                if(sa[i].indexOf(snapshotLink) != -1 )
-                                {
-                                    var as = sa[i];
-                                }
-                            }
-                            snapshotDetailData =  as.substring(as.indexOf(snapshotLink) +  snapshotLink.length + 1 , as.indexOf("<!--"));
-
-                            snapshotDetailData = JSON.parse(snapshotDetailData);
+                            var snapshotDetailData =  self.getDataString(snapshotLink);
 
                                 $("#snapshotDetailDialog").ojDialog("open");
                                 if (!snapshotDetailData)
@@ -925,13 +904,9 @@ define(['ojs/ojcore',
 
                                     var option = [];
 
-
-
                                     rootRoot = new Array();
                                     for (var i=0;i<snapshotDetailData.children.length;i++)
                                         rootRoot.push(snapshotDetailData.children[i]);
-
-
 
                                     self.snapshotDetailTreeTableDatasource(null);
 
@@ -941,12 +916,7 @@ define(['ojs/ojcore',
                                     var snapshotTreeTableDS1 = new oj.FlattenedTreeTableDataSource(flatTreeDS1);
                                     self.snapshotDetailTreeTableDatasource(snapshotTreeTableDS1);
 
-
-
-
-
                                 }
-
 
                             self.snapshotDetailDialogTitle(arguments[1].seriesData.name);
                         };
@@ -989,28 +959,19 @@ define(['ojs/ojcore',
 
             // this method is used to filter the stack data according to probe
             //when data == null; it resets the treeModel to its original value
-            self.refreshSelfCallStackData = function(data){
+            self.refreshSelfCallStackData = function(data)
+            {
                 var selfSnapshotsData;
-
                 var oldData=data;
-
                 var startTime=data.selfStartTime;
                 var threadId=data.threadId;
-                var threadIdLink='_selfSnapshots_'+threadId+'_'+startTime;
+                var threadIdLink='_selfSnapshots_'+threadId+'_'+startTime + ".json";
 
-                   var tempData = window.g_activeReportXmlData;
-                
-                var sa = tempData.split("Fxtmodel");
-                    for( i = 0 ; i < sa.length ; i ++)
-                    {
-                        if(sa[i].indexOf(threadIdLink) != -1 )
-                        {
-                            var as = sa[i];
-                        }
-                    }
-                   selfSnapshots =  as.substring(as.indexOf(threadIdLink + ".json}") +  threadIdLink.length + 6 , as.indexOf("<!--"));
+               var selfSnapshots= self.getDataString(threadIdLink);
+
+                //   selfSnapshots =  as.substring(as.indexOf(threadIdLink) +  threadIdLink.length + 1 , as.indexOf("<!--"));
                     
-                  selfSnapshots = JSON.parse(selfSnapshots);
+
                 // Made null because data from earlier selection is made visible
                 self.selfTreeTableDS1=null;
                 self.selfStackTreeTableDatasource(null);
@@ -1053,10 +1014,6 @@ define(['ojs/ojcore',
                         }
                     }
 
-
-
-                //self.selfStackTreeTableDatasource(null);
-
             };
 
             // this method is used to filter the stack data according to probe
@@ -1097,12 +1054,6 @@ define(['ojs/ojcore',
                 self.refreshSelfCallStackData(data);
                 $( "#callerButton" ).ojButton( "option", "label", oj.Translations.getTranslatedString('callStackProperties.SHOW_CALLER'));
             };
-            self.openFindingDialog = function() {
-                $("#findingDialog").ojDialog({title: oj.Translations.getTranslatedString('Findings')});
-                $('#findingDialog').ojDialog('open');
-            };
-
-
 
             //this mehtod alternately sets the root of the tree as caller and callee to show and hide caller
             self.showCaller = function()
@@ -1137,17 +1088,6 @@ define(['ojs/ojcore',
                 var flatTreeDS1 = new oj.FlattenedTreeDataSource(jsonTreeDS1, option);
                 self.treeTableDS1 = new oj.FlattenedTreeTableDataSource(flatTreeDS1);
                 self.stackTreeTableDatasource(self.treeTableDS1);
-            };
-
-            self.gotoCalledOperation = function(data)
-            {
-                window.apmManager.navigatorManager.navigateToPage ( [], [{name: PARAM_INSTANCE_ID, value: REST_API_URL+'/'+data.calledOperationLink.href}],
-                    VALUE_PAGE_INSTANCEDETAIL );
-            };
-
-            self.gotoRequestDetail = function(data)
-            {
-                window.apmManager.navigatorManager.navigateToPage([], [{name: PARAM_REQUEST_ID, value: self.requestLink}], VALUE_PAGE_REQUESTDETAIL);
             };
 
             self.loadTable = function()
@@ -1193,7 +1133,6 @@ define(['ojs/ojcore',
                     attr.operationName = opMD.operationName;
                     attr.componentType = opMD.operationGenre;
                     attr.hasSnapshot =self.isJvmServer() && ( (node.numSelfSnapshots) ? (node.numSelfSnapshots > 0) : false);
-
 
                 }
                 else
@@ -1379,9 +1318,7 @@ define(['ojs/ojcore',
                         }
                     }
                 }
-            };
-
-   
+            }
 
             self.getDetail();
             self.loadTable();
