@@ -99,13 +99,13 @@ require(['ojs/ojcore',
                         isDefault: false ,
                         value: {
                             label: oj.Translations.getTranslatedString('callStackProperties.SNAPSHOTS_TIMELINE'),
-                            path : 'snapshot',
+                            path : 'SnapshotTimeline',
                             iconClass:"fa fa-camera"}}
                                 });
             var viewModel =
                 {
                     router: router
-                };
+                }; 
              oj.Router.sync().then(function()
                 {
                     ko.applyBindings(viewModel);
