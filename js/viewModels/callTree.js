@@ -1,16 +1,8 @@
-//
-// A model for a particular Request Type.  Id of the request type is required.
-//
-//********************************************************************************
-// 05Jun14  -   GrantC: created this file.
-//********************************************************************************
-
 define(['ojs/ojcore',
         'knockout',
         'jquery',
         'utils/dateTimeUtils',
         'viewModels/apmHeaderTitle',
-        'utils/regionUtils',
         'utils/instanceUtils',
         'utils/apmConstants',
         'utils/colorUtils',
@@ -29,7 +21,7 @@ define(['ojs/ojcore',
         'ojs/ojpagingcontrol',
          'ojs/ojdialog'
     ],
-    function(oj, ko, $, DateTimeUtils, apmHeaderTitle, RegionUtils, InstanceUtils, apmConstants, ColorUtils, MscUtils)  {
+    function(oj, ko, $, DateTimeUtils, apmHeaderTitle, InstanceUtils, apmConstants, ColorUtils, MscUtils)  {
 
         function callTree()
         {
@@ -48,7 +40,6 @@ define(['ojs/ojcore',
 
 
             self.dateTimeUtils = DateTimeUtils.getInstance();
-            self.regionUtils = RegionUtils.getInstance();
             self.instanceUtils = InstanceUtils.getInstance();
             self.showFinding = ko.observable(false);
             self.externalDeploymentInfo = ko.observable('');
