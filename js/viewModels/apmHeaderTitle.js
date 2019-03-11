@@ -376,21 +376,7 @@ function(oj, ko, $, ApmConstants)
                     //self.pageIconAlt(null);
                 }
             };
-
-            self.setSingleFlow = function (flowLongKey, topologyModel) {
-                // update the observable so the header text can be updated.
-                self.singleFlowLongKey(flowLongKey);
-                self.singleFlowTopologyModel = topologyModel;
-            };
-            self.backToFlowTopology = function () {
-                if (self.singleFlowTopologyModel)
-                    self.singleFlowTopologyModel.showAllFlows();
-            };
-
-          
-            
-        }
-    
+        }   
     })();
     
     return ApmHeaderTitleModel;
