@@ -52,9 +52,9 @@ function emxActiveReportMessageReceived(event)
 if (typeof window.addEventListener !== 'undefined')
 {
     console.log("+++++ activeReportInit.js: window.addEventListener: ");
-    window.addEventListener("message", emxActiveReportMessageReceived, false);
+    window.addEventListener("message", emxActiveReportMessageReceived, false);  
 } else if (typeof window.attachEvent !== 'undefined')
 {
     console.log("+++++ activeReportInit.js: window.attachEvent: ");
     window.attachEvent("onmessage", emxActiveReportMessageReceived);
-}
+}     

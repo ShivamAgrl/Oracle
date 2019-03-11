@@ -153,24 +153,24 @@ function sendXML()
     }
 }
 
-
-function emxActiveReportMessageReceived(event)
-{
-    console.log("+++++ Message received::emxActiveReportMessageReceived!!! :: g_emMode: " + g_emMode);
-    console.log(event);
-    if (g_emMode === "emx_active_report") {
-        g_activeReportXmlData = event.data;
-    }
-}
-
-if (typeof window.addEventListener !== 'undefined')
-{
-    console.log("+++++ emxActiveReport: window.addEventListener: ");
-    window.addEventListener("message", emxActiveReportMessageReceived, false);
-} else if (typeof window.attachEvent !== 'undefined')
-{
-    console.log("+++++ emxActiveReport: window.attachEvent: ");
-    window.attachEvent("onmessage", emxActiveReportMessageReceived);
-}
-
-console.log("+++++ Out emxActiveReport.js :: g_emMode: " + g_emMode);
+//
+//function emxActiveReportMessageReceived(event)
+//{
+//    console.log("+++++ Message received::emxActiveReportMessageReceived!!! :: g_emMode: " + g_emMode);
+//    console.log(event);
+//    if (g_emMode === "emx_active_report") {
+//        g_activeReportXmlData = event.data;
+//    }
+//}
+//
+//if (typeof window.addEventListener !== 'undefined')
+//{
+//    console.log("+++++ emxActiveReport: window.addEventListener: ");
+//    window.addEventListener("message", emxActiveReportMessageReceived, false);
+//} else if (typeof window.attachEvent !== 'undefined')
+//{
+//    console.log("+++++ emxActiveReport: window.attachEvent: ");
+//    window.attachEvent("onmessage", emxActiveReportMessageReceived);
+//}
+//
+//console.log("+++++ Out emxActiveReport.js :: g_emMode: " + g_emMode);

@@ -1,16 +1,3 @@
-/*
- *  This is the new constants file.  Please start putting new constants here.
- *  We are currently transitioning from the old constants.js to this one by incrementally moving over the constants.
- *  
- *  This is a class that creates a cached instance like we do for our utils. 
- *  When a class refers to a new constant, it must require the apmConstants.js file and instantiate apmConstants via getInstance().
- *  
- *  Constants are put in a logical enumerated object domain which usually eliminates the need for the constant name containing the name of the domain.  
- *  For example, VALUE_TIMEPERIOD_LAST15MINUTES can now be put into an object called timePeriod with attribute LAST15MINUTES.
- *  When a class refers to the constant, it will be self.apmConstants.timePeriod.LAST15MINUTES.
- *  
- */
-
 define([], function()
 {
     var ApmConstants = (function () 
