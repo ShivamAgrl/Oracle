@@ -462,6 +462,9 @@ define(
         {
             "REQUEST_INSTANCES": "Request Instances"
             ,"TABLE": "Table"
+            ,"MANAGEMENT_CLOUD" : "MANAGEMENT CLOUD"
+            ,"APPLICATION_PERFORMANCE_MONITORING" : "Application Performance Monitoring"
+            ,"SERVER_REQUEST" : "Server Request Instance"
             ,"SECONDS": "sec"
             ,"START_TIME": "Start Time"
             ,"END_TIME": "End Time"
