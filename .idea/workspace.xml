@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa949159-9580-40d3-aef0-e305bffd11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/viewModels/callTree.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/viewModels/callTree.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="61" column="57" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
+            <state relative-caret-position="367">
+              <caret line="68" column="76" lean-forward="true" selection-start-line="68" selection-start-column="76" selection-end-line="68" selection-end-column="76" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -40,20 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apm.alta.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/apm.alta.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11424">
-              <caret line="672" column="35" selection-start-line="672" selection-start-column="31" selection-end-line="672" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="callTree.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="callTree.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="33" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="33" />
+            <state relative-caret-position="420">
+              <caret line="572" column="17" lean-forward="true" selection-start-line="572" selection-start-column="17" selection-end-line="572" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -61,7 +51,7 @@
       <file leaf-file-name="SnapshotTimeline.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/viewModels/SnapshotTimeline.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="442">
               <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -73,7 +63,7 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
+            <state relative-caret-position="248">
               <caret line="85" column="66" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="66" />
             </state>
           </provider>
@@ -100,17 +90,16 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>totalSnapshots</find>
       <find>total_snapshots</find>
       <find>mainModel</find>
       <find>mainModel.</find>
       <find>instancecpu</find>
       <find>getdetail</find>
       <find>refres</find>
-      <find>oj-dialog-header oj-helper-clearfix ui-draggable-handle</find>
+      <find />
       <find>snapshotDetailDialogTitleId</find>
       <find>emaas-appheader-bar</find>
-      <find>.demo-appheader-lite .demo-appheader-appname</find>
+      <find />
       <find>showfin</find>
       <find>find</find>
       <find>instDet_flatTapm_calltree_treetable_menu</find>
@@ -130,6 +119,7 @@
       <find>tilesin</find>
       <find>window.apmManager.</find>
       <find>body</find>
+      <find>tile4data</find>
     </findStrings>
     <replaceStrings>
       <replace>../</replace>
@@ -168,10 +158,10 @@
         <option value="$PROJECT_DIR$/js/views/apmHeaderTitle.html" />
         <option value="$PROJECT_DIR$/css/apm.alta.css" />
         <option value="$PROJECT_DIR$/js/views/callTree.html" />
-        <option value="$PROJECT_DIR$/js/viewModels/callTree.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/css/demo.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/viewModels/callTree.js" />
       </list>
     </option>
   </component>
@@ -184,7 +174,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1601" />
     <option name="y" value="1" />
     <option name="width" value="1642" />
@@ -383,12 +373,12 @@
       <workItem from="1551936432155" duration="18037000" />
       <workItem from="1552021380104" duration="7303000" />
       <workItem from="1552286402679" duration="19185000" />
-      <workItem from="1552368041844" duration="2875000" />
+      <workItem from="1552368041844" duration="5899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187444000" />
+    <option name="totallyTimeSpent" value="190468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1096" extended-state="6" />
@@ -445,21 +435,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/viewModels/callTree.js</url>
-          <line>952</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/viewModels/callTree.js</url>
-          <line>796</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/js/viewModels/callTree.js</url>
-          <line>278</line>
-          <option name="timeStamp" value="12" />
+          <line>568</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -697,16 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewModels/SnapshotTimeline.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/libs/oj/v5.1.0/debug/ojknockout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -714,38 +685,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="33" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="85" column="66" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/apm.alta.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11424">
+        <state relative-caret-position="17">
           <caret line="672" column="35" selection-start-line="672" selection-start-column="31" selection-end-line="672" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="61" column="57" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
+        <state relative-caret-position="367">
+          <caret line="68" column="76" lean-forward="true" selection-start-line="68" selection-start-column="76" selection-end-line="68" selection-end-column="76" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -757,6 +707,37 @@
             <element signature="n#style#0;n#span#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#h2#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="85" column="66" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewModels/SnapshotTimeline.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewModels/callTree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="572" column="17" lean-forward="true" selection-start-line="572" selection-start-column="17" selection-end-line="572" selection-end-column="17" />
         </state>
       </provider>
     </entry>
