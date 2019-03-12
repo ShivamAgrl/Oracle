@@ -569,14 +569,14 @@ define(['ojs/ojcore',
                         self.getTileDetails=function(){
 
                             var arrayString= ["sr_alerts_tile-container","instDet_response_tile-container","instDet_calls_tile-container","instDet_errors_tile-container"];
-                            var tile =[];
+                            var tile;
                             var tileData=[];
 
                             for (var i=0;i<4;i++)
                             {
-                                tile[i+1]=self.rowData.split("<!--Tile" + [i+1] + " "+"data !-->");
-                                tileData[i+1]= "<" + tile[i+1][1].substring(tile[i+1][1].indexOf("<div")+1);
-                                document.getElementById(arrayString[i]).innerHTML=tileData[i+1];
+                                tile = self.rowData.split("<!--Tile" + [i+1] + " "+"data !-->");
+                                tileData[i+1] = "<" + tile[1].substring(tile[1].indexOf("<div")+1);
+                                document.getElementById(arrayString[i]).innerHTML = tileData[i+1];
                             }
 
                         };

@@ -1,4 +1,4 @@
-@font-face { font-family: 'FaFont'; src: url("fa/font/font-awesome-4.3.0/fonts/fontawesome-webfont.woff2") format("woff2"), url("fa/font-awesome-4.3.0/fonts/fontawesome-webfont.woff") format("woff"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'FaFont'; src: url("fa/font-awesome-4.3.0/fonts/fontawesome-webfont.woff2") format("woff2"), url("fa/font-awesome-4.3.0/fonts/fontawesome-webfont.woff") format("woff"); font-weight: normal; font-style: normal; }
 /* line 16, ../../../../../web/apm/@version@/scss/_apm.fonts.scss */
 .fa { display: inline-block; font: normal normal normal 14px/1 FaFont; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; transform: translate(0, 0); }
 
@@ -845,3 +845,5 @@ div[class*=" eua-col-"] { word-break: break-word; word-wrap: break-word; -webkit
 
 /* line 166, ../../../../../web/apm/@version@/scss/_eua.alta.styles.scss */
 .eua-form-error { font-style: italic; color: red; }
+
+body { background-image: url("images/texture.png"); background-repeat: repeat; background-position: top left; color: #333333; background-color: #ffffff; }
