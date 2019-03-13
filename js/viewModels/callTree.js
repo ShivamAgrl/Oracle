@@ -565,18 +565,22 @@ define(['ojs/ojcore',
                                 }
                             }
                         }
-                        var tile1 = self.rowData.split("<!--Tile1 data !-->");
-                        var tile1data = "<" + tile1[1].substring(tile1[1].indexOf("<div") + 1);
-                         document.getElementById("sr_alerts_tile-container").innerHTML = tile1data ;
-                        var tile2 = self.rowData.split("<!--Tile2 data !-->");
-                        var tile2data = "<" + tile2[1].substring(tile2[1].indexOf("<div") + 1);
-                         document.getElementById("instDet_response_tile-container").innerHTML = tile2data ;
-                          var tile3 = self.rowData.split("<!--Tile3 data !-->");
-                        var tile3data = "<" + tile3[1].substring(tile3[1].indexOf("<div") + 1);
-                         document.getElementById("instDet_calls_tile-container").innerHTML = tile3data ;
-                         var tile4 = self.rowData.split("<!--Tile4 data !-->");
-                        var tile4data = "<" + tile4[1].substring(tile4[1].indexOf("<div") + 1);
-                         document.getElementById("instDet_errors_tile-container").innerHTML = tile4data ;
+
+                        self.getTileDetails=function(){
+
+                            var arrayString= ["sr_alerts_tile-container","instDet_response_tile-container","instDet_calls_tile-container","instDet_errors_tile-container"];
+                            var tile;
+                            var tileData=[];
+
+                            for (var i=0;i<4;i++)
+                            {
+                                tile = self.rowData.split("<!--Tile" + [i+1] + " "+"data !-->");
+                                tileData[i+1] = "<" + tile[1].substring(tile[1].indexOf("<div")+1);
+                                document.getElementById(arrayString[i]).innerHTML = tileData[i+1];
+                            }
+
+                        };
+                         self.getTileDetails();
 
                            self.apmHeaderTitle.setupApmHeader ({ pageIcon:  { colorClass: 'request-type', shapeClass: 'fa-sitemap fa-rotate-270 request-type-adj', outlineClass: 'fa-circle-thin', alt: oj.Translations.getTranslatedString('headerProperties.INSTANCE_DETAIL_ALT') }
                             ,pageHeader: oj.Translations.getTranslatedString('headerProperties.INSTANCE')
