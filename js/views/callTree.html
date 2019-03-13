@@ -393,6 +393,8 @@
                         <div data-bind="template: {name: 'requestSelfSnapshotRegionModel'}"></div>
                     </div>
                 </div>
+           <div data-bind="template: {name: 'requestInstanceErrorDetailsRegion', 
+                                           data: {errorDialogId: 'apm_error_popup', errorDialogTitle: errorDialogTitle, errorDetails: errorDetails}}"/>   
 <div id="findingDialog"
      data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',
                             rootAttributes: {style: 'width: 80%; min-width: 300px;'}}">

@@ -1244,7 +1244,34 @@ define(['ojs/ojcore',
                     self.dateTimeUtils.displayNumber(time,0),
                     self.dateTimeUtils.displayNumber(timePercentage));
             };
-
+            self.showError = function(data)
+            {
+                // Get error info for this particular call if we don't already have it
+                self.errorDialogTitle(oj.Translations.getTranslatedString('instanceProperties.ERROR_DETAILS_DIALOG_TITLE_INSTANCE_SUMMARY', data.operationName));
+               
+                if (data.errorDetailsId !== undefined && data.errorDetailsId !== null)
+                {
+                 
+                    var errorDetailsLink = '_errorDetails_'+encodeURIComponent(data.errorDetailsId);
+                     var errorDetailsData = self.getDataString(errorDetailsLink + ".json");
+                    if (errorDetailsData && errorDetailsData.errorDetails.length > 0)
+                        {
+                            var errorDetails = errorDetailsData.errorDetails[0];
+                            errorDetails.formattedErrorStack = self.instanceUtils.formatErrorStack(errorDetails.errorStack);
+                            self.errorDetails(errorDetails);
+                        }
+                        else
+                        {
+                            self.errorDetails(null);
+                        }
+                        $('#apm_error_popup').ojDialog('open');
+                }
+                else
+                {
+                    self.errorDetails(null);
+                    $('#apm_error_popup').ojDialog('open');
+                }
+            };
             self.openSQLDBPerf = function(data)
             {
                 if (data.sqlId())

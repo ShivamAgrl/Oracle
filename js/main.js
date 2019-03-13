@@ -56,6 +56,7 @@ require(['ojs/ojcore',
     'text!../html/timePercentageWidget.html',
     'text!./views/apmHeaderTitle.html',
     'text!../html/requestSelfSnapshotRegionModel.html',
+    'text!../html/requestInstanceErrorDetailsRegion.html',
     'ojs/ojknockout',
     'ojs/ojchart',
     'ojs/ojbutton',
@@ -71,7 +72,7 @@ require(['ojs/ojcore',
     'ojs/ojconveyorbelt'
     ],
 
-        function(oj, $, ko,ApmHeaderTitle ,timePercentageWidget, apmHeaderTitle, requestSelfSnapshotRegionModel) // this callback gets executed when all required modules are loaded
+        function(oj, $, ko,ApmHeaderTitle ,timePercentageWidget, apmHeaderTitle, requestSelfSnapshotRegionModel, requestInstanceErrorDetailsRegion) // this callback gets executed when all required modules are loaded
         {
             // Retrieve the parent router from the parameters
             var self=this;
@@ -79,6 +80,7 @@ require(['ojs/ojcore',
             oj.koStringTemplateEngine.install();
             ko.templates['timePercentageWidget']= timePercentageWidget;
             ko.templates['requestSelfSnapshotRegionModel']= requestSelfSnapshotRegionModel;
+            ko.templates['requestInstanceErrorDetailsRegion']= requestInstanceErrorDetailsRegion;
             ko.templates['apmHeaderTitle']= apmHeaderTitle;
             var router = oj.Router.rootInstance;
             router.configure(

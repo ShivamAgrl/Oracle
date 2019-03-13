@@ -1,0 +1,82 @@
+<style type="text/css">
+.oj-dialog-content {
+    height: 100%
+}
+
+.oj-dialog-content .oj-dialog-body {
+    overflow: hidden;
+    height: 100%;
+}
+
+.flex-content {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    height: 0;
+}
+
+.flex-container {
+    display: flex;
+    -webkit-display: flex;
+    flex-direction: column;
+    overflow: none;
+}
+</style>
+<div style="display:flex; height: 100%;"
+     data-bind="ojComponent: {component: 'ojDialog',
+                              rootAttributes: {style: 'width: 70vw; height: 70vh;'}},
+                attr: {id: errorDialogId}">
+    <div class="oj-dialog-header oj-helper-clearfix" aria-labelledby="apm_errorDialogTitleId">
+        <span class="oj-dialog-title">
+            <i class="fa fa-times-circle error-color"></i>
+            <span data-bind="text: errorDialogTitle" id="apm_errorDialogTitleId"/>
+        </span>
+    </div>
+    <div class="oj-dialog-body flex-container" style="height: 100%;">
+        <div id="noDataDiv_riedr"
+             data-bind="template: {name: 'apmNoData', 
+                                   data: {idSuffix: 'riedr', 
+                                          parentModel: {noData: errorDetails() === null, 
+                                                        noDataSuggestionText: function(){return oj.Translations.getTranslatedString('instanceProperties.NO_ERROR_DETAILS_AVAILABLE_BECAUSE_INSTANCE_EXPIRED');}}}}"/> 
+        <!-- ko if: errorDetails -->
+            <div class="oj-flex">
+                <div class="oj-flex-item oj-sm-2">
+                    <label for="apm_error_type_code" data-bind="text: oj.Translations.getTranslatedString('instanceProperties.ERROR_TYPE_CODE')" class="page_subtitle"/>
+                </div>
+                <div class="oj-flex-item oj-sm-10">
+                    <label id="apm_error_type_code" data-bind="text: (errorDetails().errorType ? errorDetails().errorType : '')" class="value_text"/>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item oj-sm-2">
+                    <label for="apm_error_code" data-bind="text: oj.Translations.getTranslatedString('instanceProperties.ERROR_CODE')" class="page_subtitle"/>
+                </div>
+                <div class="oj-flex-item oj-sm-10">
+                    <label id="apm_error_code" data-bind="text: (errorDetails().errorCode ? errorDetails().errorCode : '')" class="value_text"/>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item oj-sm-2">
+                    <label for="apm_error_msg" data-bind="text: oj.Translations.getTranslatedString('instanceProperties.ERROR_MESSAGE')" class="page_subtitle"/>
+                </div>
+                <div class="oj-flex-item oj-sm-10">
+                    <label id="apm_error_msg" data-bind="text: (errorDetails().errorMessage ? errorDetails().errorMessage : '')" class="value_text"/>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item oj-sm-2">
+                    <div style="height:10px;"/>
+                    <label for="apm_error_stack" data-bind="text: oj.Translations.getTranslatedString('instanceProperties.ERROR_STACK')" class="page_subtitle"/>
+                </div>
+            </div>
+            <div class="flex-content">
+                <textarea id="apm_error_stack"
+                          data-bind="ojComponent: {component: 'ojTextArea',
+                                                   value: errorDetails().formattedErrorStack,
+                                                   readOnly: true,
+                                                   rootAttributes: {style: 'max-width: 100%; height: 100%;'}},
+                                     attr: {style: 'height: 100%; background-color: '+'F0F0F0'}">
+                </textarea>
+            </div>
+        <!-- /ko -->
+    </div>
+</div>
