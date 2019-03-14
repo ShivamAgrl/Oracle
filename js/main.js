@@ -83,8 +83,15 @@ require(['ojs/ojcore',
             ko.templates['requestInstanceErrorDetailsRegion']= requestInstanceErrorDetailsRegion;
             ko.templates['apmHeaderTitle']= apmHeaderTitle;
             var router = oj.Router.rootInstance;
+            
+            self.showBody = function()
+            {
+             //   ko.cleanNode($("#globalBody")[0]);
+             if(!ko.dataFor(document.getElementById("globalBody"))) 
+                    ko.applyBindings({ router: router}, document.getElementById("globalBody"));
+            };
             router.configure(
-                {
+                { 
                     'calltree':  { label:oj.Translations.getTranslatedString('instanceProperties.CALL_TREE'),  isDefault: true ,
                         value: {
                             path: 'callTree',
@@ -99,7 +106,7 @@ require(['ojs/ojcore',
                                 });  
              oj.Router.sync().then(function()
                 {
-                    ko.applyBindings({ router: router});
+                    self.showBody();
                 });
         }
 );
