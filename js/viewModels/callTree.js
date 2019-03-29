@@ -28,6 +28,10 @@ define(['ojs/ojcore',
 
             var self = this;
             var tempData = window.g_activeReportXmlData;
+            if(tempData == "")
+            {
+                window.location.reload();
+            }
             var TREE_OPERATION_NAME_PREFIX = 'tree_operationName_';
             var data;
 
