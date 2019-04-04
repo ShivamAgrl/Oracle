@@ -26,13 +26,7 @@ define(['ojs/ojcore',
         var self = this;
         self.mainModel = new callTree();
         console.log( self.mainModel);
-        self.mainModel.snapshotDataCompute();
-
-
-
-        //
-        // refreshCallStackData();
-
+        window.setTimeout(self.mainModel.snapshotDataCompute(), 1000);
     }
 
     return snapshot;

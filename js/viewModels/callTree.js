@@ -277,7 +277,7 @@ define(['ojs/ojcore',
             };
             self.getDataString=function(linkData)
             {
-
+                var tempData = window.g_activeReportXmlData;  
                 var trimData = tempData.split("Fxtmodel");
                 for( i = 0 ; i < trimData.length ; i ++)
                 {
@@ -585,7 +585,7 @@ define(['ojs/ojcore',
                             }
 
                         };
-                         self.getTileDetails();
+                        
 
                            self.apmHeaderTitle.setupApmHeader ({ pageIcon:  { colorClass: 'request-type', shapeClass: 'fa-sitemap fa-rotate-270 request-type-adj', outlineClass: 'fa-circle-thin', alt: oj.Translations.getTranslatedString('headerProperties.INSTANCE_DETAIL_ALT') }
                             ,pageHeader: oj.Translations.getTranslatedString('headerProperties.INSTANCE')
@@ -1351,7 +1351,7 @@ define(['ojs/ojcore',
             function myfunction()
             {
                 self.getDetail();
-                self.snapshotDataCompute
+                self.getTileDetails(); 
                 self.loadTable();
             }
             
