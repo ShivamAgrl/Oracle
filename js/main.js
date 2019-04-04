@@ -104,10 +104,15 @@ require(['ojs/ojcore',
                             path : 'SnapshotTimeline',
                             iconClass:"fa fa-camera"}}
                                 });  
-             oj.Router.sync().then(function()
-                {
-                    self.showBody();
-                });
+             function function1()
+             {
+                oj.Router.sync().then(function()
+                    {
+                        self.showBody();
+                    });
+             }            
+             window.setTimeout(function1, 2000);
+          
         }
 );
 

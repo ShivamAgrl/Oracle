@@ -27,11 +27,7 @@ define(['ojs/ojcore',
         {
 
             var self = this;
-            var tempData = window.g_activeReportXmlData;
-            if(tempData == "")
-            {
-                window.location.reload();
-            }
+            var tempData;
             var TREE_OPERATION_NAME_PREFIX = 'tree_operationName_';
             var data;
 
@@ -351,6 +347,11 @@ define(['ojs/ojcore',
             // Get instance details for a given parameters:
             self.getDetail = function()
             {
+                 tempData = window.g_activeReportXmlData;
+                 if(tempData.length == 0 )
+                 {
+                     window.location.reload();
+                 }
                 self.externalDeploymentInfo("");
                 self.LAMessagesErrorMsg("");
                 self.LAMessagesCharts(new Array());
@@ -1345,9 +1346,15 @@ define(['ojs/ojcore',
                     }
                 }
             };
-            self.getDetail();
-            self.snapshotDataCompute
-            self.loadTable();
+  
+            window.setTimeout(myfunction, 5000);
+            function myfunction()
+            {
+                self.getDetail();
+                self.snapshotDataCompute
+                self.loadTable();
+            }
+            
         };
 
         return callTree;
